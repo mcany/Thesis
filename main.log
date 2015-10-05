@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  5 OCT 2015 14:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  5 OCT 2015 14:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1004,7 +1004,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--57
 ]
 Chapter 2.
 [7]
-<images/mcan/Requirement/oneleghop-acc.png, id=389, 122.3772pt x 122.3772pt>
+<images/mcan/Requirement/oneleghop-acc.png, id=390, 122.3772pt x 122.3772pt>
 File: images/mcan/Requirement/oneleghop-acc.png Graphic file (type png)
 
 <use images/mcan/Requirement/oneleghop-acc.png>
@@ -1012,7 +1012,7 @@ Package pdftex.def Info: images/mcan/Requirement/oneleghop-acc.png used on inpu
 t line 23.
 (pdftex.def)             Requested size: 173.34032pt x 173.34172pt.
 
-<images/mcan/Requirement/insole.png, id=390, 175.3752pt x 104.0688pt>
+<images/mcan/Requirement/insole.png, id=391, 175.3752pt x 104.0688pt>
 File: images/mcan/Requirement/insole.png Graphic file (type png)
 
 <use images/mcan/Requirement/insole.png>
@@ -1020,7 +1020,7 @@ Package pdftex.def Info: images/mcan/Requirement/insole.png used on input line
 24.
 (pdftex.def)             Requested size: 173.34032pt x 102.86963pt.
 
-<images/mcan/Requirement/oneleghop-insole.png, id=391, 113.223pt x 113.223pt>
+<images/mcan/Requirement/oneleghop-insole.png, id=392, 113.223pt x 113.223pt>
 File: images/mcan/Requirement/oneleghop-insole.png Graphic file (type png)
 
 <use images/mcan/Requirement/oneleghop-insole.png>
@@ -1029,7 +1029,7 @@ nput line 25.
 (pdftex.def)             Requested size: 173.34032pt x 173.34636pt.
  [8 <./images/mcan/Requirement/oneleghop-acc.png>] [9 <./images/mcan/Requiremen
 t/insole.png> <./images/mcan/Requirement/oneleghop-insole.png>]
-<images/mcan/Requirement/sidehop-raw.png, id=406, 122.3772pt x 122.3772pt>
+<images/mcan/Requirement/sidehop-raw.png, id=407, 122.3772pt x 122.3772pt>
 File: images/mcan/Requirement/sidehop-raw.png Graphic file (type png)
 
 <use images/mcan/Requirement/sidehop-raw.png>
@@ -1037,7 +1037,7 @@ Package pdftex.def Info: images/mcan/Requirement/sidehop-raw.png used on input
 line 32.
 (pdftex.def)             Requested size: 173.34032pt x 173.34172pt.
 
-<images/mcan/Requirement/sidehop-filtered.png, id=407, 122.3772pt x 122.3772pt>
+<images/mcan/Requirement/sidehop-filtered.png, id=408, 122.3772pt x 122.3772pt>
 File: images/mcan/Requirement/sidehop-filtered.png Graphic file (type png)
 <use images/mcan/Requirement/sidehop-filtered.png>
 Package pdftex.def Info: images/mcan/Requirement/sidehop-filtered.png used on i
@@ -1143,7 +1143,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--153
 ) (./chapters/Analysis.tex [16]
 Chapter 3.
 
-<images/mcan/Analysis/oldCommunicationDiagram.jpg, id=459, 948.54375pt x 295.10
+<images/mcan/Analysis/oldCommunicationDiagram.jpg, id=460, 948.54375pt x 295.10
 25pt>
 File: images/mcan/Analysis/oldCommunicationDiagram.jpg Graphic file (type jpg)
  <use images/mcan/Analysis/oldCommunicationDiagram.jpg>
@@ -1183,7 +1183,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
  []
 
 
-<images/mcan/Analysis/CommunicationDiagram.jpg, id=469, 1082.0425pt x 511.9125p
+<images/mcan/Analysis/CommunicationDiagram.jpg, id=470, 1082.0425pt x 511.9125p
 t>
 File: images/mcan/Analysis/CommunicationDiagram.jpg Graphic file (type jpg)
  <use images/mcan/Analysis/CommunicationDiagram.jpg>
@@ -1210,7 +1210,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--38
 
  []
 
-<images/mcan/Analysis/ComponentDiagram.jpg, id=479, 869.2475pt x 453.695pt>
+<images/mcan/Analysis/ComponentDiagram.jpg, id=480, 869.2475pt x 453.695pt>
 File: images/mcan/Analysis/ComponentDiagram.jpg Graphic file (type jpg)
 
 <use images/mcan/Analysis/ComponentDiagram.jpg>
@@ -1218,7 +1218,7 @@ Package pdftex.def Info: images/mcan/Analysis/ComponentDiagram.jpg used on inpu
 t line 39.
 (pdftex.def)             Requested size: 346.68726pt x 180.94864pt.
 
-<images/mcan/Analysis/TestDiagram.jpg, id=481, 854.19125pt x 261.97874pt>
+<images/mcan/Analysis/TestDiagram.jpg, id=482, 854.19125pt x 261.97874pt>
 File: images/mcan/Analysis/TestDiagram.jpg Graphic file (type jpg)
 
 <use images/mcan/Analysis/TestDiagram.jpg>
@@ -1242,7 +1242,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
  []
 
 [22] [23]
-<images/mcan/SystemDesign/DecompositionDiagram.jpg, id=514, 1085.05376pt x 558.
+<images/mcan/SystemDesign/DecompositionDiagram.jpg, id=515, 1085.05376pt x 558.
 085pt>
 File: images/mcan/SystemDesign/DecompositionDiagram.jpg Graphic file (type jpg)
 
@@ -1251,7 +1251,7 @@ Package pdftex.def Info: images/mcan/SystemDesign/DecompositionDiagram.jpg used
  on input line 75.
 (pdftex.def)             Requested size: 433.35742pt x 222.88942pt.
  [24 <./images/mcan/SystemDesign/DecompositionDiagram.jpg>]
-<images/mcan/SystemDesign/ComponentDiagram.jpg, id=525, 1294.8375pt x 396.48125
+<images/mcan/SystemDesign/ComponentDiagram.jpg, id=526, 1294.8375pt x 396.48125
 pt>
 File: images/mcan/SystemDesign/ComponentDiagram.jpg Graphic file (type jpg)
  <use images/mcan/SystemDesign/ComponentDiagram.jpg>
@@ -1259,7 +1259,7 @@ Package pdftex.def Info: images/mcan/SystemDesign/ComponentDiagram.jpg used on
 input line 95.
 (pdftex.def)             Requested size: 433.35742pt x 132.6965pt.
  [25 <./images/mcan/SystemDesign/ComponentDiagram.jpg>]
-<images/mcan/SystemDesign/LayeredDiagram.jpg, id=532, 639.38875pt x 450.68375pt
+<images/mcan/SystemDesign/LayeredDiagram.jpg, id=533, 639.38875pt x 450.68375pt
 >
 File: images/mcan/SystemDesign/LayeredDiagram.jpg Graphic file (type jpg)
  <use images/mcan/SystemDesign/LayeredDiagram.jpg>
@@ -1277,7 +1277,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 138--139
  []
 
 
-<images/mcan/SystemDesign/DeploymentDiagram.jpg, id=551, 837.1275pt x 315.1775p
+<images/mcan/SystemDesign/DeploymentDiagram.jpg, id=552, 837.1275pt x 315.1775p
 t>
 File: images/mcan/SystemDesign/DeploymentDiagram.jpg Graphic file (type jpg)
  <use images/mcan/SystemDesign/DeploymentDiagram.jpg>
@@ -1327,7 +1327,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--11
  []
 
 
-<images/mcan/ObjectDesign/CommunicationInterface.jpg, id=572, 759.83875pt x 224
+<images/mcan/ObjectDesign/CommunicationInterface.jpg, id=573, 759.83875pt x 224
 .84pt>
 File: images/mcan/ObjectDesign/CommunicationInterface.jpg Graphic file (type jp
 g)
@@ -1380,7 +1380,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--51
  []
 
 [32]
-<images/mcan/ObjectDesign/mainWindow.png, id=593, 1557.82pt x 988.69376pt>
+<images/mcan/ObjectDesign/mainWindow.png, id=594, 1557.82pt x 988.69376pt>
 File: images/mcan/ObjectDesign/mainWindow.png Graphic file (type png)
 
 <use images/mcan/ObjectDesign/mainWindow.png>
@@ -1393,7 +1393,7 @@ Overfull \hbox (43.33838pt too wide) in paragraph at lines 65--65
  []
 
 
-<images/mcan/ObjectDesign/ViewControllerInterface.jpg, id=594, 634.37pt x 184.6
+<images/mcan/ObjectDesign/ViewControllerInterface.jpg, id=595, 634.37pt x 184.6
 9pt>
 File: images/mcan/ObjectDesign/ViewControllerInterface.jpg Graphic file (type j
 pg)
@@ -1402,7 +1402,7 @@ Package pdftex.def Info: images/mcan/ObjectDesign/ViewControllerInterface.jpg u
 sed on input line 67.
 (pdftex.def)             Requested size: 346.68726pt x 100.93726pt.
 
-<images/mcan/ObjectDesign/gatheringWindow.png, id=597, 594.22pt x 405.515pt>
+<images/mcan/ObjectDesign/gatheringWindow.png, id=598, 594.22pt x 405.515pt>
 File: images/mcan/ObjectDesign/gatheringWindow.png Graphic file (type png)
 
 <use images/mcan/ObjectDesign/gatheringWindow.png>
@@ -1410,7 +1410,7 @@ Package pdftex.def Info: images/mcan/ObjectDesign/gatheringWindow.png used on i
 nput line 72.
 (pdftex.def)             Requested size: 346.68726pt x 236.59726pt.
 
-<images/mcan/ObjectDesign/gatheringInterface.jpg, id=598, 484.81125pt x 229.858
+<images/mcan/ObjectDesign/gatheringInterface.jpg, id=599, 484.81125pt x 229.858
 75pt>
 File: images/mcan/ObjectDesign/gatheringInterface.jpg Graphic file (type jpg)
  <use images/mcan/ObjectDesign/gatheringInterface.jpg>
@@ -1420,7 +1420,7 @@ n input line 74.
  [33] [34 <./images/mcan/ObjectDesign/mainWindow.png> <./images/mcan/ObjectDesi
 gn/ViewControllerInterface.jpg>] [35 <./images/mcan/ObjectDesign/gatheringWindo
 w.png> <./images/mcan/ObjectDesign/gatheringInterface.jpg>]
-<images/mcan/ObjectDesign/e-textileCommunicationSelection.png, id=625, 872.2587
+<images/mcan/ObjectDesign/e-textileCommunicationSelection.png, id=626, 872.2587
 4pt x 495.8525pt>
 File: images/mcan/ObjectDesign/e-textileCommunicationSelection.png Graphic file
  (type png)
@@ -1430,7 +1430,7 @@ Package pdftex.def Info: images/mcan/ObjectDesign/e-textileCommunicationSelecti
 on.png used on input line 80.
 (pdftex.def)             Requested size: 433.35742pt x 246.35188pt.
 
-<images/mcan/ObjectDesign/ECommunicationInterface.jpg, id=626, 462.72874pt x 98
+<images/mcan/ObjectDesign/ECommunicationInterface.jpg, id=627, 462.72874pt x 98
 .3675pt>
 File: images/mcan/ObjectDesign/ECommunicationInterface.jpg Graphic file (type j
 pg)
@@ -1454,7 +1454,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
-<images/mcan/ObjectDesign/JSInterface.jpg, id=636, 420.57124pt x 74.2775pt>
+<images/mcan/ObjectDesign/JSInterface.jpg, id=637, 420.57124pt x 74.2775pt>
 File: images/mcan/ObjectDesign/JSInterface.jpg Graphic file (type jpg)
 
 <use images/mcan/ObjectDesign/JSInterface.jpg>
@@ -1467,7 +1467,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 94--95
  []
 
 
-<images/mcan/ObjectDesign/fileInterface.jpg, id=638, 419.5675pt x 223.83624pt>
+<images/mcan/ObjectDesign/fileInterface.jpg, id=639, 419.5675pt x 223.83624pt>
 File: images/mcan/ObjectDesign/fileInterface.jpg Graphic file (type jpg)
 
 <use images/mcan/ObjectDesign/fileInterface.jpg>
@@ -1480,7 +1480,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--102
  []
 
 
-<images/mcan/ObjectDesign/InteractexInterface.jpg, id=640, 461.725pt x 84.315pt
+<images/mcan/ObjectDesign/InteractexInterface.jpg, id=641, 461.725pt x 84.315pt
 >
 File: images/mcan/ObjectDesign/InteractexInterface.jpg Graphic file (type jpg)
  <use images/mcan/ObjectDesign/InteractexInterface.jpg>
@@ -1504,7 +1504,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
 [39
 
-] <images/OptimLayers.pdf, id=658, 1174.3875pt x 762.85pt>
+] <images/OptimLayers.pdf, id=659, 1174.3875pt x 762.85pt>
 File: images/OptimLayers.pdf Graphic file (type pdf)
 
 <use images/OptimLayers.pdf>
@@ -1666,10 +1666,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 66.
  ) 
 Here is how much of TeX's memory you used:
- 12713 strings out of 493117
- 195174 string characters out of 6135433
- 323962 words of memory out of 5000000
- 15587 multiletter control sequences out of 15000+600000
+ 12714 strings out of 493117
+ 195192 string characters out of 6135433
+ 324006 words of memory out of 5000000
+ 15588 multiletter control sequences out of 15000+600000
  35866 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,11n,59p,2068b,513s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1681,10 +1681,10 @@ dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2014/texmf-dist/fo
 nts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/typ
 e1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
 palatino/uplri8a.pfb>
-Output written on main.pdf (66 pages, 1137442 bytes).
+Output written on main.pdf (66 pages, 1136863 bytes).
 PDF statistics:
- 920 PDF objects out of 1000 (max. 8388607)
- 799 compressed objects within 8 object streams
+ 921 PDF objects out of 1000 (max. 8388607)
+ 800 compressed objects within 8 object streams
  253 named destinations out of 1000 (max. 500000)
  579 words of extra memory for PDF output out of 10000 (max. 10000000)
 
