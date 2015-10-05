@@ -96,3 +96,68 @@ Invalid user input shall not cause any disruption in the functioning of \textit.
 \subsubsection{NF11: Operating System}
 
 \textit\ should run on MAC OS. 
+
+
+\section{Related Work}
+
+The following sections provide the summary of proposed related framework to work on e-textile development.
+
+\subsection{E-textile Generic Environments}
+
+In this section the generic environments, that are created to create an abstraction for e-textile systems, are explained in detail. \\ 
+
+The CRN Toolbox enables fast implementation of activity and context recognition systems, featuring mechanisms for distributed processing and support for mobile and wearable devices. It is a tool set specifically optimized for implementing multimodal, distributed activity and context recognition systems running on Posix operating systems. The CRN Toolbox contains a collection of ready-to-use algorithms (signal processing, pattern classification, and so on). Another important feature is the ability to interface conventional simulation environments such as WEKA (Waikato Environment for Knowledge Analysis, www.cs.waikato. ac.nz/~ml). The concepts the CRN Toolbox uses are graphical programming, data driven computation, parameterizable libraries, and distribution. \\
+
+TinyOS is an open-source operating system designed for low-power wireless devices, such a sensor networks, ubiquitous computing, personal area networks, smart buildings and smart meters. TinyOS provides useful software abstractions of the underlying device hardware. TinyOS is especially useful for microcontroller-based devices that have sensors and/or networking capabilities. It is developed to make a layer on top of the hardware so that the Os separately runs the applications from hardware.
+
+
+\subsection{E-textile Frameworks and Platforms}
+In this section the platforms and frameworks with collection of different algorithms to work on e-textile data.\\
+
+Matlab is a High-level language for numerical computation, visualization, and application development. It has predefined mathematical functions for linear algebra, statistics, Fourier analysis, filtering, optimization, numerical integration, and solving ordinary differential equations. It supports Built-in graphics for visualizing data and tools for creating custom plots. \\
+
+Weka is a collection of machine learning algorithms for data mining tasks. The algorithms can either be applied directly to a data-set or called from your own Java code. Weka contains tools for data pre-processing, classification, regression, clustering, association rules, and visualization. It is also well-suited for developing new machine learning schemes. Advantages of Weka include, free availability under the GNU General Public License, portability, since it is fully implemented in the Java programming language and thus runs on almost any modern computing platform, a comprehensive collection of data pre-processing and modeling techniques, ease of use due to its graphical user interfaces. \\
+
+\subsection{E-textile Development Environments}
+
+The following section provides the summary of related development environments to create e-textiles. \\ 
+
+	There are different models in the market right now to produce wearable or e-textile devices. As an example there are; Arduino Lilypad, which is cheap board and has low energy consumption. It is designed to build soft interactive textiles. Raspberry-pi is cheap, bigger than Arduino Lilypad, powerful and has high-energy consumption. Intel Edison has very powerful microprocessor, Wi-Fi and Bluetooth low-level energy but bulky design. Beaglebone is very similar to Raspberry-pi, has a size of a credit card. \\
+
+
+There are different development environments specifically for almost every other hardware that is listed above.  Arduino IDE is a text based programming language for Arduino hardware. Its language is similar to C++. It has 1-click deployment feature but no debugging.  \\
+
+In Gadgeteer hardware structure is defined visually (components and their connections). Automatic code is generated based on visually defined structure. It has debugging feature and also text based programming in C\#.  \\
+
+Espruino IDE is Google Chrome plug-in. It is a script and block based programming language. It can upload automatically to the Espruino microprocessor. \\
+
+Cloud9 is another browser based collaborative development environment. Version management integrated in the environment. It is also text based programming language in Node\.js and Javascript. Node-Red is visual flow based programming environment based on Node\.js. It runs as a Web Server. Programs can be created from any browser and offers components with higher-level features such as Tweeting, Mail. It can be used to connect the beans to the cloud and define behaviors such as alerting over email when temperature drops below some level. \\
+
+I\*CATch is a hybrid with visual and textual programming environment for Arduino based micro-controllers. Its targets are children and novices. It is based on bus architecture. And it is available to plug and play programming blocks and connect them to denoted program flow.  \\
+
+Fritzing is open source software for documenting and prototyping hardware involving micro-controllers sensors and actuators. Their purpose is to help hobbyists, designer and artists to produce their designs. It supports many components including micro-controllers, sensors, actuators and smaller parts such as resistors and connectivity modules. It has functionality to export the design in order to share it with other users. SAM is visual flow based programming environment for the SAM Kit. It can translate visual representation into code that can be uploaded wirelessly to the boards. \\
+
+RUNES (Reconfigurable Ubiquitous Networked Embedded Systems), is a project to enable the creation of large scale, widely distributed, heterogeneous networked embedded e-textile systems that interoperate and adapt to their environments. RUNES aims to provide an adaptive middleware platform and application development tools that allow programmers the flexibility to interact with the environment where necessary. It also offers a level of abstraction that facilitates ease of application construction and use. This will allow for a dramatic cut in the cost of new application development and a much faster time to market. \\
+
+\subsection{Interactive Development Environments for Teaching}
+
+Swift playground is introduced by Apple to make swift learning more interactive, effective and fun. Playground makes writing Swift code incredibly simple and fun [13]. Whenever the users enter a line of code, the result appears immediately. For immediate result the Swift playground uses REPL (read-eval-print-loop) approach. Thus the playground does not require any compiling and keep listening the input from the users. The playground can be used for designing a new algorithm by watching its results every step, create new tests by verifying the work before applying into the test suite and experimenting with new APIs. \\
+
+Khan Academy has also launched an online development environment for teaching purpose. This online environment contains a set of tutorials based on the JavaScript and Processing languages and supports live coding environment like Swift playground, where the program updates the output as the programmers write. \\
+
+Processing is an open source programming language built for teaching the fundamentals of computer programming in a visual context and to serve as the foundation for electronic sketchbooks. One of the stated aims of Processing is to act as a tool to get non-programmers started with programming, through the instant gratification of visual feedback. \\
+
+Greenfoot is an interactive Java development environment for also educational purposes. Its main focuses are two-dimensional graphical applications like simulations and games. The aim of Greenfoot is to give programming education (object-oriented programming) at high school and early university level. \\
+
+Bluej is another Java environment specifically for first year college students. It is developed to eliminate some of Java's complex syntax and represents the object/class relationship visually. Special emphasis is placed in Bluej on visualization and interaction techniques to create an interactive environment to encourage experimentation and exploration. \\
+
+Bret Victor, the owner of the work that was cited as an inspiration for the Khan system, emphasizes that; the goals of a programming system should be: 
+
+\begin{itemize}
+
+\item to support and encourage powerful ways of thinking
+\item to enable programmers to see and understand the execution of their programs
+
+\end{itemize}
+
+As a live coding example Processing do not address any of these goals [14]. Bret Victor further criticizes JavaScript and Processing as a poorly-designed languages since they do not support ways of thinking and ignores learning process. Without these goals a live coding environments are worthless.

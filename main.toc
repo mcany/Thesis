@@ -5,33 +5,34 @@
 \contentsline {chapter}{Outline of the Thesis}{xiii}{section*.6}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Problem Statement}{2}{section.1.1}
-\contentsline {section}{\numberline {1.2}Related Work}{5}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}E-textile Frameworks}{5}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}E-textile Development Environments}{6}{subsection.1.2.2}
-\contentsline {subsection}{\numberline {1.2.3}Interactive Development Environments for Teaching}{7}{subsection.1.2.3}
-\contentsline {section}{\numberline {1.3}Proposed solution}{8}{section.1.3}
-\contentsline {chapter}{\numberline {2}Requirements Elicitation}{9}{chapter.2}
-\contentsline {section}{\numberline {2.1}Project KneeHapp}{9}{section.2.1}
-\contentsline {section}{\numberline {2.2}Use Cases}{10}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}One Leg Hop}{10}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Side Hops}{10}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Requirements}{12}{section.2.3}
-\contentsline {subsubsection}{\nonumberline Observation 1: Gathering}{13}{section*.13}
-\contentsline {subsubsection}{\nonumberline Observation 2: Observing}{13}{section*.14}
-\contentsline {subsubsection}{\nonumberline Observation 3: Testing}{14}{section*.15}
-\contentsline {subsection}{\numberline {2.3.1}Functional Requirements}{14}{subsection.2.3.1}
-\contentsline {subsubsection}{\nonumberline FR1: Data Gathering}{14}{section*.16}
-\contentsline {subsubsection}{\nonumberline FR2: Data Observing}{14}{section*.17}
-\contentsline {subsubsection}{\nonumberline FR3: Data Testing}{14}{section*.18}
-\contentsline {subsubsection}{\nonumberline FR4: Test Case Management}{14}{section*.19}
-\contentsline {subsubsection}{\nonumberline FR5: Pre-defined Algorithms}{14}{section*.20}
-\contentsline {subsubsection}{\nonumberline FR6: Live Coding}{14}{section*.21}
-\contentsline {subsection}{\numberline {2.3.2}Non-functional Requirements}{15}{subsection.2.3.2}
-\contentsline {subsubsection}{\nonumberline NF1: E-textile Device Independence}{15}{section*.22}
-\contentsline {subsubsection}{\nonumberline NF2: Extendibility with Respect to Algorithms}{15}{section*.23}
-\contentsline {subsubsection}{\nonumberline NF6: Response Time}{15}{section*.24}
-\contentsline {subsubsection}{\nonumberline NF7: Robustness}{15}{section*.25}
-\contentsline {subsubsection}{\nonumberline NF11: Operating System}{15}{section*.26}
+\contentsline {section}{\numberline {1.2}Solution}{5}{section.1.2}
+\contentsline {chapter}{\numberline {2}Requirements Elicitation}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Project KneeHapp}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2}Use Cases}{8}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}One Leg Hop}{8}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Side Hops}{8}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Requirements}{10}{section.2.3}
+\contentsline {subsubsection}{\nonumberline Observation 1: Gathering}{11}{section*.13}
+\contentsline {subsubsection}{\nonumberline Observation 2: Observing}{11}{section*.14}
+\contentsline {subsubsection}{\nonumberline Observation 3: Testing}{12}{section*.15}
+\contentsline {subsection}{\numberline {2.3.1}Functional Requirements}{12}{subsection.2.3.1}
+\contentsline {subsubsection}{\nonumberline FR1: Data Gathering}{12}{section*.16}
+\contentsline {subsubsection}{\nonumberline FR2: Data Observing}{12}{section*.17}
+\contentsline {subsubsection}{\nonumberline FR3: Data Testing}{12}{section*.18}
+\contentsline {subsubsection}{\nonumberline FR4: Test Case Management}{12}{section*.19}
+\contentsline {subsubsection}{\nonumberline FR5: Pre-defined Algorithms}{12}{section*.20}
+\contentsline {subsubsection}{\nonumberline FR6: Live Coding}{12}{section*.21}
+\contentsline {subsection}{\numberline {2.3.2}Non-functional Requirements}{13}{subsection.2.3.2}
+\contentsline {subsubsection}{\nonumberline NF1: E-textile Device Independence}{13}{section*.22}
+\contentsline {subsubsection}{\nonumberline NF2: Extendibility with Respect to Algorithms}{13}{section*.23}
+\contentsline {subsubsection}{\nonumberline NF6: Response Time}{13}{section*.24}
+\contentsline {subsubsection}{\nonumberline NF7: Robustness}{13}{section*.25}
+\contentsline {subsubsection}{\nonumberline NF11: Operating System}{13}{section*.26}
+\contentsline {section}{\numberline {2.4}Related Work}{13}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}E-textile Generic Environments}{13}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}E-textile Frameworks and Platforms}{14}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}E-textile Development Environments}{14}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}Interactive Development Environments for Teaching}{15}{subsection.2.4.4}
 \contentsline {chapter}{\numberline {3}Analysis}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}Analysis Object Model}{17}{section.3.1}
 \contentsline {chapter}{\numberline {4}System Design}{21}{chapter.4}

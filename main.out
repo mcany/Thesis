@@ -3,53 +3,54 @@
 \BOOKMARK [0][-]{section*.6}{Outline of the Thesis}{}% 3
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 4
 \BOOKMARK [1][-]{section.1.1}{Problem Statement}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.2}{Related Work}{chapter.1}% 6
-\BOOKMARK [2][-]{subsection.1.2.1}{E-textile Frameworks}{section.1.2}% 7
-\BOOKMARK [2][-]{subsection.1.2.2}{E-textile Development Environments}{section.1.2}% 8
-\BOOKMARK [2][-]{subsection.1.2.3}{Interactive Development Environments for Teaching}{section.1.2}% 9
-\BOOKMARK [1][-]{section.1.3}{Proposed solution}{chapter.1}% 10
-\BOOKMARK [0][-]{chapter.2}{Requirements Elicitation}{}% 11
-\BOOKMARK [1][-]{section.2.1}{Project KneeHapp}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.2}{Use Cases}{chapter.2}% 13
-\BOOKMARK [2][-]{subsection.2.2.1}{One Leg Hop}{section.2.2}% 14
-\BOOKMARK [2][-]{subsection.2.2.2}{Side Hops}{section.2.2}% 15
-\BOOKMARK [1][-]{section.2.3}{Requirements}{chapter.2}% 16
-\BOOKMARK [2][-]{subsection.2.3.1}{Functional Requirements}{section.2.3}% 17
-\BOOKMARK [2][-]{subsection.2.3.2}{Non-functional Requirements}{section.2.3}% 18
-\BOOKMARK [0][-]{chapter.3}{Analysis}{}% 19
-\BOOKMARK [1][-]{section.3.1}{Analysis Object Model}{chapter.3}% 20
-\BOOKMARK [0][-]{chapter.4}{System Design}{}% 21
-\BOOKMARK [1][-]{section.4.1}{Design Goals}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.2}{Subsystem Decomposition}{chapter.4}% 23
-\BOOKMARK [2][-]{subsection.4.2.1}{Event Driven Middle-ware Architecture}{section.4.2}% 24
-\BOOKMARK [2][-]{subsection.4.2.2}{Repository Pattern}{section.4.2}% 25
-\BOOKMARK [2][-]{subsection.4.2.3}{Broker Pattern}{section.4.2}% 26
-\BOOKMARK [2][-]{subsection.4.2.4}{Plug-in Pattern}{section.4.2}% 27
-\BOOKMARK [2][-]{subsection.4.2.5}{TextIt}{section.4.2}% 28
-\BOOKMARK [1][-]{section.4.3}{Identify Concurrency}{chapter.4}% 29
-\BOOKMARK [1][-]{section.4.4}{HW/SW Mapping}{chapter.4}% 30
-\BOOKMARK [1][-]{section.4.5}{Persistent Data Management}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.6}{Software Control}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.7}{Boundary Conditions}{chapter.4}% 33
-\BOOKMARK [2][-]{subsection.4.7.1}{Initialization}{section.4.7}% 34
-\BOOKMARK [2][-]{subsection.4.7.2}{Failure}{section.4.7}% 35
-\BOOKMARK [2][-]{subsection.4.7.3}{Termination}{section.4.7}% 36
-\BOOKMARK [0][-]{chapter.5}{Object Design}{}% 37
-\BOOKMARK [1][-]{section.5.1}{Specifying Interfaces}{chapter.5}% 38
-\BOOKMARK [2][-]{subsection.5.1.1}{BLE - Firmata Controller}{section.5.1}% 39
-\BOOKMARK [2][-]{subsection.5.1.2}{ViewController}{section.5.1}% 40
-\BOOKMARK [2][-]{subsection.5.1.3}{Gathering Data}{section.5.1}% 41
-\BOOKMARK [2][-]{subsection.5.1.4}{Etextile Communication Selection}{section.5.1}% 42
-\BOOKMARK [2][-]{subsection.5.1.5}{JavaScript Runner}{section.5.1}% 43
-\BOOKMARK [2][-]{subsection.5.1.6}{File}{section.5.1}% 44
-\BOOKMARK [2][-]{subsection.5.1.7}{Interactex Server Controller}{section.5.1}% 45
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 46
-\BOOKMARK [1][-]{section.6.1}{Discussion}{chapter.6}% 47
-\BOOKMARK [1][-]{section.6.2}{Future Work}{chapter.6}% 48
-\BOOKMARK [2][-]{subsection.6.2.1}{Administration Component}{section.6.2}% 49
-\BOOKMARK [2][-]{subsection.6.2.2}{Artificial Intelligence Component}{section.6.2}% 50
-\BOOKMARK [2][-]{subsection.6.2.3}{Communication Protocols for New Fixtures}{section.6.2}% 51
-\BOOKMARK [1][-]{section.6.3}{Summary}{chapter.6}% 52
-\BOOKMARK [-1][]{part*.54}{Appendix}{}% 53
-\BOOKMARK [0][-]{appendix.A}{Glossary}{part*.54}% 54
-\BOOKMARK [0][-]{appendix*.55}{Bibliography}{part*.54}% 55
+\BOOKMARK [1][-]{section.1.2}{Solution}{chapter.1}% 6
+\BOOKMARK [0][-]{chapter.2}{Requirements Elicitation}{}% 7
+\BOOKMARK [1][-]{section.2.1}{Project KneeHapp}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.2}{Use Cases}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.2.1}{One Leg Hop}{section.2.2}% 10
+\BOOKMARK [2][-]{subsection.2.2.2}{Side Hops}{section.2.2}% 11
+\BOOKMARK [1][-]{section.2.3}{Requirements}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.3.1}{Functional Requirements}{section.2.3}% 13
+\BOOKMARK [2][-]{subsection.2.3.2}{Non-functional Requirements}{section.2.3}% 14
+\BOOKMARK [1][-]{section.2.4}{Related Work}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.4.1}{E-textile Generic Environments}{section.2.4}% 16
+\BOOKMARK [2][-]{subsection.2.4.2}{E-textile Frameworks and Platforms}{section.2.4}% 17
+\BOOKMARK [2][-]{subsection.2.4.3}{E-textile Development Environments}{section.2.4}% 18
+\BOOKMARK [2][-]{subsection.2.4.4}{Interactive Development Environments for Teaching}{section.2.4}% 19
+\BOOKMARK [0][-]{chapter.3}{Analysis}{}% 20
+\BOOKMARK [1][-]{section.3.1}{Analysis Object Model}{chapter.3}% 21
+\BOOKMARK [0][-]{chapter.4}{System Design}{}% 22
+\BOOKMARK [1][-]{section.4.1}{Design Goals}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.2}{Subsystem Decomposition}{chapter.4}% 24
+\BOOKMARK [2][-]{subsection.4.2.1}{Event Driven Middle-ware Architecture}{section.4.2}% 25
+\BOOKMARK [2][-]{subsection.4.2.2}{Repository Pattern}{section.4.2}% 26
+\BOOKMARK [2][-]{subsection.4.2.3}{Broker Pattern}{section.4.2}% 27
+\BOOKMARK [2][-]{subsection.4.2.4}{Plug-in Pattern}{section.4.2}% 28
+\BOOKMARK [2][-]{subsection.4.2.5}{TextIt}{section.4.2}% 29
+\BOOKMARK [1][-]{section.4.3}{Identify Concurrency}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.4}{HW/SW Mapping}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.5}{Persistent Data Management}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.6}{Software Control}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.7}{Boundary Conditions}{chapter.4}% 34
+\BOOKMARK [2][-]{subsection.4.7.1}{Initialization}{section.4.7}% 35
+\BOOKMARK [2][-]{subsection.4.7.2}{Failure}{section.4.7}% 36
+\BOOKMARK [2][-]{subsection.4.7.3}{Termination}{section.4.7}% 37
+\BOOKMARK [0][-]{chapter.5}{Object Design}{}% 38
+\BOOKMARK [1][-]{section.5.1}{Specifying Interfaces}{chapter.5}% 39
+\BOOKMARK [2][-]{subsection.5.1.1}{BLE - Firmata Controller}{section.5.1}% 40
+\BOOKMARK [2][-]{subsection.5.1.2}{ViewController}{section.5.1}% 41
+\BOOKMARK [2][-]{subsection.5.1.3}{Gathering Data}{section.5.1}% 42
+\BOOKMARK [2][-]{subsection.5.1.4}{Etextile Communication Selection}{section.5.1}% 43
+\BOOKMARK [2][-]{subsection.5.1.5}{JavaScript Runner}{section.5.1}% 44
+\BOOKMARK [2][-]{subsection.5.1.6}{File}{section.5.1}% 45
+\BOOKMARK [2][-]{subsection.5.1.7}{Interactex Server Controller}{section.5.1}% 46
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 47
+\BOOKMARK [1][-]{section.6.1}{Discussion}{chapter.6}% 48
+\BOOKMARK [1][-]{section.6.2}{Future Work}{chapter.6}% 49
+\BOOKMARK [2][-]{subsection.6.2.1}{Administration Component}{section.6.2}% 50
+\BOOKMARK [2][-]{subsection.6.2.2}{Artificial Intelligence Component}{section.6.2}% 51
+\BOOKMARK [2][-]{subsection.6.2.3}{Communication Protocols for New Fixtures}{section.6.2}% 52
+\BOOKMARK [1][-]{section.6.3}{Summary}{chapter.6}% 53
+\BOOKMARK [-1][]{part*.54}{Appendix}{}% 54
+\BOOKMARK [0][-]{appendix.A}{Glossary}{part*.54}% 55
+\BOOKMARK [0][-]{appendix*.55}{Bibliography}{part*.54}% 56
