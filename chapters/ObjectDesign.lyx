@@ -1,0 +1,5894 @@
+#LyX file created by tex2lyx 2.1
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\options bibtotoc,idxtotoc,headsepline,footsepline,footexclude,BCOR12mm,DIV13
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Object Design
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset FormulaMacro
+\def\ra {REST Adapter}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\def\et {Environment Tracker}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\def\fc {Fixture Controller}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\def\fr {Fixture Repository}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\def\dm {Decision Maker}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\def\aac {Authentication and Access Control}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The following chapter describes the object models of the components that make up the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+. The focus is placed on the implementation of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fr
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+and 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+components. 
+\begin_inset Newline newline
+\end_inset
+
+ Although the previous chapters describe the system from the application domain, this chapter represents the transition to the solution domain. The main components of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+are already defined, but in this chapter, they are refined in more detail. This chapter provides the definition of component interfaces and describes the interaction between components.
+\end_layout
+
+\begin_layout Section
+Interface Specification
+\end_layout
+
+\begin_layout Subsection
+REST Adapter
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ra
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+provides a HTTP based interface to the client applications. It is the component that takes HTTP requests, processes them, constructs the appropriate SOAP based requests and passes them to the components responsible for processing these types of requests. The response message that is sent to the client is a JSON message containing either information about the success of the request execution or the requested information. Other than what is described, the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ra
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+does not contain any other logic. The interface of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ra
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "RAInterface"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/RESTInterface.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ra
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+interface specification 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+RAInterface
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1.00
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+REST adapter takes four different HTTP request types for different purposes: 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+GET
+\series default
+ - for retrieving information about the system 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+PUT
+\series default
+ - for changing the state of the system 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+POST
+\series default
+ - for creating a new system resource 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+DELETE
+\series default
+ - for deleting a resource from the system 
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ra
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+communicates to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+when the user issues a command that requires interaction with the fixtures. The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+et
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+provides information about the state of the smart environment (state of all the fixtures). The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fr
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+provides information about fixture groups and building configuration. The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+aac
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+component provides information about the user's authenticity. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Three different client requests are supported by the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ra
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+:
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+Fixture (group) control 
+\end_layout
+
+\begin_layout Enumerate
+Fixture group management 
+\end_layout
+
+\begin_layout Enumerate
+Information about the configuration or environment 
+\end_layout
+
+\begin_layout Subsubsection
+Fixture (Group) Control
+\end_layout
+
+\begin_layout Standard
+For fixture control, a PUT request is used. The request structure is as follows: 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+http://
+\shape italic
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+_ address
+\shape default
+ : 
+\shape italic
+port_ number
+\shape default
+/REST/api/rest/
+\shape italic
+username
+\shape default
+/
+\shape italic
+fixture_ name
+\shape default
+/
+\shape italic
+command
+\shape default
+ 
+\end_layout
+
+\begin_layout Standard
+If the command requires parameters, they should be written in JSON format. For example, for changing colors of the Philips Hue light, the following JSON string is sent as a body of the request: 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+{ "sat":144,"bri":254,"hue":14922 } 
+\end_layout
+
+\begin_layout Standard
+The same applies for controlling groups of fixtures. Instead of 
+\shape italic
+fixture_ name
+\shape default
+, the name of the fixture group is entered.
+\end_layout
+
+\begin_layout Subsubsection
+Fixture Groups Management
+\end_layout
+
+\begin_layout Standard
+In order to add a new fixture group, a POST request is sent. The request structure is the following:
+\begin_inset Newline newline
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+http://
+\shape italic
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+_ address
+\shape default
+ : 
+\shape italic
+port_ number
+\shape default
+/REST/api/rest/
+\shape italic
+username
+\shape default
+/config/
+\shape italic
+group_ name
+\shape default
+/
+\shape italic
+fixture_ name& fixture_ name&...
+\shape default
+ 
+\end_layout
+
+\begin_layout Standard
+For removing a group, a DELETE request is sent. The request structure is the following:
+\begin_inset Newline newline
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+http://
+\shape italic
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+_ address
+\shape default
+ : 
+\shape italic
+port_ number
+\shape default
+/REST/api/rest/
+\shape italic
+username
+\shape default
+/config/
+\shape italic
+group_ name
+\shape default
+ 
+\end_layout
+
+\begin_layout Subsection
+Environment State Information
+\end_layout
+
+\begin_layout Standard
+For obtaining information regarding the state of a fixture, a GET request is sent. The request structure is the following:
+\begin_inset Newline newline
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+http://
+\shape italic
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+_ address
+\shape default
+ : 
+\shape italic
+port_ number
+\shape default
+/REST/api/rest/
+\shape italic
+username
+\shape default
+/status/
+\shape italic
+fixture_ name
+\shape default
+ 
+\end_layout
+
+\begin_layout Standard
+For getting information about a state of the environment (all fixtures), a GET request is sent. The request structure is the following:
+\begin_inset Newline newline
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+http://
+\shape italic
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+_ address
+\shape default
+ : 
+\shape italic
+port_ number
+\shape default
+/REST/api/rest/
+\shape italic
+username
+\shape default
+/status 
+\end_layout
+
+\begin_layout Standard
+For getting information about the created groups' names, a GET request is sent. The request structure is the following:
+\begin_inset Newline newline
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+http://
+\shape italic
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+_ address
+\shape default
+ : 
+\shape italic
+port_ number
+\shape default
+/REST/api/rest/
+\shape italic
+username
+\shape default
+/config/groupNames 
+\end_layout
+
+\begin_layout Standard
+For getting information about the the names of the fixtures in a group, a GET request is sent. The request structure is the following:
+\begin_inset Newline newline
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+http://
+\shape italic
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+_ address
+\shape default
+ : 
+\shape italic
+port_ number
+\shape default
+/REST/api/rest/
+\shape italic
+username
+\shape default
+/config/
+\shape italic
+group_ name
+\shape default
+ 
+\end_layout
+
+\begin_layout Subsubsection
+User Authentication
+\end_layout
+
+\begin_layout Standard
+For user authentication, a POST request is sent. The request structure is the following: 
+\end_layout
+
+\begin_layout Standard
+\align center
+http://
+\shape italic
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+_ address
+\shape default
+ : 
+\shape italic
+port_ number
+\shape default
+/REST/api/rest/
+\shape italic
+username
+\shape default
+/authenticate 
+\end_layout
+
+\begin_layout Standard
+A password is sent as a part of the request body.
+\end_layout
+
+\begin_layout Subsection
+Fixture Controller
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+is a component that enables 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+to communicate with fixtures. As such, it contains the implementations of different communication protocols. The interface of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "FCInterface"
+
+\end_inset
+
+ (next page).
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/FCInterface.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+interface specification 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+FCInterface
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1.00
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+provides a fixture control interface to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ra
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+and the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+dm
+\end_layout
+
+\end_inset
+
+. Every change in the environment is reported to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+dm
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+and the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+et
+\end_layout
+
+\end_inset
+
+. All the commands issued to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+are reported to the activity tracker interface of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+et
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+and checked for permissions with the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+aac
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+component. The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+receives only the name of the fixture, or a group of fixtures, with which it is supposed to communicate. It fetches the details about a fixture, or a group of fixtures, from the fixture information interface of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fr
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+component. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The object diagram is shown in the figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "FCObjectDiagram"
+
+\end_inset
+
+ (next page). For the design of this object model, a combination of a command pattern 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "GoF"
+
+\end_inset
+
+ and abstract factory pattern 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "GoF"
+
+\end_inset
+
+ was used. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%Command pattern is a behavioral pattern that encapsulates a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations. Abstract factory pattern is a creational pattern that provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/FCObject.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+object diagram 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+FCObjectDiagram
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1.00
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The CommandSuite abstract class contains one or many references of the Command interface and defines two methods that have to be implemented by the classes implementing it. The defined methods are the methods for creation and execution of commands. This abstract class can be seen as an abstract factory interface in the respective pattern. Thye FixtureController abstract class contains many objects that inherit the CommandSuite abstract class. The objects that inherit this abstract class are abstract classes (Protocol_ ACommandSuite and Protocol_ BCommandSuite in the figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "FCObjectDiagram"
+
+\end_inset
+
+) that contain the implementation of a fixture communication protocol. For every protocol used by the fixtures in the system, a separate abstract class inheriting the CommandSuite abstract class has to be created. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Every fixture type has a set of commands that it can execute. Therefore, for every fixture type, there is a class (Fixture_ 1CommandSuite and Fixture_ 2CommandSuite in the figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "FCObjectDiagram"
+
+\end_inset
+
+) that inherits the abstract class containing the respective protocol implementation. These classes create the commands that can be executed by a certain type of fixture. In the context of abstract factory pattern, they can be seen as concrete factories and in the context of command pattern, they can be seen as invoker classes. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The role of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+in the system is threefold: translation and communication of user's commands to the fixtures and constant listening for the sensor readings in the environment. If a change in the environment is detected, the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+reports the change to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+et
+\end_layout
+
+\end_inset
+
+Ḟigure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "FCActivityChange"
+
+\end_inset
+
+ shows the activity diagram of detecting a change in the environment. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/FCSensorActivity.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+activity diagram for changes in the environment 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+FCActivityChange
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.4
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When sensor data is received, the source fixture is recognized by its device ID written in the received message. Then the change is reported to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+et
+\end_layout
+
+\end_inset
+
+. If the source device is unknown, the received message is dropped. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When a command is received, the access rights of the user who sent the command are checked. If the user does not have the rights to access the fixture, his activity is reported to the activity tracker in the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+et
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+and an error response message is sent to the client. If the user was granted the permission to access, the command is checked in order to determine whether it was meant for a single fixture or a group of fixtures. If it is destined for the group of fixtures, the command is split in a group of commands for a single fixture and executed one by one. When the command is destined for a single fixture, fixture properties are obtained from the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fr
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+by asking for a fixture with an unique name. If the fixture is not found, an error message is sent to the client. 
+\begin_inset Newline newline
+\end_inset
+
+ When the properties of the fixture are obtained, a suitable command suite is chosen based on the protocol information gathered from the fixture properties. A validity of the command is checked, and if it is not valid, an error message is sent to the user. If the command is valid, it is sent to the fixture. If the response from the fixture is not received within 5 seconds, an error message is sent to the client. If a response message is received from the fixture, the change in the environment is reported to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+et
+\end_layout
+
+\end_inset
+
+, and an appropriate response message is sent to the client. Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "FCActivityCommand"
+
+\end_inset
+
+ shows the activity diagram of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+when executing a command.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/FCCommandActivity.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+activity diagram for command execution 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+FCActivityCommand
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.90
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Communication with Fixtures
+\end_layout
+
+\begin_layout Standard
+During the course of writing this thesis, the following fixtures were available: Philips Hue smart light bulb, Eltako FSUD-230V addressable power plug, Telefunken window/door sensor, Peha Easyclick in-wall switch and Opus power strip.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Communication with Philips Hue smart light bulbs is performed over a HTTP protocol. These lights are equipped with a gateway that receives a HTTP request, translates it to ZigBee protocol and then sends the command to the light bulbs. A detailed developer documentation for these devices is available 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Hue"
+
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%[http://developers.meethue.com/1_lightsapi.html].
+\end_layout
+
+\end_inset
+
+ Communication with the other available devices devices is performed over an EnOcean protocol. This protocol is an attempt to create a standard communication protocol in the industry of smart devices. When it comes to communication with fixtures using EnOcean protocol, special hardware devices are needed. The device used for communication over EnOcean protocol is Thermokon Easy-Sens STC-Ethernet gateway which is set in a client mode. The communication with this device is established by creating a TCP socket server which receives a 28 byte long stream of ASCII characters, which represent a 14 byte command. The gateway device, upon receiving a message from a fixture, forwards them to the server address (messages encoded in ASCII), which is set during the configuration of the gateway device.
+\end_layout
+
+\begin_layout Subsubsection
+Communication with the Fixture Repository
+\end_layout
+
+\begin_layout Standard
+Whenever the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+executes a command, it has to communicate with the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fr
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+at least twice: to check if a command is a command for a single fixture or for a group of fixtures, and to get fixture properties. If the command is meant for a group of fixtures, the fetching of fixture properties has to be done multiple times. All this communication with another component slows down the execution of the command. 
+\begin_inset Newline newline
+\end_inset
+
+ In order to speed up the execution of the command, a proxy pattern 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "GoF"
+
+\end_inset
+
+ is used. An object diagram of the proxy used for communication with the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fr
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "FCProxy"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/FCProxy.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Class diagram of the proxy contained in the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+FCProxy
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1.00
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this scenario, proxy pattern is used for caching fixture properties and fixture group information, in order to reduce the amount of communication with the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fr
+\end_layout
+
+\end_inset
+
+, thus decreasing the response time of the system. It also hides the complexity of remote communication from the FixtureController object.
+\end_layout
+
+\begin_layout Subsection
+Fixture Repository
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fr
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+component is responsible for storing detailed information about fixtures. This information is not exclusively related to their properties (name, device ID, protocol, type etc.) but they are also about fixture groups and fixture location in the building. The interface of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fr
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "FRInterface"
+
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/FRInterface.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fr
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+interface specification
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+FRInterface
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1.00
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fr
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+provides the grouping information to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ra
+\end_layout
+
+\end_inset
+
+. The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+requires fixture properties, and the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+et
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+requires the names of all the fixtures from the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fr
+\end_layout
+
+\end_inset
+
+. User activities originating from the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ra
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+are checked for permission with the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+aac
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+component and are reported to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+et
+\end_layout
+
+\end_inset
+
+. 
+\begin_inset Newline newline
+\end_inset
+
+ Fixture details are stored in the database as objects. Hibernate 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Hibernate"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%[http://www.hibernate.org/]
+\end_layout
+
+\end_inset
+
+ is selected for storing objects into database. Hibernate is an object-relational mapping library for Java that provides a framework for mapping an object-oriented domain model to a relational database. It is chosen because it is the most used library for object-relational mapping, and a detailed documentation along with numerous tutorials is available. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The fixture class diagram along with the building and group configuration classes can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "FixtureObjectModel"
+
+\end_inset
+
+. Every fixture in the system is uniquely identified by its name, therefore the name fields in the database are marked as unique. Unlike fixture details, information about the fixture groups and building configuration are stored in XML configuration files. The advantage of storing this information in XML files is that they are human readable and easier to change than when stored into database. In these files, fixtures are represented only by their names (and in general, the user selects a fixture only by its name).
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/FixtureObjectModel.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Class diagram of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+'s persisted data
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+FixtureObjectModel
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1.00
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The structure of the group configuration file can be seen in the figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "GroupConfig"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/GroupConfig.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Group configuration file structure
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+GroupConfig
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.7
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The fixture group configuration class contains a hashmap. The hashmap keys are group names, and values are lists of fixture names. Information about fixture groups is persisted by exporting the fixture group configuration class into XML. This way fixture groups can be configured manually by editing the XML file. The example shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "GroupConfig"
+
+\end_inset
+
+ shows the XML file with the fixture group configuration. In this file two groups are defined. The 
+\shape italic
+TestGroup1
+\shape default
+ contains fixtures 
+\shape italic
+Sensor
+\shape default
+ and 
+\shape italic
+Bigger_ Sensor
+\shape default
+, while the group 
+\shape italic
+Light
+\shape default
+ contains fixtures 
+\shape italic
+Light, Light1, Light2
+\shape default
+. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Building configuration class is similar to the group configuration class. Building configuration class contains a hashmap that stores the information about different floors, and every floor contains the information about the rooms on that floor. Information about the building configuration is persisted by exporting the building configuration class into XML. This way the building configuration can be created manually as well by editing the XML file. In order to access the data in a room, two keys have to be provided. The first key is the floor number which selects the floor, and the second key is the room name, which accesses the fixture list for that room. A screenshot of an example of the building configuration XML file can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "BuildingConf"
+
+\end_inset
+
+. 
+\begin_inset Newline newline
+\end_inset
+
+ In this example, only one floor is defined and named 
+\shape italic
+1
+\shape default
+, made up of one room 
+\shape italic
+TestRoom1
+\shape default
+ which contains fixtures 
+\shape italic
+Light
+\shape default
+ and 
+\shape italic
+Light1
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/BuildingConfig.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+The building configuration file structure
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+BuildingConf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.7
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Decision Maker
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+dm
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+component is responsible for the automation of the smart environment. This component is built to support support the addition of new automation rules suggested by the machine learning algorithms. However, these algorithms are out of the scope of this thesis. The interface of this component can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "DMInterface"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/DMInterface.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+dm
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+interface specification
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+DMInterface
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1.00
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As shown in the figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "DMInterface"
+
+\end_inset
+
+, the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+dm
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+interacts only with the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+. The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+reports the changes in the environment to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+dm
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+by sending it a message containing information about the device name, device type and data describing the change in the environment. The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+dm
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+responds to the change in the environment by sending a fixture control command to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For the implementation of this component, an off-the-shelf component was used. Drools 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Drools"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%[http://www.jboss.org/drools/] 
+\end_layout
+
+\end_inset
+
+is a business rule management system with an integrated rules engine called Drools Expert. Drools also contains parts that provide support for process/workflow management, event processing/temporal reasoning, automated planning and business rules/process managing. For the purpose of this thesis, only the Drools Expert rule engine will be used. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Drools enables the automation of the system to be performed by writing rules according to which the system should react to a change in the system. A rule is defined by four different keywords:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+rule
+\series default
+ 
+\shape italic
+rulename
+\shape default
+ - defines a unique name for a rule and marks the beginning of the rule definition. 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+when
+\series default
+ section - defines a condition that has to be satisfied for the rule to be applicable. The "when" part of the rule is written in a MVEL dialect 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "MVEL"
+
+\end_inset
+
+. MVEL is a powerful expression language for Java-based applications. 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+then
+\series default
+ section - defines the action that is performed if a rule is applicable. The "then" part of the rule is written in Java. 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+end
+\series default
+ - marks the end of the rule definition.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+dm
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+enables a rule-based automation of the system. The rules store information about an appropriate action (issuing a command to fixture(s)) that should be performed in case of a change in the environment. These rules are stored in files, and their structure can be seen in the figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "DMRule"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/DMRule.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+The structure of the automation rules
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+DMRule
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.9
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There are two rules shown in the example in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "DMRule"
+
+\end_inset
+
+. The rules 
+\shape italic
+"Turn light off if the window is open"
+\shape default
+ and 
+\shape italic
+"Turn light on if the window is closed"
+\shape default
+ do just that. They check the message from the Sensor fixture containing the information whether the window is open or closed and issue an appropriate command to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Every message received by the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+dm
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+is transformed into an appropriate event object, because the message field contains different information for every fixture type. For example 
+\shape italic
+LightParameters
+\shape default
+ may contain information about the brightness of the light bulbs. The object diagram can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "DMEvents"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/DMEvents.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+An object diagram of events in the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+dm
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+DMEvents
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.90
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Authentication and Access Control
+\end_layout
+
+\begin_layout Standard
+An 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+aac
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+component is responsible for the security of the system. The interface of this component can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "AACInterface"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/ACCInterface.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+aac
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+interface specification
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+AACInterface
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1.00
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As shown in the figure above, the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+aac
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+component provides permission check for all components that the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ra
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+interacts with. It also provides the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ra
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+with the user authentication service. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Information about the users are stored in the database. For the registration of a new user, the system has to be provided with the following information:
+\end_layout
+
+\begin_layout Itemize
+first and last name 
+\end_layout
+
+\begin_layout Itemize
+username 
+\end_layout
+
+\begin_layout Itemize
+role 
+\end_layout
+
+\begin_layout Itemize
+office name 
+\end_layout
+
+\begin_layout Itemize
+password 
+\end_layout
+
+\begin_layout Standard
+The provided password is concatenated with an integer value (salt) and hashed using SHA-1 algorithm before being stored into the database. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Access control is designed to adhere to Advancing open standards for the information society's (OASIS) Extensible Access Control Markup Language (XACML) 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "OASIS"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%[https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=xacml#CURRENT] 
+\end_layout
+
+\end_inset
+
+standard. This standard defines a declarative access control policy language implemented in XML and a processing model describing how to evaluate authorization requests according to the rules defined in policies 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "XACML"
+
+\end_inset
+
+. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+% [http://en.wikipedia.org/wiki/XACML]
+\end_layout
+
+\end_inset
+
+For the implementation of access control, an out-of-the-box implementation of OASIS XACML standard was chosen. Sunxacml open source library 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "sunXACML"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%[http://sunxacml.sourceforge.net/] 
+\end_layout
+
+\end_inset
+
+is chosen over Balana 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Balana"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%[http://xacmlinfo.org/2012/08/16/balana-the-open-source-xacml-3-0-implementation/] 
+\end_layout
+
+\end_inset
+
+implementation, because it is more lightweight, easier to use and better documented. Unlike user information, access control policy is stored in a XML file. Every rule is made up of three parts: 
+\end_layout
+
+\begin_layout Enumerate
+Resource that is being accessed (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "XACMLTarget"
+
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Enumerate
+Subject that is trying to access the resource (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "XACMLSubject"
+
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Enumerate
+Action that the subject is trying to perform on the resource (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "XACMLAction"
+
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/XACMLTarget.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Structure of the XACML target definition
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+XACMLTarget
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1.00
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/XACMLSubject.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Structure of the XACML subject definition
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+XACMLSubject
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1.00
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/XACMLAction.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Structure of the XACML action definition
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+XACMLAction
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1.00
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Environment Tracker
+\end_layout
+
+\begin_layout Standard
+An 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+et
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+component is responsible for gathering information about the changes in the environment (changes of temperature, humidity, brightness, opening of doors, windows, turning on/off of fixtures) and tracking user behaviour (commands issued by the user). All this information is stored into the database. The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+et
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+provides an activity report interface to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fr
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+and the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+components, for reporting user actions. The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+et
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+also provides an interface to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+, for reporting changes in the environment. The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+et
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+uses 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fr
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+for getting the names of the fixtures that make up the smart environment (when a user sends a request for the status of the smart environment). The interface of this component can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "ETInterface"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/ETInterface.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+et
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+interface specification
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+ETInterface
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1.00
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A class diagram of the data being stored into the database can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "ETLog"
+
+\end_inset
+
+. As mentioned throughout this chapter, both user activity and environment change are tracked. Environment change message contains the device type that detected the change, the name of the device, the message containing the change information and the timestamp that defines when the change was detected. The user activity message contains the username of the user, command that was issued, the name of the fixture that the command was issued to, information if the execution of the command was granted or not and the timestamp when the command was issued.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/ETLog.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Class diagram of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+et
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+data stored into a database
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+ETLog
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.60
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+System Response Messages
+\end_layout
+
+\begin_layout Standard
+System response messages can inform the user about two events: a successful execution of a command, and a problem or failure of the system. In both cases, the response messages are designed to have two fields. The first field contains an execution code, and the second contains the response message. Response codes contain information about the response source. First digit of the response code defines the component from which the message originated. The second digit defines the service of the component that was executed, and the third digit gives information about the success of the command execution (1 error, 0 success). The response codes and their sources can be found in the table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table:responseCode"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\begin_inset Tabular 
+<lyxtabular version="3" rows="25" columns="9">
+<features rotate="0" tabularvalignment="middle" tabularwidth="0pt">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="left" valignment="top">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="left" valignment="top">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="center" valignment="top">
+<column alignment="none" valignment="top" special=" ">
+<row>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Component 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Method 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Response code 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ra
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+executeCommand 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+11x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+getFixtureStatus 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+12x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+getEnvironmentStatus 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+13x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+groupManagementAdd 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+14x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+groupManagementRemove 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+15x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+groupManagementGetGroupNames 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+16x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+getFixtureNamesForGroup 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+17x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+authenticateUser 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+18x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+executeCommand 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+21x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+executeRoomCommand 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+22x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+executeSingleCommand 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+23x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+executeGroupCommand 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+24x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fr
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+addPhilipsHueFixture 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+31x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+addEnOceanFixture 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+32x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+removeFixture 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+33x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+addGroup 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+34x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+removeGroup 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+35x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+getGroups 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+36x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+getFixturesForGroup 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+37x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+EnvironmentTracker 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+getFixtureStatus 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+41x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+getEnvironmentStatus 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+42x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+aac
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+registerNewUser 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+51x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+removeUser 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+52x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+authenticateUser 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+53x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Standard
+System response codes and their sources (x=1 Error, x=0 OK)
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "table:responseCode"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

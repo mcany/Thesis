@@ -1,0 +1,103 @@
+\chapter{Object Design}
+
+\def\ra{REST Adapter}
+\def\et{Environment Tracker}
+\def\fc{Fixture Controller}
+\def\fr{Fixture Repository}
+\def\dm{Decision Maker}
+\def\aac{Authentication and Access Control}
+
+The following chapter describes the object models of the components that make up the TextIt.\\
+ 
+	Although the previous chapters describe the system from the application domain, this chapter represents the transition to the solution domain. The main components of the TextIt are already defined, but in this chapter, they are refined in more detail. This chapter provides the definition of components and describes the interaction between components. 
+
+\section{Specifying Interfaces}
+\subsection{BLE - Firmata Controller}
+The BLE - Firmata controller are used for two actions. One is to find and connect to nearby peripherals and two is for starting messaging and asking for the wanted data. The controller takes the connection requests and the communication types, process them, constructs the appropriate BLE and firmata requests and passes them to BLE or Firmata libraries to communicate with the e-textile device. This controlller is used as a broker to take care of all the communication concerns with the e-textile devices. This broker class is a bridge between the communication libraries and the system. Other than taking control of the communication there is no other logic going on on this component. The interface of the component can be seen in figure \ref{CommunicationInterface}.
+
+\insertfigure{images/mcan/ObjectDesign/CommunicationInterface.jpg}{The BLE Firmata Controller Interface Specification }{CommunicationInterface}{0.8}
+
+To communicate through Firmata protocol, there 3 different messaging types: 
+
+\begin{enumerate}
+\item \textbf{Analog Messages} - for retrieving information from Analog sensors
+\item \textbf{Digital Messages} - for retrieving information from Digital sensors
+\item \textbf{I2C Replies} - for retrieving information from I2C sensors like accelerometer and gyroscope
+\end{enumerate}
+
+To initiate the messaging communication between the system and the device there are three different methods for three different message types. \\
+
+To retrieve an Analog or Digital messages, the system asks to the device to get report from specific pin address on the e-textile device. However, for I2C replies, the address and register number have to be specified to tell which sub-component should be listened that is connected to actual device and the size of the incoming message.
+
+\begin{enumerate}
+\item \textbf{Digital Messages} - sendReportRequestsForDigitalPin:(NSInteger) pin reports:(BOOL) reports;
+\item \textbf{Analog Messages} - sendReportRequestForAnalogPin:(NSInteger) pin reports:(BOOL) reports
+\item \textbf{I2C Replies} - sendI2CStartReadingAddress:(NSInteger) address reg:(NSInteger) reg size:(NSInteger) size;
+\end{enumerate}
+
+When the connected device start to sending replies to the system, Firmata protocol delegates are used and according to the message type the data is parsed if necessary and forwarded to next component. Here to give an example, all I2C replies are need to be parsed before any other actions. The reason for this is I2C replies are sent by bytes and all the actual values are divided into two bytes by the peripheral device before sending them. That is why a simple function is used to shift the byte array. 
+
+\begin{enumerate}
+\item \textbf{Digital Messages} - didReceiveDigitalMessageForPort:(NSInteger) port value:(NSInteger) value;
+\item \textbf{Analog Messages} - didReceiveAnalogMessageOnChannel:(NSInteger) channel value:(NSInteger) value;
+\item \textbf{I2C Replies} - didReceiveI2CReply:(uint8\_t*) buffer length:(NSInteger) length;
+\end{enumerate}
+
+There are different delegates supported by the Firmata protocol to retrieve the message information from the devices. \\
+
+The input for the messaging types are coming from user commands. E-textile communication selection component takes the messaging types to use and forwards them to the BLE - Firmata controller component. So this component can create necessary quarries and communicate through the protocols. \\
+
+In this current version of TextIt, connecting to the peripheral command is coming from users. Whenever users wants to connect to available device, they can send a connect command through the View Controller interface. \\
+
+When there is a connected device and the messaging types are decided, the incoming data is forwarded to Gathering Controller to show it to user and let them be saved in a file. 
+
+\subsection{ViewController}
+This is the controller class of the main view. The view can be seen in figure \ref{mainWindow}. The component includes five sub components.
+
+\begin{enumerate}
+\item \textbf{Text View} - is the middle area for users to program their own code. The area is designed to let the users enter their JavaScript code. The entered input is sent to JavaScript Runner to interpret the code and according to type of a result, the result will be shown in a debug area as a feedback or in data view to visualize the given data. 
+\item \textbf{Debug View} - is the lower area to give exceptions or feedback about the user input. This debug view is designed to give feedback about the user code and show the exceptions, problems to warn the users.
+\item \textbf{Folder View} - is the left area to show the folder structure of the project. The folder view shows the files and folders that are in the Documents/TextIt folder. This folder is the main folder for the TextIt system and all the read and write functions are done on this folder. 
+\item \textbf{Data View} - is the right area to visualize the any data that is assigned by the user. The user can specify the data to visualize on this area. So that users can first see the original data and then can see the affects of the manipulations that have been done to data. 
+\item \textbf{Toolbar View} - is the bar to give shortcuts of the pre-defined functions in the system. This is the bar view on top of the main view. Some of the pre-defined functions can be added here to make them easy to access. The reason for this feature is that users will not need to call those functions from their code and their code will stay pure user defined JavaScript code.
+\end{enumerate}
+The interface specification of this component can be seen in figure \ref{ViewControllerInterface}.
+\insertfigure{images/mcan/ObjectDesign/mainWindow.png}{Main Window of TextIt}{mainWindow}{1.10}
+
+\insertfigure{images/mcan/ObjectDesign/ViewControllerInterface.jpg}{ViewController Interface Specification}{ViewControllerInterface}{0.80}
+
+\subsection{Gathering Data}
+This component is a controller class of Gathering Data view. In this component the gathered data from e-textile device is shown to users in a view. Later than users can save the gathered data in a file by giving the file name. When the users are done with the view, the controller send an event indicating the component is done and regarding the user choice the gathered data is saved to file by using File Component. The view can be seen in figure \ref{gatheringData}. The interface specification of the component can be seen in figure \ref{gatheringInterface}.
+
+\insertfigure{images/mcan/ObjectDesign/gatheringWindow.png}{GatheringData View of TextIt}{gatheringData}{0.80}
+
+\insertfigure{images/mcan/ObjectDesign/gatheringInterface.jpg}{GatheringData Interface Speficitation}{gatheringInterface}{0.80}
+
+\subsection{Etextile Communication Selection}
+This component is a controller class of Etextile Communication Selection View class. This component is connected to GUI for users to select which communication types they want to choose. the component is basically allows users a list of communication types and let them add or remove via drag - drop as much as they want to choose and specify the name, pin, address or register number to success the communication. After the selection is done by users the list of communication types are sent to BLE - Firmata controller by the center controller to start the data flow. The view can be seen in figure \ref{etextileCommunicationSelection}. And the interface specification of the ETExtile Communication Selection can be seen in figure \ref{eCommunicationInterface}.
+
+
+\insertfigure{images/mcan/ObjectDesign/e-textileCommunicationSelection.png}{E-textile Communication Selection Window of TextIt}{etextileCommunicationSelection}{1.00}
+
+\insertfigure{images/mcan/ObjectDesign/ECommunicationInterface.jpg}{Etextile Communication Selection Interface Speficitation}{eCommunicationInterface}{0.80}
+
+\subsection{JavaScript Runner}
+To interpret all the user input, there is a JavaScript Runner component. This component is designed as a singleton so that there is only one responsible object that is controlling the interpreting tasks. Moreover as it is singleton there will be only one JavaScript context that contains all the information that is given by the user. In this component, also the defined filter, feature extraction and machine learning models are added to JavaScript context in this component. The interface specification of the JavaScript Runner is shown in figure \ref{JSRunner}.\\
+
+In this component there is executeLoop() method that is running in a loop with three conditions to realize the user inputs. The loop either calls itself for every two seconds or when the previous execution is done the loop starts again. Besides one of these two conditions there has to be a change that is done by the user to make sure the same code will not be executed. \\
+
+In addition the execution of user input is done in another thread to make sure the main thread is free to do other jobs and not to freeze the GUI. So that user can continue writing a code, while the execution is done on the background. \\
+
+\insertfigure{images/mcan/ObjectDesign/JSInterface.jpg}{JavaScript Runner Interface Speficitation}{JSRunner}{0.80}
+
+\subsection{File}
+File Component is responsible for storing two different information. One job is to store the data that is gathered from e-textile device, the other job is storing the user code. The stored user code later can be retrieved when the system is started, so that user does not loose any information between coding sessions. With the same reason data is also stored to use the same data again in other programming sessions and can be manipulated without loosing the original data. The interface of the File component is shown in figure. The interface specification of the component can be seen in figure \ref{FileInterface}.\\
+
+The stored user code and data are sent to the ViewController to visualize and let the user to manipulate them. Indeed, ViewController sends the user code to File Component to make them stored in a file. However Gathering Data components is the component to send the gathered data to File component to store them. The gathered data is saved with their original message types alongside with the received values. The class diagram of the message types can be seen in figure.
+
+\insertfigure{images/mcan/ObjectDesign/fileInterface.jpg}{File Component Interface Speficitation}{FileInterface}{0.80}
+
+\subsection{Interactex Server Controller}
+In order to connect to another development environment Interactex and work as a plug-in to Interactex, Interactex Server Controller component is used. This component is only responsible for connection between these two systems. To achieve this goal, Multipeer Connectivity Framework is used and the systems are designed with a plug-in pattern. The interface specification of the Interactex Server Controller is shown in figure \ref{InteractexInterface}.\\
+
+\insertfigure{images/mcan/ObjectDesign/InteractexInterface.jpg}{Interactex Server Controller Interface Speficitation}{InteractexInterface}{0.80}

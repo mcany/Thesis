@@ -1,0 +1,55 @@
+\chapter{Analysis}
+
+	In this chapter, an analysis model based on the requirements elicitation will be presented. The main purpose of the analysis model is to structure and formalize the elicited requirements and to identify the objects that exist in the application domain. An analysis model is composed of three individual models: a \textbf{functional model}, represented by the use cases and scenarios, an \textbf{analysis object model}, represented by the class and object diagrams and a \textbf{dynamic model}, represented by the state machine and sequence diagrams \cite{Bruegge2004}. The functional model was presented in the previous chapter. To complete the system requirements analysis model, object and sequence diagrams will be presented.
+
+	
+\section{Analysis Object Model}
+
+	The application consists of 3 stages; gathering, observing, testing. For simplicity and easy to read these categories will be explained separately. Firstly, the analysis object model of the gathering, which includes communication with the hardware and collecting the data, is shown in the UML class diagrams and is developed iteratively in the following section. The initial model is shown in figure \ref{oldCommunicationDiagram}.
+
+\insertfigure{images/mcan/Analysis/oldCommunicationDiagram.jpg}{Communication Diagram}{oldCommunicationDiagram}{0.80}
+
+
+%used Firmata protocol
+%composite pattern 
+%template/strategy pattern
+
+In this model the software can connect to different kinds of e-textile components. Also in an e-textile component there can be different sub-components which have different functionality (actuators, sensors), addresses, registers and pins. The communication can be different between the actual component and the sub-components so the correct command should be sent. Even the communication through these different e-textile components can vary depending on the manufacturers. In addition to this, the two same devices can send the information in a different way, so that it has to be parsed specifically. As it is stated in the requirements elicitation the system should be extendable, it should connect to different devices and the communication shouldn't be device dependent. \\
+
+Moreover, the initial model is designed to only get acceloremeter and gyroscope values (I2C values). However one e-textile component can have not only I2C messages but also Analog and Digital sensors. In order to tackle this issue and make the communication device independent, the well-known and mostly used Firmata protocol is used in this project.\\
+
+Firmata protocol gives you the ability to communicate with the devices without knowing the model of the device and it ensures that the message that is received will be in the same format. The Firmata protocol proposes three different communication ways. For analog sensors it has Analog Messages, for Digital sensors Digital Messages and for acceloremeter and gyroscope value it has I2C messages. The way to communicate and the response received from this communication include different meanings and different information. Yet in all communication type there needs to be a name according to their types and the data is received. Because the data type changes based on the communication type in abstract class the data is shown as a generic type AnyObject. Later this will be implemented accordingly to the communication type. Although it is an array of numbers in Digital and Analog messages, it is a double array of numbers in I2C. The reason of being a double array in I2C is the e-textile component returns different information from different sub-components at the same time. In every message that is received has an acceleration x,y,z and gyroscope values of x,y,z. \\
+
+The data is saved to a file after collecting data is done. In order to save the messages and their data to a file the abstract class implements Printable class. This interface enables to have a description method to return a string representation of information the class has. Since the types have different data types and different variables the description of the classes should be also different. The template pattern is used to solve that problem by allowing having different implementations of description method \cite{GoF}. So that the description algorithm can be overridden by subclass to have a different behaviors by still following the overall flow. \\
+
+To get the data or the description of every messages one by one can be time consuming and redundant. In those cases those different sub classes of messages can be treated as a single instance of an object since they all support the same variables. The composite pattern is used for this issue. The composite patterns allows users to treat group of different messages as a single object \cite{GoF}. \\
+	
+	The second iteration is presented in figure \ref{CommunicationDiagram2} \\
+
+\insertfigure{images/mcan/Analysis/CommunicationDiagram.jpg}{Communication Diagram}{CommunicationDiagram2}{0.80}
+
+The 3 different communication types use different protocols to communicate with the e-textile component. They send different messages and different inputs like pin number, address number or register number. There is a problem of having multiple communication types and they all contain different variables with different protocols. To achieve the problem an abstract factory pattern is used \cite{GoF}. In figure in figure \ref{CommunicationDiagram2}the abstract factory object is Communication Type Factory object. The 3 different communication types are the concrete objects that contain the necessary information to success the communication. \\
+
+Another functionality of the system is observing data. The meaning of observing data is visualizing the data, manipulating it, applying filter methods, feature extraction methods or machine learning methods and visualizing it again. So that the users can extract the necessary information that they need and in every step they can follow the process and see how the data is changed. \\
+
+To support users when they want to manipulate the data or apply some machine learning methods, they are pre-defined in the application so that these components are ready to use. The user can create an actual object from the components and can use it by giving the necessary inputs. Here in this model there are multiple components that are added to application. The components is the abstract object for the feature extraction, filter and machine learning methods. In deed they are also abstract objects and they include the actual implementation of the methods like; peak-detection algorithm, low-pass filter algorithm or k-nearest-neighbor algorithm \ref{ComponentDiagram1}. \\
+
+In this model using an Abstract Factory pattern is considered, but for the simplicity to the user it is not used. Since the users are mostly developers; it is left as an Object-Oriented programming. The user can create the objects by using new() methods and start using them. The application itself is an IDE and the users are actually programming. To give freedom to the users and for the simplicity, abstract factory pattern is not used here. \\
+
+\insertfigure{images/mcan/Analysis/ComponentDiagram.jpg}{Component Diagram}{ComponentDiagram1}{0.80}
+
+At the final stage there is testing  part to see how different algorithms effect the data and gives the best result. Here to get the accuracy the user should have a reference to compare. For example a jump count in Side-hops use case. The each component algorithms have different effects on the data. So here the user can create multiple use cases with different component algorithms and get the result of the each test cases and see the final accuracy in a table format. Easily the user should compare and see the best test case by comparing the accuracy of the use cases on the table \ref{TestDiagram}. 
+
+\insertfigure{images/mcan/Analysis/TestDiagram.jpg}{Testing Diagram}{TestDiagram}{0.80}
+
+
+
+
+
+
+
+
+
+
+
+

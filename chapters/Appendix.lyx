@@ -1,0 +1,326 @@
+#LyX file created by tex2lyx 2.1
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\options bibtotoc,idxtotoc,headsepline,footsepline,footexclude,BCOR12mm,DIV13
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Glossary
+\end_layout
+
+\begin_layout Description
+Broker 
+\begin_inset space \hfill{}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ The Broker architectural pattern can be used to structure distributed software systems with decoupled components that interact by remote service invocations. A broker component is responsible for coordinating communication, such as forwarding requests, as well as for transmitting results and exceptions 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Buschmann"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+Enterprise service bus 
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space \hfill{}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ Enterprise service bus (ESB) is a software architecture model used for designing and implementing the interaction and communication between mutually interacting software applications in service-oriented architecture 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "ESBBook"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Fixture 
+\begin_inset space \hfill{}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ A fixture is an instance of a specific fixture type (see below). An instrumented space consists of a number of fixtures that affect the environmental conditions of the occupant.
+\end_layout
+
+\begin_layout Description
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+Fixture type
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space \hfill{}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ A fixture type is the generalization of a fixture. Fixture types include: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Light 
+\end_layout
+
+\begin_layout Itemize
+Addressable plug 
+\end_layout
+
+\begin_layout Itemize
+Window blinds 
+\end_layout
+
+\begin_layout Itemize
+Window/door sensor 
+\end_layout
+
+\end_deeper
+\begin_layout Description
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+Smart environment
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space \hfill{}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ A highly integrated computing and sensory environment that effectively reasons about the physical and user context of the space to transparently act on human desires 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Lupiana09"
+
+\end_inset
+
+. 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Highly integrated - an environment that is saturated with actuators and sensors that are fully integrated with wireless networks 
+\end_layout
+
+\begin_layout Itemize
+Effectively reason - a pseudo-intelligent reasoning mechanism for the environment as a whole, not just to an individual device or component 
+\end_layout
+
+\begin_layout Itemize
+User context - an individual profiles, policies, current location and mobility status 
+\end_layout
+
+\begin_layout Itemize
+Transparently act - an environment that is responsive to humans and supports their mobility without requiring user interaction 
+\end_layout
+
+\end_deeper
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%(http://www.opengroup.org/soa/source-book/soa/soa.htm#soa_definition) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Description
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+Service Oriented Architecture
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space \hfill{}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ Service-oriented architecture (SOA) is a software design and software architecture design pattern based on discrete pieces of software that provide application functionality as services, known as Service-orientation. A service is a self-contained logical representation of a repeatable function or activity 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "SOAonline"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+Web service
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space \hfill{}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ A Web service is a software system designed to support interoperable machine-to-machine interaction over a network. It has an interface described in a machine-processable format (specifically WSDL). Other systems interact with the Web service in a manner prescribed by its description using SOAP-messages, typically conveyed using HTTP with an XML serialization in conjunction with other Web-related standards 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "WSOnline"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "chapter:ThisIsMyAppendixChapter"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_body
+\end_document

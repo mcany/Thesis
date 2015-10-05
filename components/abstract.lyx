@@ -1,0 +1,315 @@
+#LyX file created by tex2lyx 2.1
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\options bibtotoc,idxtotoc,headsepline,footsepline,footexclude,BCOR12mm,DIV13
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+% Abstract for the TUM report document
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+% Included by MAIN.TEX
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+clearemptydoublepage
+\end_layout
+
+\end_inset
+
+  
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+addcontentsline{toc}{chapter}{Abstract}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset VSpace 2cm*
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+
+\series bold
+Abstract
+\size default
+ 
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset FormulaMacro
+\def\sife {Smart Environment Integration Framework}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\def\seif {SEIF}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%Smart environment is not a new concept, but due to the technology shortcomings, some of the problems related to it, couldn't have been addressed in the past. The advancement in technology during the last 10 to 15 years, paved the way for the researchers to do research in the area of smart environment automation, energy efficiency, intuitive control etc. 
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Industrial concepts designed to make our environment smarter, still suffer from technology related problems that have not been solved sufficiently; problems such as incompatible protocols, lack of appropriate interfaces for system extension and full integration of the user context. As a consequence, controlling and gathering information from fixtures that use different communication protocols poses a challenge, and the integration of intelligent algorithms based on machine learning is too cumbersome. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%MOBILE DEVICES!!! 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%The main prerequisite for creating a smart environment is the ability to communicate with the smart devices. Due to the lack of standard in the industry, there are many proprietary smart device communication protocols. 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this thesis, a flexible and extensible framework for communication with fixtures, using a variety of communication protocols, has been proposed. The solution is based on the REST architectural style and the broker pattern that is used for decoupling the clients from fixtures. The broker provides a uniform protocol for controlling all fixtures in the environment, while hiding the complexity of different fixture communication protocols being used. The protocol, provided by the broker, is a HTTP based protocol which can be easily implemented in any programming language that supports the HTTP protocol. Using this feature, a variety of mobile or web based smart environment applications can be developed. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The focus of this thesis is on the design and the development of a pattern-based and platform independent framework called 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+(
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sife
+\end_layout
+
+\end_inset
+
+)
+\begin_inset space \thinspace{}
+
+\end_inset
+
+ that is used for controlling smart environments. In addition to the mentioned broker pattern, a combination of the abstract factory and command pattern was used for encapsulating the implementation of different communication protocols and sets of commands that can be executed by a single fixture type. The created framework also provides mechanisms for environment automation, gathering of information about the changes of the environment state (changes of temperature, light being on or off, heating unit being on or off etc.), user management and access control.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%One page!
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%What is the content of your thesis? What are the results, what have you achieved?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%Common mistake:
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%This is NOT an appetizer to read your whole thesis. The most interesting things should already be in %the abstract.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,316 @@
+\begin{thebibliography}{CLWF07}
+
+\bibitem[Act13]{Activemq}
+Activemq messaging server home page.
+\newblock Website, 2013.
+\newblock Available online at \url{http://activemq.apache.org/}; visited on
+  October 17th 2013.
+
+\bibitem[AIM10]{IoT}
+Luigi Atzori, Antonio Iera, and Giacomo Morabito.
+\newblock The internet of things: A survey.
+\newblock {\em Computer Networks}, 54(15):2787--2805, 2010.
+
+\bibitem[All06]{alliance2006zigbee}
+ZigBee Alliance.
+\newblock Zigbee specification.
+\newblock {\em Document 053474r06, Version}, 1, 2006.
+
+\bibitem[Axi13]{Axis2}
+Apache axis2 framework home page.
+\newblock Website, 2013.
+\newblock Available online at \url{http://axis.apache.org/axis2/java/core/};
+  visited on October 17th 2013.
+
+\bibitem[Bal13]{Balana}
+Balana xacml 3.0 project home page.
+\newblock Website, 2013.
+\newblock Available online at
+  \url{http://xacmlinfo.org/2012/08/16/balana-the-open-source-xacml-3-0-implem%
+entation}; visited on October 17th 2013.
+
+\bibitem[Bar97]{barlow}
+J.~Barlow.
+\newblock Smart homes project. user needs analysis.
+\newblock {\em Report to the Joseph Rowntree Foundation}, 1997.
+
+\bibitem[BAT13]{BATIBUS}
+Batibus general information.
+\newblock Website, 2013.
+\newblock Available online at \url{http://de.wikipedia.org/wiki/BatiBus};
+  visited on November 20th 2013.
+
+\bibitem[BD04]{Bruegge2004}
+Bernd Br{\"u}gge and Allen~H. Dutoit.
+\newblock {\em Object-oriented software engineering - using UML, patterns and
+  Java (2nd ed.)}.
+\newblock Prentice Hall, 2004.
+
+\bibitem[CDC13]{CDC}
+Falls among older adults: An overview.
+\newblock Website, 2013.
+\newblock Available online at
+  \url{http://www.cdc.gov/homeandrecreationalsafety/falls/adultfalls.html};
+  visited on November 20th 2013.
+
+\bibitem[CLWF07]{mobileAgents}
+Chun-Feng~Liao Chao-Lin~Wu and Li-Chen Fu.
+\newblock Service-oriented smart-home architecture based on osgi and
+  mobile-agent technology.
+\newblock {\em Systems, Man, and Cybernetics, Part C: Applications and Reviews,
+  IEEE Transactions}, pages 193--205, 2007.
+
+\bibitem[CXF13]{CXF}
+Apache cxf framework home page.
+\newblock Website, 2013.
+\newblock Available online at \url{http://cxf.apache.org/}; visited on October
+  17th 2013.
+
+\bibitem[DFR01]{homeAutimation01}
+Tasos Dagiuklas Nikolaos S.~Voros David~Fuschelberger, Ioannis~Pyrounakis and
+  Carlos Ribeiro.
+\newblock Next generation smart home systems using hardware acceleration
+  techniques.
+\newblock {\em IEEE Computer Society Annual Symposium}, pages 367--368, 2001.
+
+\bibitem[DJCK03]{mavhome}
+Edwin O. Heierman III Karthik Gopalratnam Sira Rao Andrey~Litvin Diane J.~Cook,
+  Michael~Youngblood and Farah Khawaja.
+\newblock Mavhome: An agent-based smart home.
+\newblock In {\em Pervasive Computing and Communications, 2003.(PerCom 2003).
+  Proceedings of the First IEEE International Conference on}, pages 521--524.
+  IEEE, 2003.
+
+\bibitem[DLO09]{Lupiana09}
+F.~Mtenzi D.~Lupiana, Z.~Omaray and Ciaran O'Driscoll.
+\newblock Smart spaces in ubiquitous computing.
+\newblock {\em 4th International Conference on Information Technology}, 2009.
+
+\bibitem[Dro13]{Drools}
+Drools project home page.
+\newblock Website, 2013.
+\newblock Available online at \url{http://www.jboss.org/drools/}; visited on
+  October 17th 2013.
+
+\bibitem[EGV03]{GoF}
+Richard~Helm Erich~Gamma, Ralph~Johnson and John Vlissides.
+\newblock {\em Design Patterns: Elements of Reusable Object-Oriented Software}.
+\newblock Addison Wesely, 2003.
+
+\bibitem[EHS13]{EHS}
+European home system protocol general information.
+\newblock Website, 2013.
+\newblock Available online at
+  \url{http://en.wikipedia.org/wiki/European_Home_Systems_Protocol}; visited on
+  November 20th 2013.
+
+\bibitem[EIA13a]{EIA1}
+How much energy is consumed in residential and commercial buildings in the
+  u.s.?
+\newblock Website, 2013.
+\newblock Available online at
+  \url{http://www.eia.gov/tools/faqs/faq.cfm?id=86&t=1}; visited on November
+  20th 2013.
+
+\bibitem[EIA13b]{EIA}
+U.s. energy information administration world energy consumption projection.
+\newblock Website, 2013.
+\newblock Available online at
+  \url{http://www.eia.gov/todayinenergy/detail.cfm?id=12251}; visited on
+  November 20th 2013.
+
+\bibitem[EIB13]{EIB}
+General information about european installation bus.
+\newblock Website, 2013.
+\newblock Available online at
+  \url{http://de.wikipedia.org/wiki/Europ%C3%A4ischer_Installationsbus};
+  visited on November 20th 2013.
+
+\bibitem[Erl08]{ESB}
+Thomas Erl.
+\newblock {\em SOA Design Patterns}.
+\newblock Prentice Hall, 2008.
+
+\bibitem[FBS99]{Buschmann}
+H.~Rohnert P.~Sommerland F.~Buschmann, R.~Meunier and M.~Stal.
+\newblock {\em Pattern oriented software architecture: a system of patters}.
+\newblock Wiley, 1999.
+
+\bibitem[FD13]{FD}
+The u.s. fire problem.
+\newblock Website, 2013.
+\newblock Available online at
+  \url{http://www.nfpa.org/research/fire-statistics/the-us-fire-problem};
+  visited on November 20th 2013.
+
+\bibitem[Har03]{Inside03}
+Richard Harper.
+\newblock {\em Inside the Smart Home}.
+\newblock Springer, 2003.
+
+\bibitem[Hib13]{Hibernate}
+Hibernate project home page.
+\newblock Website, 2013.
+\newblock Available online at \url{http://www.hibernate.org/}; visited on
+  October 17th 2013.
+
+\bibitem[htt08]{httpVSjms}
+Performance of soap/http vs. soap/jms.
+\newblock Website, 2008.
+\newblock Available online at
+  \url{http://java.dzone.com/articles/performance-soaphttp-vs-soapjm}; visited
+  on October 17th 2013.
+
+\bibitem[Hue13]{Hue}
+Philips hue developer's documentation.
+\newblock Website, 2013.
+\newblock Available online at
+  \url{http://developers.meethue.com/1_lightsapi.html}; visited on October 17th
+  2013.
+
+\bibitem[Jer13]{Jersey}
+Jersey framework home page.
+\newblock Website, 2013.
+\newblock Available online at \url{https://jersey.java.net/}; visited on
+  October 17th 2013.
+
+\bibitem[jso99]{json}
+Javascript object notation homepage.
+\newblock Website, 1999.
+\newblock Available online at \url{http://www.json.org/}; visited on October
+  17th 2013.
+
+\bibitem[JW98]{agents}
+Nicholas~R. Jennings and Michael Wooldridge.
+\newblock {\em Applications of intelligent agents}.
+\newblock Springer, 1998.
+
+\bibitem[KB12]{smartGrid}
+Bytschkow D. Gupta P. K. Schatz B. Sellmayr~F. Ko\ss, D. and S.~Bauerei\ss.
+\newblock Establishing a smart grid node architecture and demonstrator in an
+  office environment using the soa approach.
+\newblock {\em Software Engineering for the Smart Grid (SE4SG), 2012
+  International Workshop}, pages 8--14, 2012.
+
+\bibitem[KNX13]{KNX}
+Knx standard homepage.
+\newblock Website, 2013.
+\newblock Available online at \url{http://www.knx.org/}; visited on November
+  20th 2013.
+
+\bibitem[Law04]{XML}
+Ramon Lawrence.
+\newblock The space efficiency of xml.
+\newblock {\em Information and Software Technology}, 46(11):753--759, 2004.
+
+\bibitem[LLC12]{zigbee}
+Ziyang He Xin Xu Changmin~Chen Lingling~Li, Weicheng~Xie and Xiaorong Cui.
+\newblock Design of smart home control system based on zigbee and embedded web
+  technology.
+\newblock {\em Artificial Intelligence and Computational Intelligence. Springer
+  Berlin Heidelberg, 2012. 67-74.}, 2012.
+
+\bibitem[LO99]{ma}
+Danny~B. Lange and Mitsuru Oshima.
+\newblock Seven good reasons for mobile agents.
+\newblock {\em Communications of the ACM}, 42(3):88--89, 1999.
+
+\bibitem[MAP13]{MAPA}
+100 products and technologies for energy conservation.
+\newblock Website, 2013.
+\newblock Available online at
+  \url{http://mapawatt.com/2011/07/17/100-products-and-technologies-energy-con%
+servation}; visited on November 20th 2013.
+
+\bibitem[Mey88]{Mayer88}
+Bertrand Meyer.
+\newblock {\em Object-Oriented Software Construction}.
+\newblock Prentice hall, 1988.
+
+\bibitem[Mis01]{use01}
+Frank~G Miskelly.
+\newblock Assistive technology in elderly care.
+\newblock {\em Age and ageing 30}, 6:455--458, 2001.
+
+\bibitem[MKW05]{ESBBook}
+Jerry M. Denman Stuart Foster Stepan Husek Ben~Thompson Martin~Keen,
+  Jonathan~Bond and Helen Wylie.
+\newblock {\em Patterns: Integrating Enterprise Service Buses in a
+  Service-Oriented Architecture}.
+\newblock IBM Redbooks, 2005.
+
+\bibitem[MVE06]{MVEL}
+Mvel project home page.
+\newblock Website, 2006.
+\newblock Available online at \url{http://mvel.codehaus.org/}; visited on
+  October 17th 2013.
+
+\bibitem[NNI09]{xmlVSjson}
+Randall~Reynolds Nurzhan~Nurseitov, Michael~Paulson and Clemente Izurieta.
+\newblock Comparison of json and xml data interchange formats: A case study.
+\newblock {\em CAINE}, 2009:157--162, 2009.
+
+\bibitem[OAS13]{OASIS}
+extensible access control markup language (xacml) version 3.0 oasis standard.
+\newblock Website, 2013.
+\newblock Available online at
+  \url{https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=xacml#CURRE%
+NT}; visited on October 17th 2013.
+
+\bibitem[Res13a]{Resteasy}
+Resteasy framework home page.
+\newblock Website, 2013.
+\newblock Available online at \url{http://www.jboss.org/resteasy}; visited on
+  October 17th 2013.
+
+\bibitem[Res13b]{Restlet}
+Restlet framework home page.
+\newblock Website, 2013.
+\newblock Available online at \url{http://restlet.org/}; visited on October
+  17th 2013.
+
+\bibitem[SOA11]{SOAonline}
+The soa source group: What is soa?
+\newblock Website, 2011.
+\newblock Available online at
+  \url{http://www.opengroup.org/soa/source-book/soa/soa.htm#soa_definition};
+  visited on October 17th 2013.
+
+\bibitem[sun06]{sunXACML}
+Sun xacml implementation project.
+\newblock Website, 2006.
+\newblock Available online at \url{http://sunxacml.sourceforge.net/}; visited
+  on October 17th 2013.
+
+\bibitem[TAG13]{TAG}
+From m2m to the internet of things: Viewpoints from europe.
+\newblock Website, 2013.
+\newblock Available online at
+  \url{http://www.techvibes.com/blog/from-m2m-to-the-internet-of-things-viewpo%
+ints-from-europe-2011-07-07}; visited on November 20th 2013.
+
+\bibitem[Wei93]{MW93}
+Mark Weiser.
+\newblock Hot topics-ubiquitous computing.
+\newblock {\em Computer 26}, 10:71--72, 1993.
+
+\bibitem[WHO13]{WHO}
+Ageing and life course.
+\newblock Website, 2013.
+\newblock Available online at \url{http://www.who.int/ageing/en/}; visited on
+  November 20th 2013.
+
+\bibitem[WSO04]{WSOnline}
+W3c working group: Web services.
+\newblock Website, 2004.
+\newblock Available online at
+  \url{http://www.w3.org/TR/2004/NOTE-ws-gloss-20040211/#webservice}; visited
+  on October 17th 2013.
+
+\bibitem[XAC13]{XACML}
+General information about xacml.
+\newblock Website, 2013.
+\newblock Available online at \url{http://en.wikipedia.org/wiki/XACML}; visited
+  on October 17th 2013.
+
+\end{thebibliography}

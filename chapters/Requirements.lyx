@@ -1,0 +1,2808 @@
+#LyX file created by tex2lyx 2.1
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\options bibtotoc,idxtotoc,headsepline,footsepline,footexclude,BCOR12mm,DIV13
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Requirements Elicitation
+\end_layout
+
+\begin_layout Standard
+The requirements elicitation chapter provides a description of the overall use of the system and defines the requirements that the system has to meet. The requirements are extracted from the scenarios described below. Extracted requirements are divided into three categories: 
+\series bold
+functional requirements
+\series default
+, 
+\series bold
+non-functional requirements
+\series default
+ and 
+\series bold
+pseudo requirements
+\series default
+. Functional requirements describe the interaction between the system and its environment, independent of its implementation 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Bruegge2004"
+
+\end_inset
+
+. Non-functional requirements refer to user requirements that are not directly related to the functional behaviour of the system. Pseudo requirements or constraints are non-functional requirements that fall into implementation, interface, packaging or legal categories. 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Bruegge2004"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Functional Model
+\end_layout
+
+\begin_layout Standard
+The functional model is represented by scenarios and use cases and serves to describe the functionality of the system from the users point of view 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Bruegge2004"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Scenarios
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "scenarios"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The following scenarios do not describe all the possible uses of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+. They describe a few scenarios from which the functional requirements are extracted. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+will not implement the following scenarios, but it will enable their implementation by facilitating the communication with the smart environment. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Boundary Scenario 1: "Setting up a smart room"
+\end_layout
+
+\begin_layout Standard
+Mr. Smith, a CEO at a company, made a decision to build a smart meeting room in order to minimize energy consumption and optimize the productivity of workers during meetings. After the installing fixtures needed for a smart room (sensors, actuators etc.), Mr. Admin was asked to set up the new system. He installs the smart environment software on a local server, and registers the devices to the server. During the registration process, he enters the required descriptions of the devices including the names and protocols that the devices use for communication. In the process, Mr. Admin makes some mistakes, so he has to remove some devices, and change their names. After registering the device(s), the server is able to communicate with them. Mr. Admin inputs the information about the users and their roles, and sets up their access rights. Now the system is ready to execute user's commands.
+\end_layout
+
+\begin_layout Subsubsection
+Scenario 2: "Cold and dark room"
+\end_layout
+
+\begin_layout Standard
+Mr. Smith wants to see the smart room before signing Mr. Admin's pay check. It is late in the afternoon when Mr. Smith enters the room, and he cannot see anything, but he feels a cool breeze . He takes out his smartphone/tablet, and opens an application. He pushes the button, and the lights turn on. Now he is able to see that Mr. Admin forgot to close the windows, and the temperature in the room is well below 
+\begin_inset Formula $18\,^{\circ}{\rm C}$
+\end_inset
+
+ . He pushes the button to close the windows, and he sets up the heating system to heat up the room to 
+\begin_inset Formula $22\,^{\circ}{\rm C}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Scenario 3: "Adequate reaction"
+\end_layout
+
+\begin_layout Standard
+Mr. Smith does not want the situation with the cold room to happen again. He does not want to have to think about it, nor does he want to assign this task to one of his employees. He decides to make the system automatically take care of the temperature, and the light in the room. He adds the rules to the system that the temperature of the room must not drop below 
+\begin_inset Formula $20^{\circ}{\rm C}$
+\end_inset
+
+, and must not rise above 
+\begin_inset Formula $24^{\circ}{\rm C}$
+\end_inset
+
+ during office hours. He also wants to optimize energy consumption, so he activates the artificial intelligence module which will analyse the patterns of behaviour in the smart environment, and generate new rules that will increase the comfort in the smart room, and minimize the energy consumption.
+\end_layout
+
+\begin_layout Subsubsection
+Scenario 4: "Catching the bad guy"
+\end_layout
+
+\begin_layout Standard
+Mr. Admin walks in the office early in the morning and sees that someone has been interacting with the smart room system, and that he/she forgot to close the windows. Mr. Admin wants to find out who is responsible for that before Mr. Smith finds out, so he starts the smart room control application, and opens the "
+\shape italic
+System Activity History
+\shape default
+" tab. He then opens the "
+\shape italic
+Window opener
+\shape default
+" fixture history, and sees that Mr. Smith was the last one accessing this fixture the night before.
+\end_layout
+
+\begin_layout Subsubsection
+Scenario 5: "Hotel guest"
+\end_layout
+
+\begin_layout Standard
+Mr. Smith likes his new system and he has it installed in one of his hotels. He wants every room to be a smart room, in order to increase the comfort of guests and minimize energy consumption (running costs). To accomplish that, every guest has to be able to access and control only the fixtures in his or her own room. The hotel manager has to be able to access and control all the fixtures in the hotel. The system administrators enable this by opening the "
+\shape italic
+Access Control
+\shape default
+" tab of the smart environment control software, and defining access rights for different user groups. Every guest will be assigned to a guest group at the reception, and assigned a room number in which he or she will be able to control the fixtures.
+\end_layout
+
+\begin_layout Subsection
+Functional Requirements
+\end_layout
+
+\begin_layout Standard
+The following subsection defines functional requirements identified from the previously shown scenarios.
+\end_layout
+
+\begin_layout Subsubsection
+FR1: Fixture Management
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+shell allow the administrator to add fixtures, remove them from the smart environment and change their properties in the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+FR2: Fixture Control
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+shall enable the user to change the state of a single fixture.
+\end_layout
+
+\begin_layout Subsubsection
+FR3: Fixture Grouping
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+shall enable the user to group fixtures together and control them the same way that a single fixture is controlled. A fixture group is a set of fixtures that can execute at least one common command.
+\end_layout
+
+\begin_layout Subsubsection
+FR4: Fixture Information
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+shall enable the user to get information about the state of a fixture or group of fixtures.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%The system should enable the user to control multiple fixtures by issuing a single command.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+FR5: User Authentication
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+shall require every user to be registered, authenticated and assigned a role in the system, before he/she is allowed to interact with the system.
+\end_layout
+
+\begin_layout Subsubsection
+FR6: Access Control
+\end_layout
+
+\begin_layout Standard
+Every user shall be granted access to the fixtures or information provided by the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+according to the access permissions of the role assigned to the user.
+\end_layout
+
+\begin_layout Subsubsection
+FR7: Automated Control
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+shall be capable of reacting to changes in the environment, according to the rules that are provided by an authorized entity.
+\end_layout
+
+\begin_layout Subsection
+Non-functional Requirements
+\end_layout
+
+\begin_layout Standard
+In the following subsection, the non-functional requirements of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+will be described.
+\end_layout
+
+\begin_layout Subsubsection
+NF1: Presentation Independence
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+shall provide support for multiple user interfaces (web site, smartphone, tablet, gesture based etc.). The framework shall also support the switch of control between artificial intelligence (AI) and the human user.
+\end_layout
+
+\begin_layout Subsubsection
+NF2: Extendibility with Respect to the Number of Fixtures
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+shall support the addition and removal of fixtures, without the need for restarting the system or updating the software.
+\end_layout
+
+\begin_layout Subsubsection
+NF3: Extendibility with Respect to the Number of Supported Communication Protocols
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+shall provide support for adding, removing or changing the implementations of fixture communication protocols, without interrupting the running system.
+\end_layout
+
+\begin_layout Subsubsection
+NF4: Extendibility with Respect to the Artificial Intelligence and System Automation
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+shall provide support of integration of artificial intelligence for automation of the smart environment.
+\end_layout
+
+\begin_layout Subsubsection
+NF5: Scalability
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+shall support multiple control devices operating at the same time. The addition of more control devices and fixtures in multiple smart environments should not be prevented by the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+design. Nevertheless, it may require additional hardware.
+\end_layout
+
+\begin_layout Subsubsection
+NF6: Response Time
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+shall provide system feedback within 5 seconds (an error message in case of an error or a message about a successful execution of a command) and fixture feedback (fixture executes the command, e.g. the light turns on) within 2 seconds after the command was issued.
+\end_layout
+
+\begin_layout Subsubsection
+NF7: Robustness with Respect to Fixture Failure
+\end_layout
+
+\begin_layout Standard
+Malfunction of fixtures or a failure of fixtures to execute a command shall not impact the functioning of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+NF8: Robustness with Respect to User Input
+\end_layout
+
+\begin_layout Standard
+Invalid user input shall not cause any disruption in the functioning of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+NF9: Traceability
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+audit logs will be verbose enough to provide information about the past events in the smart environment which led to the current state of the smart. The event logs shall contain the date, time and an event description. If an event was triggered by a user, his username will be contained in the event logs.
+\end_layout
+
+\begin_layout Subsubsection
+NF10: Accountability
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+audit logs shall be verbose enough to support accountability. All authentication attempts and requests for fixture state changes will be logged. The activity logs shall contain the date, time, action description and username of the user who issued a request.
+\end_layout
+
+\begin_layout Subsubsection
+NF11: Operating System
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+shall run on Windows, Linux and MAC OS.
+\end_layout
+
+\begin_layout Subsubsection
+NF12: 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+Configuration
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+shall support configuration using XML based configuration files.
+\end_layout
+
+\begin_layout Subsubsection
+NF13: System Data
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+shall support storing user, fixture and data about changes in the environment into a database.
+\end_layout
+
+\begin_layout Subsubsection
+NF14: Security with Respect to Request Origin
+\end_layout
+
+\begin_layout Standard
+No request originating from outside of the local network shall be processed by 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+NF15: Security with Respect to User Authentication
+\end_layout
+
+\begin_layout Standard
+Every user will have to be authenticated by using his or her username and password before interacting with 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+NF16: Security with Respect to Access Rights
+\end_layout
+
+\begin_layout Standard
+Every user shall be able to control only the fixtures that he is allowed to, by the fixture access policy.
+\end_layout
+
+\begin_layout Subsubsection
+NF17: Security with Respect to Communication Between the User and 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Communication between users and 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+shall be done using the HTTPS protocol.
+\end_layout
+
+\begin_layout Subsection
+Pseudo Requirements
+\end_layout
+
+\begin_layout Standard
+The following subsection describes the pseudo requirements (PR) of the described system.
+\end_layout
+
+\begin_layout Subsubsection
+PR1: Platform Independence
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+should provide support for client applications independent from the programming language that they were written in, as long as the programming language provides support for HTTP protocol.
+\end_layout
+
+\begin_layout Subsection
+Use Cases
+\end_layout
+
+\begin_layout Standard
+A use case is the generalization of all scenarios for a given piece of functionality and helps when identifying product requirements. The identified use cases are summarized in the UML use case diagrams shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "UseCaseDiagram"
+
+\end_inset
+
+ and figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "DecisionMakerUseCase"
+
+\end_inset
+
+ on the following pages.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/BrokerUseCase.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+UML use case diagram for fixture management and control 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+UseCaseDiagram
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.89
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The identified use cases are described in more detail in the following subsections.
+\end_layout
+
+\begin_layout Subsubsection
+UC1: Control Fixture Behaviour
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Tabular 
+<lyxtabular version="3" rows="7" columns="5">
+<features rotate="0" tabularvalignment="middle" tabularwidth="0pt">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="left" valignment="top">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="none" valignment="top" width="11cm">
+<column alignment="none" valignment="top" special=" ">
+<row>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Use case name 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Control Fixture Behaviour 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Participating actor 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Authorized User, Activity Logger, Fixture Controller, Fixtures 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Entry condition 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1. Smart environment control app or web site is opened. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Flow of events 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+2. App or website acquires the available fixtures from the Fixture Manager and presents them to the user. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+3. The user selects which fixture or group of fixtures to control, and issues a control command to the Fixtures via the Fixture Controller. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Exit condition 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+4. The state of the fixture is changed, and the user receives feedback. A report of change is sent to the Activity Logger. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Special requirements 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+The state of the fixture changes in less than 2 seconds, or in case of an error, an error message is presented to the user within 5 seconds from the moment of command issue. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+UC2: Manage Fixtures (Boundary Use Case)
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Tabular 
+<lyxtabular version="3" rows="7" columns="5">
+<features rotate="0" tabularvalignment="middle" tabularwidth="0pt">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="left" valignment="top">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="none" valignment="top" width="11cm">
+<column alignment="none" valignment="top" special=" ">
+<row>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Use case name 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Manage Fixtures (Boundary use case) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Participating actor 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Administrator, Fixture Manager, Activity Logger 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Entry condition 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1. A smart environment has to be set up for the first time, or some changes to the environment have to be made by the administrator. The administrator accesses the Fixture Manager. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Flow of events 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+2. The administrator is presented with a hierarchy of rooms of the building, and fixtures that are installed in each room. He is also presented with the additional properties of every fixture.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+3. The administrator makes changes to the configuration (adds or removes fixtures or modifies fixture properties), and saves the changes to the server. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Exit condition 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+4. The system accepts the new configuration at runtime, and distributes it to all that request it after that point in time. The changes are reported to the activity logger.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Special requirements 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+None. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+UC3: View the Status of All Fixtures
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Tabular 
+<lyxtabular version="3" rows="6" columns="5">
+<features rotate="0" tabularvalignment="middle" tabularwidth="0pt">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="left" valignment="top">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="none" valignment="top" width="11cm">
+<column alignment="none" valignment="top" special=" ">
+<row>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Use case name 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+View Status of All Fixtures 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Participating actor 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Administrator, Authorised user, Fixture Controller, Fixtures, Activity logger 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Entry condition 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1. Smart environment control app or web site is opened. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Flow of events 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+2. The user issues a command to see the status of (all) devices by clicking the 
+\shape italic
+"Environment State"
+\shape default
+ button. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Exit condition 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+3. The user is presented with a list of selected fixtures and their state. The user's activity is reported to activity logger.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Special requirements 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+None. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/DecisionMakerUseCase.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+UML use case diagram environment automation 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+DecisionMakerUseCase
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1.00
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+UC4: Rule Management
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Tabular 
+<lyxtabular version="3" rows="8" columns="5">
+<features rotate="0" tabularvalignment="middle" tabularwidth="0pt">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="left" valignment="top">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="none" valignment="top" width="11cm">
+<column alignment="none" valignment="top" special=" ">
+<row>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Use case name 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Rule Management 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Participating actor 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Admin, Authorized user, AI 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Entry condition 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1. a) The administrator or Authorized user start the smart environment control app or website. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1. b) The artificial intelligence unit is started. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Flow of events 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+2. a) The systems presents the user with the list of existing rules. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+3. The user or AI makes the changes to the smart environment automation by changing the content of the rule base (adding or removing existing rules or modifying existing ones), and uploads it to the server.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Exit condition 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+4. The system accepts the new rule base at runtime, and distributes it to everyone who requests it after that point in time. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Special requirements 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+None. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+UC4: Retrieve (Specific) Rule
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Tabular 
+<lyxtabular version="3" rows="8" columns="5">
+<features rotate="0" tabularvalignment="middle" tabularwidth="0pt">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="left" valignment="top">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="none" valignment="top" width="11cm">
+<column alignment="none" valignment="top" special=" ">
+<row>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Use case name 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Retrieve (Specific) Rule 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Participating actor 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+User, Decision Maker, Rule Repository 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Entry condition 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1. a) The administrator or Authorized user start the smart environment control app or website. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1. b) The artificial intelligence unit is started.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1. c) The decision maker module is started.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+2. A list of automation rules is requested from the rule repository.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Exit condition 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+3. The systems presents the requester with the list of requested rules.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Special requirements 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+None. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+UC5: Decision Making
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Tabular 
+<lyxtabular version="3" rows="7" columns="5">
+<features rotate="0" tabularvalignment="middle" tabularwidth="0pt">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="left" valignment="top">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="none" valignment="top" width="11cm">
+<column alignment="none" valignment="top" special=" ">
+<row>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Use case name 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Decision making 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Participating actor 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Decision maker, Rule repository, Fixture Controller 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Entry condition 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1. The decision maker unit is activated by the change in the smart environment.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Flow of events 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+2. The Decision maker retrieves the state of the smart environment from the Fixture Controller.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+3. The Decision maker retrieves the rules that should be enforced in the smart environment.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Exit condition 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+4. The Decision maker finds the rule that is affected by the change in the smart environment, and issues a command proposed by the found rule to the Fixtures via the Fixture Controller.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Special requirements 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+None. 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%
+\backslash
+section{Summary}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%		This chapter describes the overall purpose of the system. The use cases are based on four main scenarios (cold and dark room, adequate reaction, catching the bad guy, guest's comfort comes first), and one boundary scenario (setting up a smart room). Using these scenarios, generalized use cases were defined. These use cases were used for definition of functional, non-functional and pseudo requirements. The proposed smart room control system is built to satisfy the defined requirements.
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%	In the following section an analysis model is created. Analysis model is a formalization of objects and information found in the application domain and is used for refining the functional model and deriving object and dynamic model. This leads to a more precise and complete specification of system requirements.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

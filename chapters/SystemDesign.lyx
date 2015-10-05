@@ -1,0 +1,2366 @@
+#LyX file created by tex2lyx 2.1
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\options bibtotoc,idxtotoc,headsepline,footsepline,footexclude,BCOR12mm,DIV13
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+System Design
+\end_layout
+
+\begin_layout Standard
+The system design chapter focuses on transforming the previously described requirements analysis model into a system design model. The system design model contains a description of design goals, subsystem decomposition and strategies (hardware/software mapping, persistent data management, access control policy) for building the system. The goal of this chapter is to describe the smart environment system decomposition and to give a clear description of the strategies that are to be used for building the system.
+\end_layout
+
+\begin_layout Section
+Design Goals
+\end_layout
+
+\begin_layout Standard
+The system design of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+was based on the following design goals:
+\end_layout
+
+\begin_layout Subsubsection
+Support of Different Communication Protocols
+\end_layout
+
+\begin_layout Standard
+Multiple vendors of the same fixture type may use different protocols for communicating with their devices. For example, two light fixtures can require different communication protocols to be turned on; one using HTTP protocol and the other using EnOcean protocol. To overcome the lack of common communication protocol in the industry, this system has to be able to implement different protocols for communication with different fixtures, while providing a uniform protocol for communication with all fixtures. This is accomplished by introducing the Fixture Controller component to 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+which contains different protocol implementations while providing a uniform interface for interaction with the fixtures. More information about this component is given in 
+\shape italic
+Object Design
+\shape default
+ chapter.
+\end_layout
+
+\begin_layout Subsubsection
+Modifiability of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+Components
+\end_layout
+
+\begin_layout Standard
+The implementation of different 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+components should be modifiable without affecting the functioning of other components as long as the interface to the component doesn't change. This is accomplished by designing 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+components as web services. More details about web services are provided in the next section.
+\end_layout
+
+\begin_layout Subsubsection
+Runtime Extendibility with Respect to Fixtures
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+should enable adding, removing, modification and grouping of fixtures in 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+at runtime, without effecting the functions of the system. This is accomplished by introducing a Fixture Repository component to 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+which is responsible for storing information about fixtures that are a part of the smart environment, their properties (name, communication protocol, device ID), their location and the information about the fixture groups. More information about this component is given in 
+\shape italic
+Object Design
+\shape default
+ chapter.
+\end_layout
+
+\begin_layout Subsubsection
+Extendibility with Respect to Supported Communication Protocols
+\end_layout
+
+\begin_layout Standard
+The communication protocols used by the fixtures can change over time. Consequently, this system should enable changing the protocol implementation and adding new protocols without affecting the application flow. To facilitate the process, the protocols implementation should not mix with the application flow. This is accomplished by allowing modifiability of the Fixture Controller component without effecting the functioning of other 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+components.
+\end_layout
+
+\begin_layout Subsubsection
+Extendibility with Respect to 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+Components
+\end_layout
+
+\begin_layout Standard
+The design of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+should support addition of new components. This goal is achieved by designing 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+according to the service-oriented architecture design pattern. More details about 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+architecture design can be found in the following chapter.
+\end_layout
+
+\begin_layout Subsubsection
+Decoupling of Clients and Fixtures
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+should be designed to support multiple client types, ranging from mobile applications (iOS or Android) to web browsers (JavaScript). Clients should be unaware of any fixture communication protocol details. This goal is achieved by placing 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+as a broker between the client applications and the fixtures. The clients will communicate their requests to 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+using HTTP based protocol and 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+will communicate with fixtures using appropriate communication protocols.
+\end_layout
+
+\begin_layout Subsubsection
+Programming Language Independence
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+should support clients independent from the programming language that they were implemented in, as long as the programming language provides support for HTTP. This goal was accomplished by introducing a REST Adapter component to 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+which provides a HTTP based interface for interaction with the smart environment.
+\end_layout
+
+\begin_layout Subsubsection
+Security
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+should not allow unauthorised users to control the fixtures in the system. To accomplish this goal, an Authentication and Access Control component was introduced to 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+. More information about this component is given in 
+\shape italic
+Object Design
+\shape default
+ chapter. More details about the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+ security is provided in the 
+\shape italic
+Access Control and Security
+\shape default
+ section.
+\end_layout
+
+\begin_layout Subsubsection
+Portability
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+should run on Windows, Linux and Mac OS. This goal was achieved by implementing all 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+components in JAVA programming language.
+\end_layout
+
+\begin_layout Subsubsection
+Distributability
+\end_layout
+
+\begin_layout Standard
+The design of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+should support the distribution of components across multiple machines without the need of changing the component implementation. This goal is achieved by introducing a message-oriented middleware to 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+. More details about message-oriented middleware can be found in the following section.
+\end_layout
+
+\begin_layout Section
+Subsystem Decomposition
+\end_layout
+
+\begin_layout Standard
+The system is made up of three distinct subsystems which can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "ComponentDiagram"
+
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Client subsystem
+\series default
+ - consists of a variety of applications enabling the user to control the smart environment. 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Fixture subsystem
+\series default
+ - consists of a number of fixtures that make up the smart environment. 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\series default
+ - makes communication possible by translating user requests into commands understandable to the fixtures.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/ComponentDiagram.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Smart environment component diagram 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+ComponentDiagram
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1.00
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The focus of this thesis is on the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+component, thus the client applications will not be developed.
+\end_layout
+
+\begin_layout Subsection
+Service-oriented Architecture
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+component acts like a server component in a client-server architecture. One of the activities performed by 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+is receiving REST-based requests from the user, processing them (fetching requested information or translating a request into an executable command using an appropriate protocol) and returning a message in Javascript Object Notation (JSON) 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "json"
+
+\end_inset
+
+ format to the user, containing requested information or the status of the command execution. The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+activities will be described in more detail in the 
+\shape italic
+Object Design
+\shape default
+ section.
+\begin_inset Newline newline
+\end_inset
+
+ The design of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+is based on a service-oriented architecture (SOA) 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "SOAonline"
+
+\end_inset
+
+ design pattern. All the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+components, except the message-oriented middleware, shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "BrokerArchitecture"
+
+\end_inset
+
+ are designed as web services 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "WSOnline"
+
+\end_inset
+
+. Web services are chosen because they provide the possibility of modifying the implementation of web services without affecting the function of components communicating with the web service under change, as long as the interface of the web service doesn't change. Also, web services support extendibility of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+because they provide support for integration of new web services (components) into the existing system and facilitate the reuse of the existing services by the component.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%"Service-oriented architecture (SOA) is a software design and software architecture design pattern based on discrete pieces of software that provide application functionality as services, known as Service-orientation. A service is a self-contained logical representation of a repeatable function or activity." 
+\backslash
+cite{SOAonline}
+\backslash
+
+\backslash
+%(http://www.opengroup.org/soa/source-book/soa/soa.htm#soa_definition) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%"A Web service is a software system designed to support interoperable machine-to-machine interaction over a network. It has an interface described in a machine-processable format (specifically WSDL). Other systems interact with the Web service in a manner prescribed by its description using SOAP-messages, typically conveyed using HTTP with an XML serialization in conjunction with other Web-related standards."
+\backslash
+cite{WSOnline} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%  [http://www.w3.org/TR/2004/NOTE-ws-gloss-20040211/#webservice] 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+All of the components, except the REST Adapter which is a RESTful web service , are SOAP based web services. SOAP based web services are chosen because they provide a built-in communication handling mechanism. A part of this mechanism is Web Service Definition Language (WSDL) which is used to describe a common set of rules defining the location of the web service, bindings, operations and messages that are needed for communication with the web service. RESTful web service is chosen because it provides an interface based on Hypertext Transfer Protocol (HTTP), which is simpler to interact with than the interface of a SOAP based web service. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+architecture can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "BrokerArchitecture"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/BrokerArchitecture.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Component diagram of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+BrokerArchitecture
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1.00
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Implementation of Web Services
+\end_layout
+
+\begin_layout Standard
+For the implementation of SOAP web services, the Axis2 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Axis2"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%[http://axis.apache.org/axis2/java/core/] 
+\end_layout
+
+\end_inset
+
+web service engine is chosen because it provides a more detailed documentation than Apache CXF 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "CXF"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%[http://cxf.apache.org/] 
+\end_layout
+
+\end_inset
+
+ framework which was also considered. Axis2 is the only framework that provides implementation for both Java and C programming language. For the RESTful web service implementation, three frameworks were considered. Jersey RESTful Web Service framework 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Jersey"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%[https://jersey.java.net/] 
+\end_layout
+
+\end_inset
+
+is chosen, because it provides better documentation than RestEasy 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Resteasy"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%[http://www.jboss.org/resteasy] 
+\end_layout
+
+\end_inset
+
+and is easier to use than Restlet 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Restlet"
+
+\end_inset
+
+. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%[http://restlet.org/].
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Message-oriented Middleware
+\end_layout
+
+\begin_layout Standard
+To support distributability of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+components, an enterprise service bus (ESB) architecture 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "ESB"
+
+\end_inset
+
+ is introduced. 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%An enterprise service bus is a software architecture model used for designing and implementing the interaction and communication between mutually interacting software applications in service-oriented architecture. 
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%
+\backslash
+cite{ESBBook}
+\end_layout
+
+\end_inset
+
+ An off-the-shelf component is chosen for the implementation of the ESB architecture. A component that is suitable, has to provide support for clients written in a variety of programming languages, so that future system components don't have to be written in a particular programming language. Apache ActiveMQ 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Activemq"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%[http://activemq.apache.org/] 
+\end_layout
+
+\end_inset
+
+ is an open source message broker written in Java. It is chosen because it supports a variety of cross language clients (Java, C, C++, Python etc.) and protocols (OpenWire, REST, Stomp etc.). 
+\begin_inset Newline newline
+\end_inset
+
+ Web services communicate with each other by exchanging SOAP messages over Java Messaging Service (JMS). JMS is chosen because it provides support for asynchronous message exchange, queuing is better for achieving larger scalability and reliability and handles temporary high loads better than HTTP 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "httpVSjms"
+
+\end_inset
+
+. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%[http://java.dzone.com/articles/performance-soaphttp-vs-soapjm]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sife
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+(
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+The purpose of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+in this design model is to hide the complexity of different communication protocols being used for fixture control, and to provide the clients with a simple and uniform protocol for controlling the fixtures. In order to fulfil the functional requirements of the system, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+had to be made "smarter" than just translating user input into fixture commands. The component diagram of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "BrokerArchitecture"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+is decomposed into seven sub-components: 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+REST Adapter
+\series default
+ - responsible for providing a HTTP based smart environment control interface to the user applications. 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Fixture Repository
+\series default
+ - responsible for storing fixture properties that are needed for a successful communication with fixtures. 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Fixture Controller
+\series default
+ - responsible for communication with fixtures. Fixture controller contains implementations of protocols needed for communication with fixtures. 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Decision Maker
+\series default
+ - responsible for automation of the smart environment. It also stores the rules (event - response based) based on which 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+should respond in case of a change in the environment.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Authentication and Access Control
+\series default
+ - responsible for storing credentials and access rights of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+users.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Environment Tracker
+\series default
+ - responsible for tracking user activities and changes in the smart environment. Changes in the smart environment include the changes of fixture states caused by the user (a light turned on or off) and changes caused by external factors (change of temperature or brightness of the room caused by sunset).
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Message-oriented Middleware
+\series default
+ - responsible for message handling between the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+components.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+architecture can be represented as a four layered architecture which is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "LayeredBrokerArchitecture"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/LayeredBrokerArchitecture.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Layered architecture of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+LayeredBrokerArchitecture
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.90
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Interface Layer
+\series default
+ manages client connections. Clients establish HTTP connections and send HTTP requests. Interface layer decodes the incoming requests, and forwards the request to an appropriate component. Interface layer forwards the system response to the client.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Application Logic Layer
+\series default
+ communicates with the fixtures. This layer is responsible for translating user's requests to appropriate commands using a protocol that the fixture can understand. This layer also contains a component for the smart environment automation.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Data Layer
+\series default
+ provides the upper layers with the information about user access rights, fixture details and the state of the smart environment.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Storage Layer
+\series default
+ persists the data that the data layer provides to the upper layers.
+\end_layout
+
+\begin_layout Section
+HW/SW Mapping
+\end_layout
+
+\begin_layout Standard
+The following section describes the assignment of the subsystems from figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "BrokerArchitecture"
+
+\end_inset
+
+ to hardware components. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using the following HW/SW mapping we accomplish decoupling of client applications from the fixtures. This enables the creation of multiple user interfaces that are going to communicate with 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+in order to control the smart environment.
+\begin_inset Newline newline
+\end_inset
+
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "DeploymentDiagram"
+
+\end_inset
+
+ shows the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+deployment diagram. On the left side we can see three different types of client devices. There can be any number of types of client devices, as long as they use an appropriate HTTP based protocol for communication with the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+. The fixtures on the right contain modules for communication using EnOcean or HTTP protocol. In this example, a database and 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+are deployed on the same machine. However, deploying these two components on different machines is also possible.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/DeploymentDiagram.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Deployment diagram of the smart environment system 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+DeploymentDiagram
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1.00
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+is designed to be a stateless component with regard client request processing. The processing of client requests is always done in the same way, and is not influenced by the previously processed requests. Smart environment automation, on the other hand, will be influenced by the previous changes in the environment. The automation rules will be defined based on the analysis of the changes in the environment and identifying the patterns of events that can be automated. This will be done using machine learning algorithms. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Because of the statelessness of the request processing, it is possible to replicate 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+to a number of different server machines in a case that a single instance of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+becomes a bottleneck of the system. This could happen with an increased number of clients.
+\end_layout
+
+\begin_layout Section
+Persistent Data Management
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+uses both a database and the configuration files for storing persistent data. Database stores information about fixtures, users and logs the events in the environment and activities performed by the users. The configuration files are used for storing information about the fixture groups, fixture location, the names of the commands for a specific fixture type, access control and automation rules.
+\begin_inset Newline newline
+\end_inset
+
+ More details about the persistent data will be provided in the "Object Design" chapter.
+\end_layout
+
+\begin_layout Section
+Access Control and Security
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+is secured using the following protocols and devices : 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Firewall
+\series default
+ prevents requests originating from unauthorised networks (internet or networks other than the one in which 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+is deployed) from reaching 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+. 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+User authentication
+\series default
+ is performed by the network devices when a user is trying to access the network in which 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+is running.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+User authentication
+\series default
+ has to be performed by 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+before the user is allowed to access the services provided by 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Access control lists
+\series default
+ are are checked for the user's access rights before the issued command is executed by 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+HTTPS protocol
+\series default
+ is chosen for communication between the user and 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+because it provides a secure communication channel between the user and 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+. 
+\end_layout
+
+\begin_layout Section
+Boundary Conditions
+\end_layout
+
+\begin_layout Subsection
+Initialization
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+is composed of seven components that have been previously described. The initialization process can be divided into two stages; the first stage being the initiation of the off-the-shelf database and the message-oriented middleware components and the second stage being the initiation of the six web services. The order in which the web services are started is not important. On initialization, all web services have to access the web service configuration file (
+\shape italic
+axis2.conf
+\shape default
+) in order to be successfully deployed. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Fixture Repository component loads the fixtures information from the database (accesses database access configuration file 
+\shape italic
+hibernate.xfg.xml
+\shape default
+ before communicating with the database) and the fixture grouping and location information from the configuration files (
+\shape italic
+GroupConfig.xml
+\shape default
+ and 
+\shape italic
+BuildingConfig.xml
+\shape default
+) into memory. More details about the configuration files are given in the next chapter. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Authentication and Access Control component accesses the XACML policy configuration file (
+\shape italic
+Policy.xml
+\shape default
+) and loads the access policies into memory. It also loads the format of the access control request from the configuration file (
+\shape italic
+Request.xml
+\shape default
+). Authentication and Access Control policy sets up the communication with the database (accesses database access configuration file 
+\shape italic
+hibernate.xfg.xml
+\shape default
+ before creating the communication channel), where the user information is stored, before it is initialized. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Environment Tracker also sets up the communication with the database the same way as Authentication and Access Control component does it, before it is initialized. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Decision Maker component loads the automation rules from the rule base file (
+\shape italic
+BasicRule.drl
+\shape default
+) into memory before it is initialized.
+\end_layout
+
+\begin_layout Subsection
+Failure
+\end_layout
+
+\begin_layout Standard
+In case of the failure of one of the web services, the system will provide the user with an error message containing information detailing which web service is down. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+will continue functioning when the missing web service is brought up again. In case of the failure of communication with the database, the web services that directly communicate with the database have to be restarted. In case of the failure of the message-oriented middleware, all the web services have to be reinitialized.
+\end_layout
+
+\begin_layout Subsection
+Termination
+\end_layout
+
+\begin_layout Standard
+For the full functioning of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+, all components have to be running. If a single component is terminated, the whole 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+will stop functioning. 
+\begin_inset Newline newline
+\end_inset
+
+ All the objects in the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+components that are required to be persistent are stored into a database or a configuration file upon creation. Thus, no special sequence of actions is needed for a safe termination of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

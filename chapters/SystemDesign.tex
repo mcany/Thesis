@@ -1,0 +1,179 @@
+
+\chapter{System Design}
+	The system design chapter focuses on transforming the previously described requirements analysis model into a system design model. The system design model contains a description of design goals, subsystem decomposition and strategies (hardware/software mapping, persistent data management, access control policy) for building the system. The goal of this chapter is to describe the system decomposition and to give a clear description of the strategies that are to be used for building the system.
+	
+\section{Design Goals}
+The system design of TextIt was based on the following design goals:
+
+%ble-firmata, communication model
+%communication message selection
+%gathering saving displaying data
+%JS Runner
+%plug-in pattern Interactex
+%left pannel, toolbar, menubar, debug view
+%Components model
+%pre-defined methods?
+%user added methods (parser. test cases)
+
+	%ble-firmata, communication model
+	\subsubsection{Support of Different E-Textile Hardware} 
+Different hardware manufacturers have different communication protocols. Even on the same hardware the messages getting values from different analog, digital or I2C messages can differentiate. To overcome the communication problem and to make it more device independent, the system has been developed with Firmata protocol. This Firmata protocol is implemented in Communication Manager. The component contains different messaging implementations while providing a uniform interface for the interactions. More information about this component is given in \textit{Object Design} chapter.\\
+
+The Firmata protocol helps to overcome lack of uniform communication problem. In addition to this in order to connect to hardware at the first place, the BLE (Bluetooth Low Energy) library has been used. The BLE library helps to connect to hardware and start communication via Bluetooth 4.0. So that the system can connect to any hardware ,that is supporting BLE feature, wirelessly.
+
+	To Separate system communication functionality from the main application functionality, the communication manager is used as a broker that isolates communication-related concerns (Broker Pattern).
+	
+	%communication message selection
+	\subsubsection{Selection of Different Communication Message Types} 
+The system should enable adding, removing, modification of different message types to communicate with the connected hardware. The Firmata protocol supports 3 different message types. The users should be able select which message types they want to use and how many different hardware components they want to communicate. For example there might be a case where the user wants to communicate via Analog Message with 3 different components on the hardware. This is accomplished by introducing E-textile Communication Selector Controller. In this controller user can add or remove by dragging and dropping the message types and identifies their pin, register, address number. So that the user can connect to any component on the e-textile hardware. More information about this component is given in \textit{Object Design} chapter.
+	
+	%gathering saving displaying data
+	\subsubsection{Saving ad Displaying the Incoming Data From E-Textile} 
+	TextIt should help to users to understand which data, users are receiving. It is stated that the users can get 3 different messages (data) from many different hardware components. In order to identify which message type sends what kind of data, the system displays the message data to users while receiving the data. So that the users can see the data, that is currently receiving. This may help users to see whether it is the data that they want to get and whether there is a problem with the data before continuing working on the data. \\
+	
+	Moreover to use the data later on and keep it persistently, users can save their data under the given file. The system enables to enter the file name and an option to save the data. This is accomplished by introducing Gathering Window Controller right after the message types are selected. More information about this component is given in \textit{Object Design} chapter.
+	
+	%JS Runner
+	\subsubsection{Supporting Scripting Language} 
+	The system should interpret a scripting language to enable its user to code their own program and use the tools. To achieve interpreting the user input live with REPL (read eval print loop) approach, using a light scripting language is decided. REPL (read eval print loop) method is chosen to support playground feature for beginner programmers, so that the system is more interactive and return the result of the code immediately. This encourages the inexperienced users when they see their result or problems immediately. Moreover in a result the system is light, easy to use, returns immediate results, and has a modern look rather than having an old way of compiler approach. For this feature JavaScript Runner component is added to the system. The reason choosing JavaScript and more information will be explained in \textit{Object Design} chapter.
+	
+	%plug-in pattern Interactex
+	\subsubsection{Should Connect and Push User Defined Code to Interactex Program} 
+	Interactex is the visual programming version of TextIt, and developed by my supervisor \advisor . They target the similar goals for development of e-textile programming. TextIt can support the Interactex where it has some drawbacks because of the visual programming. In TextIt users can program their own custom algorithms and push their own methods to Interactex. The system supports this communication with Interactex and push the user defined methods. To achieve this feature plug-in pattern is used. 
+	
+	%left pannel, toolbar, menubar, debug view
+	\subsubsection{Supporting Basic Features of Integrated Development Environment} 
+	The system is designed to be an Integrated Development Environment(IDE) for e-textile development. Thus there are some common features that IDEs are supporting. As they can be found in many IDEs, the left panel is reserved for folder view. So that users can go through different files or folders in the project folder. The system also supports creating a new file/folder. 
+	
+	In the toolbar not only to the classic functions are added like text size, font and color buttons but also some new functions that are specific to the system is like record button for connecting to e-textile hardware and getting the data from it and push button for sending the user defined code to other platforms like Interactex.
+
+	Since it is an IDE and allows users to program the debugger view is attached at the bottom of the view traditionally. Whenever there is a result of user code or an exception it is immediately printed to debugger view.	
+	
+	In order to keep integrity between models and view the widely used Model View Controller architectural design pattern is used. So that Model subsystem is responsible for application domain knowledge, View subsystem is Responsible for displaying data to the user and Controller subsystem is responsible for sequence of interactions with the user and notifying views of changes in the model.
+
+	%Components model
+	\subsubsection{Ready to Use E-Textile Development Components and Pre-defined Functions}
+	The system contains some ready to use components to hep users to develop their e-textile program in an efficient way. These components are the methods that are widely used in e-textile development like signal smoothing, feature extraction or machine learning tools. So that users can gain more time and focus on their program in a more abstract way rather than focusing on the algorithm implementing.
+	
+	The design of TextIt should also support addition of new components. Users can also define their own components. The feature is achieved by supporting JavaScript language so that the user input is directed to JavaScript context without making any changes on it. Thus  the user defined components will be persistent on JavaScript context and users can use them as much as they want. 
+	
+	In addition to the components there are some pre-defined functions to realize some features in the system. These behaviors are the ones that should be supported inside of the system and let the user call those functions without concerning the implementations. For example display function to visualize the data or connect function to e-textile hardware or pre-defined parser methods are examples of pre-defined functions. These functions are system defined functions meaning they are written is swift and are ready to use when the system is opened. It is realized by using Repository Architectural Style. All the pre-defined functions are in the TextIt repository, so that subsystems are decoupled.
+		
+	\subsubsection{Portability} 
+	Textit is designed to run on Mac Os, that is why it is implemented in Swift programming language.
+	
+	In addition to this, the system supports JavaScript language to interpret. However nothing on the system is developed specific to JavaScript. Later when another scripting language is wanted to use, only changing the interpreter is enough to evaluate the user input.
+		
+\section{Subsystem Decomposition}
+The system is made up of three distinct subsystems which can be seen in figure \ref{DecompositionDiagram}:
+\begin{enumerate}
+\item \textbf{E-Textile subsystem} - consists of a different e-textile hardware to connect and gather the necessary data.
+\item \textbf{TextIt-Swift subsystem} - consists of a number of components and pre-defined functions to support features that users need when they develop an e-textile application.
+\item \textbf{TextIt-JS subsystem} - is an interface to make communication possible by interpreting user inputs and activate some Swift commands if necessary.
+\item \textbf{Interactex subsystem} - is a visual programming version of e-textile development environment, and the system can communicate and transfer user defined methods to be used in Interactex.
+\end{enumerate}
+\insertfigure{images/mcan/SystemDesign/DecompositionDiagram.jpg}{TextIt system decomposition diagram }{DecompositionDiagram}{1.00}
+
+The focus of this thesis is on the TextIt component, thus the e-textile hardware and Interactex applications will not be explained.
+
+
+\subsection{Event Driven Middle-ware Architecture}
+To support distributability of the TextIt components, event-driven architecture is implemented. A center middle-ware controller has the control of the flow and calls the necessary components to do their job. As the components finishes their job  and sends their events to the middle-ware, the middle-ware assigns the next task to other components or return feedback to the user.
+
+\subsection{Repository Pattern}
+There are some methods that are able to be used by the users. The users do not know the implementation but the purpose of the methods. The reason is that there are some functionality that TextIt supports but the user actually do not know who it is implemented. To decouple these two different subsystems a repository pattern is used. All the pre-defined functions are added to repository so that users can call them whenever they need from the repository. Later if new functions are added to the system again they can be added to repository to make them available to the users. 
+
+\subsection{Broker Pattern}
+For the implementation of communication between the system and the hardware a Broker Pattern is implemented. The purpose of using this pattern is there are two distributed system that needs to communicate and work on synchronously. Moreover, this patterns helps to separate system communication functionality from the main application functionality, alkso isolates communication-related concerns.
+
+\subsection{Plug-in Pattern}
+When it comes to connecting and communicating with Interactex, plug-in pattern is used. In this functionality, TextIt works as an plug in to Interactex. A new components is defined by the user in TextIt and later this custom component is sent to Interactex, and Interactex systems uses it as a new custom component without knowing the implementation. So that a new element is added to the system by using another compatible system.  
+
+\subsection{TextIt}
+The purpose of TextIt in this design model is to hide the complexity of different components and also make them communicate between each other so that the user input is fulfilled as designed. In order to fulfill the functional requirements of the system, TextIt has the JavaScript part to enable to users implement their own code and Swift part to help users to achieve their goals. The component diagram of TextIt can be seen in figure \ref{ComponentDiagram1}.
+
+\insertfigure{images/mcan/SystemDesign/ComponentDiagram.jpg}{Component diagram of TextIt }{ComponentDiagram}{1.00}
+
+
+ TextIt is decomposed into eight sub-components:
+\begin{enumerate}
+\item \textbf{BLE - Firmate Controller} - responsible for connecting to hardware, which UUID is in the allowed list.
+\item \textbf{E-Textile Communication Selection} - responsible for starting a data flow from specific address or pin on the connected hardware.
+\item \textbf{Gathering Controller} - responsible for receiving the data from the hardware, display it to the user.
+\item \textbf{JavaScript Runner} - responsible for interpreting the user input in REPL (read-eval-print-loop) approach. 
+\item \textbf{Interactex Server Controller} - responsible for connecting to Interactex program and sends the user defined custom component.
+\item \textbf{View Controller} - responsible for interacting with the user. It receives the input and shows the result as a GUI to the users. It has folder view, debug view, display view and text input view.
+\item \textbf{File} - responsible for handling all the file functionality; reading, writing, creating etc.
+\item \textbf{Event Driven Middle-ware} - responsible for handling the events and the flow between different components.
+
+\end{enumerate}
+
+\seif\ architecture can be represented as a four layered architecture which is shown in figure \ref{LayeredDiagram}. 
+
+\insertfigure{images/mcan/SystemDesign/LayeredDiagram.jpg}{Layered architecture of TextIt }{LayeredDiagram}{0.90}
+
+\begin{enumerate}
+\item \textbf{Interface Layer} manages user interactions. It receives the user inputs and forwards the request to appropriate components. Interface layer also forwards the system response to the user.
+
+\item \textbf{Application Logic Layer} is responsible for translating user's requests to appropriate commands. This layer also contains a component for the TextIt controllers.
+
+\item \textbf{Storage Layer} persists the data that the data layer provides to the upper layers.
+
+\end{enumerate}
+
+
+\section{Identify Concurrency}
+TextIt has several threads to success the different task concurrently:
+\begin{itemize}
+\item \textbf{Main thread} is the main thread where application runs and executes the remaining functionalities. 
+\item \textbf{JavaScript Thread} is used to run user code. Whenever the user inputs a new line of code it is activated o that the user input is interpreted. 
+\item \textbf{GUI Thread} is used to make a change and visualize the data on GUI.
+\item \textbf{File Thread} is used to store user inputs. This thread is in a loop and whenever there is a change of the status of user input it saves the user code to a file.
+\end{itemize}
+
+
+\section{HW/SW Mapping}
+The following section describes the assignment of the subsystems from figure \ref{LayeredDiagram} to hardware components. \\
+
+Using the following HW/SW mapping, decoupling of client applications from the hardware is accomplished. This enables the creation of an interface to communicate and manipulate the e-textile components. Also thanks to design of TextIt and Interactex they can communicate with each other and can transform custom component. In this way the user has more freedom and can choose or use both of the visual and textual programming for e-textile development. Figure \ref{DeploymentDiagram} shows TextIt deployment diagram. On the left side we can see different types of e-textile devices. There can be any number of types of e-textile devices, as long as they use an appropriate BLE and Firmata based protocol for communication with TextIt. The Interactex on the right contain modules for communication using Multipeer Connectivity Framework. \\
+
+\insertfigure{images/mcan/SystemDesign/DeploymentDiagram.jpg}{Deployment diagram of the e-textile system }{DeploymentDiagram}{1.00}
+
+Because the communication is done via Bluetooth, this can be bottleneck and can be connected to one device because of the hardware limitations. 
+
+\section{Persistent Data Management}
+	TextIt uses files for storing persistent data. Files stores information about user code and the data received from e-textile components. \\
+	JavaSctipt context can also be stored in a file so that, the user defined components in the JavaScript can be persistent and can be used again after closing the application. 
+	
+\section{Software Control}
+The flow of the system is controlled by center controller using event driven architecture. All the components report to center controller by sending the finished event when they are done doing their task. After the center controller gets the event from one controller, it can assign another task to another component. \\
+
+File thread used in the system is working isolated from other thread. But JavaScript, main and GUI threads have interactions between each other. JavaScript thread gets the user inputs from the user and if necessary may call main thread function or GUI functions. In this situation the functions in the main and GUI threads always tries to get them selves to the main thread or GUI thread to do their tasks. 
+
+\section{Boundary Conditions}
+
+\subsection{Initialization}
+TextIt is composed of eight components as already have been described. And there are some components that are initialized at the start of the system like Middle-ware Component and the View Controller, and others are not initialized until the user command has arrived. \\
+
+At the starting of TextIt, the system checks the User/Document folder to see if there is already created a folder for the project. If there is an existing TextIt folder then it reads the main folder to load all the previous code of the user. If the system can not find any existing TextIt folder it creates a folder and an empty main folder to enable user to put some input. \\
+
+JavaScript Runner components is being initialized as a singleton. Since all the user input should be interpreted in the same context and to achieve this there is only one JavaScript runner, thus there is only one JavaScript context. \\
+
+Gathering Controller and Etextile Communication Selection components are lazy variables. At the first place there is no need for those components. When the user explicitly wants to use those components then the components are initialized. The same approach is used for the Interactex Server Controller, it is not started until the user starts it. \\
+
+On the other hand, the BLE - Firmata Controller is started at the start of the system. It is initialized and started so that it is ready to connect when the user wants to. It searches nearby e-textile components and if the found peripheral UUID is on the allowed list, it connects to the peripheral and wait for the communication types, addresses, registers or pin from the user. 
+
+
+
+
+
+\subsection{Failure}
+In case of the failure of one of task that is needed to be done, the system will provide an error message containing information to the debug view of the system. Then TextIt will wait for the next task from the user. In case of the failure of communication with the external components, the communication controllers have to be restarted. 
+
+\subsection{Termination}
+For the full functioning of TextIt, all components do not have to be running. The components are temporary, they become active when they are assigned a task, then are terminated after their job is done. The only 2 components are need to be active for the all time is the ViewController to keep interaction with the user and the middle-ware to continue to flow of events. \\
+
+All the objects in the TextIt components that are required to be persistent are stored into files whenever there is change or when a task is assigned explicitly. Thus, no special sequence of actions is needed for a safe termination of TextIt.
+
+
+

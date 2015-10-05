@@ -1,0 +1,98 @@
+\def\kneehapp {KneeHapp}
+
+
+\chapter{Requirements Elicitation}
+	
+	The requirements elicitation chapter provides a description of the overall use of the system and defines the requirements that the system has to meet. The requirements are extracted from the project \kneehapp. In order to identify the requirements the project KneeHapp is developed with the current technologies that are available to develop smart garments. After using the available e-textile development environments and frameworks, the missing pieces are identified.  \kneehapp  project is developed in TUM iOS praktikum with Prof. Bern Br\"uge and sport traumatology expert Dr. J\"urgen H\"oher in 2014. Moreover the participants of this project were computer science students and had not previous knowledge about e-textile development. This made us also see the barriers and challenges for beginners to e-textile development. With \kneehapp project we had the chance to work on a real e-textile project and see the current status and the drawbacks of the area. The most of the requirements are extracted by our observations. The requirements are extracted from the scenarios described below. Extracted requirements are divided into two categories: \textbf{functional requirements} and \textbf{non-functional requirements}. Functional requirements describe the interaction between the system and its environment, independent of its implementation \cite{Bruegge2004}. Non-functional requirements refer to user requirements that are not directly related to the functional behavior of the system \cite{Bruegge2004}.
+
+	
+\section{Project \kneehapp}
+
+The rupture of the anterior cruciate ligament (ACL) of the knee is a severe injury. ACL ruptures are mainly the result of sports related injuries such as football, basketball, handball, and contact sports. An intense rehabilitation period is necessary to bring the individual back to physical activities and the desired sports. The rehabilitation of the knee often includes physical therapy and strength exercises. The progress and the success of the rehabilitation measures are currently not well documented. The goal of this project is to develop a system that would allow patients to record their rehabilitation progress without the need of a doctor or physiotherapist. During the Summer Semester 2014 we, six TUM students, developed a smart bandage (Kangaroo Bandage) and iPad application (\kneehapp) that measure performance parameters while the patient performs the rehabilitation exercises. The smart bandage was consisted of two Arduino devices and the devices were put in to the knee bandage. One of the exercises that were supported was "One Leg Hop". The one Leg Hop is an exercise in which the patient jumps forward as far as he/she can with only one leg. Then the algorithm calculates the duration of the hop. The other exercise was "Side Hops". In this exercise patient should jump right and left as many times as he/she can in the given time. Then the algorithm calculates the number of the hops from accelerometer data.
+
+
+\section{Use Cases}
+
+The requirements are extracted by use cases and they also serve to describe the functionality of the system from the users point of view \cite{Bruegge2004}.
+
+\subsection{	One Leg Hop}
+
+One Leg Hop is the exercise that the patient should jump as far as he/she can, then the smart garment should calculate the duration of the hop by processing the acceloremeter data. 
+Figure 2.1 shows the linear accelerometer data from the y and z-axis corresponding to a one-leg hop. Even for human eyes it is not easy to read this accelerometer signal. There are one maximum peak and two minimum peaks in the signal. Thus without further observations, one can not conclude which points corresponds to jumping and landing. So that we could take the time difference between these two points. It was not really possible to implement the algorithm before really understanding the signal and knowing which points to take. We made several iterations of jumping, collecting the data, video recording of the jump, using different filtering methods, using different feature extraction methods. Unfortunately at the end we found measuring the duration of a hop from accelerometer signal challenging due to the fact that hops occur very quickly (an average hop lasts around 0.22 seconds) and there are so many noise because of the leg shaking. One possible solution we proposed was using an insole with integrated pressure sensors. We thought that it could be more easier to detect when the user leaves the ground and lands the ground by using insole with pressure sensor. Figure 2.2 shows the insole and its hardware. Figure 2.3 shows the signal produced by the pressure sensors during a one-leg hop. We could then determine whether the user is on the ground or in the air using a threshold. 
+
+\insertfigure{images/mcan/Requirement/oneleghop-acc.png}{One Leg Hop with Accelerometer Data}{UserFixtures}{0.40}
+\insertfigure{images/mcan/Requirement/insole.png}{Insole - Pressure Sensor}{UserFixtures}{0.40}
+\insertfigure{images/mcan/Requirement/oneleghop-insole.png}{One Leg Hop with Pressure Sensor}{UserFixtures}{0.40}
+
+\subsection{	Side Hops}
+
+Side Hops is the exercise that the patient should jump right and left as many times as he/she can in the given time. Then our smart garment should calculate the number of jumps. This was rather an easier exercise than the One Leg Hop to calculate. To given an idea about how the signal looks like, the example linear acceleration on the horizontal axis for 7 side hops is given in Figure 2.4. This was rather cleaner and easier to understand when compared to One Leg Hop exercise signal. The number of jumps are clear for human eyes, as the peaks indicates the jumps. However for the algorithm to calculate the number of the jumps, we needed to filter the signal from the noise. In order to eliminate noise in the signal, we applied several iterations of a low-pass filter until the signal's standard deviation became smaller than a specific threshold. We called this threshold low-pass filter threshold. We found the optimal low-pass filter threshold to vary depending on the algorithms used for calculating the jump duration. We tested the RC low-pass filter with a time constant T = 0.25 and a weighted moving average filter with coefficients [1/4 1/2 1/4]. After filtering the signal, we used a peak detection algorithm to count the high and low peaks in the signal. A naive peak detection algorithm counted also local maxima as hops in the signal, resulting in more side hops being counted. To overcome this issue we analyzed the surroundings of a peak. If the peak is larger enough than its surroundings, the peak is counted as a hop. We called this factor peak threshold. We found the peak threshold leading to most accurate results to depend on the filtering algorithm used. Figure 2.5 shows the same 7 hops after applying three iterations of the RC filter and running the peak detection algorithm.
+
+
+\insertfigure{images/mcan/Requirement/sidehop-raw.png}{Side Hop Raw Data}{UserFixtures}{0.40}
+\insertfigure{images/mcan/Requirement/sidehop-filtered.png}{Side Hop Filtered Data}{UserFixtures}{0.40}
+
+
+\section{Requirements}
+			
+In this section requirements are presented. Requirements are collected into 3 main parts; gathering, observing and testing the data. Paul Lukowicz et al. argues the requirements for e-textile environments can be listed as, a collection of ready-to-use algorithms (signal processing, pattern classification, and so on), synchronization, merging, and splitting of data streams. The environment should include I/O device readers and writers, filtering and classification algorithms, and components for splitting, merging, and synchronizing data streams. Also a visualizer is a must to show the data to user. Thus it would be easier to work on the data. 
+
+\subsubsection{Observation 1: Gathering}
+
+
+In our case since we did not know how the signal looks like, first of all we needed to collect sufficient amount of sample data to really understand the signal and discover what peaks, curves, numbers and points actually mean in the context. Collecting sufficient amount of data is the important key before the actual implementation because first we need to understand the data and the problem before proposing the solution to that. Understanding the signal by gathering data is required since the developers did not have previous knowledge about e-textile field and know how the actual data looks like. In our project for this purpose, we developed a mini application to record all the acceleration and gyroscope data. After all the collection process was done, we needed to transfer to data into an environment in which we process the signal. Although it might sound as an easy process it took several full days to only collect 10 jumps from users. 
+	
+	
+\subsubsection{Observation 2: Observing}
+
+
+After the collection of the data, the signal was passed to another environment in which it was processed. As mentioned before, since the developers had not had any previous knowledge about the data, it was necessary to show how actually the signal looks to give an overview about the problem. Then we could understand the signal better and decide what was needed to process the signal (filtering, feature extraction, data mining, machine learning). In our case we used different environments and frameworks ,like WEKA, Matlab, Octave as desktop applications and JBChartView, iOS Chart etc. for iOS integration, to visualize the exercise signal. To try every different framework we had implemented them in our project to see which ones gave the better solution for our application. Because every framework is suitable for different purposes, it took quite a time to find the best one for our needs. It was necessary to show not only the original signal to developer but also how it looked like after every manipulation the developer made to process the data and make it more understandable. With this approach we could see what effects every algorithm had. Also we had the same approach when deciding the filtering and feature extraction methods to use. In our project we implemented different filtering and feature extraction methods and applied them to data sequentially and noted the results of the methods.
+
+
+\subsubsection{Observation 3: Testing}
+
+
+As every algorithm has different effects on the signal, we wanted to see which one had the best results for our project. In our case we manually took the result of different methods and compared them with our references. Then we created a table to see which ones we should use. To find the appropriate methods, it required several iterations of gathering, observing and testing. Since only one iteration takes significant amount of time, repeating this loop was a time consuming process. It would be easier if we could have defined the different test cases to run and the references to compare with to the development environment, then the result returned as an excel like table to present the final results of different test cases and the comparison of the accuracies.
+
+\subsection{Functional Requirements}
+The following subsection defines functional requirements identified from the previously shown use cases.
+
+\subsubsection{FR1: Data Gathering}
+\textit\ should allow the user to receive data from an external e-textile device.
+
+\subsubsection{FR2: Data Observing}
+\textit\ should allow the user to visualize the data.
+
+\subsubsection{FR3: Data Testing}
+\textit\ should show the result of different test cases and the comparison of their accuracies. 
+
+\subsubsection{FR4: Test Case Management}
+\textit\ should allow the user to create and to run different test cases.
+
+\subsubsection{FR5: Pre-defined Algorithms}
+\textit\ should allow the user to use pre-defined algorithms.
+
+\subsubsection{FR6: Live Coding}
+\textit\ should interpret the user input live with REPL (read eval print loop) approach.
+
+
+
+\subsection{Non-functional Requirements}
+
+In the following subsection, the non-functional requirements of \textit\ will be described.
+
+\subsubsection{NF1: E-textile Device Independence} 
+\textit\ should provide suport to receive from different e-textile products.
+
+\subsubsection{NF2: Extendibility with Respect to Algorithms} 
+\textit\ should support the addition of defined algorithms.
+
+\subsubsection{NF6: Response Time}
+\textit\ should provide system feedback within 5 seconds (an error message in case of an error or a message about a successful execution of a command)
+
+\subsubsection{NF7: Robustness}
+Invalid user input shall not cause any disruption in the functioning of \textit.
+
+\subsubsection{NF11: Operating System}
+
+\textit\ should run on MAC OS. 

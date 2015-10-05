@@ -1,0 +1,1756 @@
+#LyX file created by tex2lyx 2.1
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\options bibtotoc,idxtotoc,headsepline,footsepline,footexclude,BCOR12mm,DIV13
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Analysis
+\end_layout
+
+\begin_layout Standard
+In the following chapter, a requirements analysis model based on the requirements elicitation will be created. The main purpose of the analysis model is to structure and formalize the elicited requirements and to identify the objects that exist in the application domain. An analysis model is composed of three individual models: a 
+\series bold
+functional model
+\series default
+, represented by the use cases and scenarios, an 
+\series bold
+analysis object model
+\series default
+, represented by the class and object diagrams and a 
+\series bold
+dynamic model
+\series default
+, represented by the state machine and sequence diagrams 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Bruegge2004"
+
+\end_inset
+
+. The functional model was presented in the previous chapter. To complete the system requirements analysis model, object and sequence diagrams will be presented.
+\end_layout
+
+\begin_layout Section
+Analysis Object Model
+\end_layout
+
+\begin_layout Standard
+The analysis object model of the smart environment is shown in the UML class diagrams and is developed iteratively in the following section. The initial model is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "UserFixtures"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/UserFixtures.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Fixture grouping 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+UserFixtures
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.80
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this model, different types of users are defined. Depending on the type of user, different actions can be performed on the system. For example, an authenticated user can set the state of a fixture, while the administrator can add new fixtures to the system, remove them and change their properties.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There can be different types of fixtures and the status of a fixture can have a different meaning for each type, but all the fixtures have to have a name which is given by the administrator, and a fixture ID which is given to the fixture by its manufacturer. Because of the different meanings of the fixture status, the abstract class Fixture passes a generic type Object to a setStatus method, and will be implemented differently for every fixture type. For example, a window sensor status can be represented by a single boolean (open or closed), but the status of a dimmable light bulb can be represented by an integer number that ranges from 0 to 65535.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In some situations, issuing a command for every single fixture is the wrong solution. An example of such a situation would be turning on the lights in a warehouse which can have tens of light units. To avoid this scenario, a fixture grouping feature is introduced. Using this feature, all the lights in a warehouse can be grouped and controlled by issuing a single command. On the other hand, the lights can be grouped by the sections of a warehouse. The fixture group doesn't have to be made by fixtures of the same type, but they all have to support the execution of the same command that can be issued to the group. The composite pattern 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "GoF"
+
+\end_inset
+
+ tackles this problem by allowing the user to treat both a single and a group of fixtures uniformly.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The second iteration of analysis object model is presented in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "UserFixtures2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/UserFixtures2.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Fixture grouping object diagram 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+UserFixtures2
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.80
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Not only can there be different types of fixtures with different sets of executable commands, they can also be made by a different manufacturer. Due to the lack of a common communication protocol in the industry, different manufacturers use different protocols to communicate with the fixtures. Even the manufacturers that use the same protocol (like EnOcean) may use different byte sequences to transfer the same command (turn on or off commands) to different fixture types. An abstract class for every manufacturer will contain the implementations of the protocols needed for communication with the fixtures of the respective manufacturer.
+\begin_inset Newline newline
+\end_inset
+
+ A complete analysis object model consists of entity, boundary and control objects. Entity objects represent the persistent information tracked by the system. Control objects are in charge of realizing use cases. Boundary objects represent the interaction actors and system 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Bruegge2004"
+
+\end_inset
+
+. The figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "AnalysisObjectModel"
+
+\end_inset
+
+ shows the complete analysis object model of the smart environment. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/AnalysisObjectModel.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Analysis object model of the smart environment 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+AnalysisObjectModel
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.80
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset FormulaMacro
+\def\app {Smart Environment Control App (SECA) }
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\def\controller {Smart Environment Controller (SEC) }
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\def\auth {Authentication and Access Control (AAC) }
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\def\automation {Smart Environment Automation (SEA) }
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset FormulaMacro
+\def\seca {SECA}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\def\sec {SEC}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\def\aac {AAC}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\def\sea {SEA}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The problem of having multiple device types that can execute a different set of commands while using different communication protocols is tackled by using an abstract factory pattern 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "GoF"
+
+\end_inset
+
+. Fixture Factory object in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "AnalysisObjectModel"
+
+\end_inset
+
+ is an abstract factory object, and the PhilipsHue Factory and EnOcean Factory objects are concrete factory objects that contain information about which commands a single fixture can execute and which communication protocol it uses.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+app
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+represents the boundary object through which the user will interact with the system. This object is out of the scope of this thesis. The developers that are going to develop this application will be using 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+for interaction with the smart environment. This object will communicate with 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+auth
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+object and 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+controller
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+object. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seca
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+will enable the user to authenticate himself to the system by providing his credentials, control the fixtures as well as perform fixture grouping. The administrator will have special permission to administer fixtures in the smart environment (add, remove fixtures or change fixture properties).
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sec
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+object stores information about all the fixtures in the system, communicates with the fixtures and issues the user's commands to the specific fixture.
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+auth
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+object stores the information about the system users. Every user has to be authenticated by providing the credentials to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seca
+\end_layout
+
+\end_inset
+
+ before using the system. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seca
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+sends the credentials to 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+aac
+\end_layout
+
+\end_inset
+
+ for authentication. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+aac
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+compares the provided credentials to the list of users, and authenticates the user if an entry in the list has been found. Even an authenticated user can not control all the fixtures in the system, so 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+aac
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+stores the access rights for each user.
+\begin_inset Newline newline
+\end_inset
+
+ When a user issues a command, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sec
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+checks with the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+aac
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+if the user has the permissions to issue such a command.
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+automation
+\end_layout
+
+\end_inset
+
+ object enables the system to define the automation rules. If it "decides" to issue a command to the system, it communicates the command to the SEC.
+\end_layout
+
+\begin_layout Section
+Dynamic Model
+\end_layout
+
+\begin_layout Subsection
+System Automation Sequence
+\end_layout
+
+\begin_layout Standard
+System automation sequence is started when a fixture senses a change in the environment, or the state of the fixture changes. Fixture reports the event to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sec
+\end_layout
+
+\end_inset
+
+. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sec
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+reports the change to 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sea
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+which searches for an adequate reaction. If a reaction is found, a command is issued to 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sec
+\end_layout
+
+\end_inset
+
+. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sec
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+performs the same action sequence as if the command was issued by a regular user. System automation sequence diagram can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "SystemAutomationSequence"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/SystemAutomationSequence.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+System automation sequence diagram 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+SystemAutomationSequence
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.8
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Authentication Sequence
+\end_layout
+
+\begin_layout Standard
+The authentication sequence starts when a user inputs his credentials into the authentication form, and pushes the 
+\shape italic
+Authenticate
+\shape default
+ button. The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seca
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+sends a check credentials request along with the credentials to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+aac
+\end_layout
+
+\end_inset
+
+. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+aac
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+searches the list of credentials to check if the provided credentials match any of the credentials that exist in the system. Depending if the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+aac
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+finds the credentials, it sends a response containing information detailing authentication success. The authentication sequence diagram can bee seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "AuthenticationSequence"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/AuthenticationSequence.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+User authentication sequence diagram 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+AuthenticationSequence
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.80
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Command Execution Sequence
+\end_layout
+
+\begin_layout Standard
+When issuing a command, a user has to push the adequate button. The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seca
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+sends the command to 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sec
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+which checks if the user has the permission to execute the command. If the permission is granted, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sec
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+sets the new state of the fixture(s). 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sec
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+returns a response containing the information if the command was executed successfully. Command execution sequence diagram can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "ExecuteCommandSequence"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/ExecuteCommandSequence.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Command execution sequence diagram 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+ExecuteCommandSequence
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.8
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Group Creation Sequence
+\end_layout
+
+\begin_layout Standard
+A group creation sequence is started when a user inputs a list of fixtures that should be grouped, and pushes the 
+\shape italic
+Add Group 
+\shape default
+button. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seca
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+sends the "create group" request, along with the group data data, to 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sec
+\end_layout
+
+\end_inset
+
+. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sec
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+checks if the user has the permission to create a group. If the permission is granted, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sec
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+creates a fixture group and stores it. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sec
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+sends a response containing information regarding the success of the command execution. The group creation sequence diagram can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "CreateGroupSequence"
+
+\end_inset
+
+. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/CreateGroupSequence.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Group creation sequence diagram 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+CreateGroupSequence
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.8
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Fixture Addition Sequence
+\end_layout
+
+\begin_layout Standard
+Fixture addition sequence is started by the administrator inputting the required information into the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seca
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+special 
+\shape italic
+Admin
+\shape default
+ tab, and pushing the 
+\shape italic
+Add
+\shape default
+ button. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seca
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+sends the add fixture request along with the fixture data and user identification to 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sec
+\end_layout
+
+\end_inset
+
+, which checks with the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+aac
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+if the user has the permission to add a new fixture. If the permission is granted, a new fixture is created and added to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sec
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+fixture list. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sec
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+returns a response containing information about the success of the command execution. Fixture adding sequence diagram can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "AddFixtureSequence"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/AddFixtureSequence.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Fixture addition sequence diagram 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+AddFixtureSequence
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.8
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,1095 @@
+#LyX file created by tex2lyx 2.1
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\options bibtotoc,idxtotoc,headsepline,footsepline,footexclude,BCOR12mm,DIV13
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Introduction
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "chapter:Introduction"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+% ADD THE INFORMATION FROM THE PRESENTATION
+\end_layout
+
+\end_inset
+
+The growing population of the world and increase of technology application in everyday life are the main causes causes leading to increased energy consumption. According to the U.S. Energy Information Administration (EIA), the world energy consumption will increase 56% by 2040 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "EIA"
+
+\end_inset
+
+. Nearly 40% of total U.S. energy consumption in 2012 was consumed in residential and commercial buildings 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "EIA1"
+
+\end_inset
+
+. Most of that energy was consumed by heating, cooling and lighting systems 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "MAPA"
+
+\end_inset
+
+. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+According to the World Health Organization (WHO), the world population is rapidly ageing. Between 2000 and 2050, the number of people aged 60+ is going to triple, from 650 million to 2 billion 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "WHO"
+
+\end_inset
+
+. Each year, one in every three adults age 65 and older falls. Falls can cause hip fractures, head traumas and can increase the risk of early death. In 2010, 2.3 million nonfatal fall injuries among older adults were treated in emergency departments and more than 662,000 of these patients were hospitalized 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "CDC"
+
+\end_inset
+
+. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In 2012. U.S. fire departments responded to 480 500 home fires that caused 2470 civilian deaths and 14700 civilian injuries 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "FD"
+
+\end_inset
+
+. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is no single solution for solving all these problems, but there are some that can represent steps towards a solution. A step towards solving these problems would be to add "smartness" to our environment. Adding "smartness" to the environment should enable more efficient energy consumption (e.g. turning the light off when no one is in the room), improve elderly care (e.g. remind the inhabitant to take the medication or calling the ambulance if a person is on the floor and not moving) and improve safety of the inhabitants (e.g. calling the fire department if a fire is detected).
+\begin_inset Newline newline
+\end_inset
+
+ This thesis provides an insight into some of the challenges that have to be overcome when creating a smart environment. The goal of the thesis is to make a first step towards the creation of a smart environment. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The concept of the smart space has evolved from home automation systems. The term "
+\shape italic
+home automation
+\shape default
+" refers to technology-based applications which generally lead to a better way of living, mostly in form of automating a set of common household devices 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "homeAutimation01"
+
+\end_inset
+
+. This usually includes the control of lighting, heating, security locks, and other systems
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "use01"
+
+\end_inset
+
+ in order to provide the inhabitants with an improved sense of convenience, comfort, energy efficiency, cost reduction, safety and security.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Interest in creating homes with increased functionality dates back to the 1960s, but it was only in the 1980s that the commercial interest in home automations had grown enough for the National Association of Home Builders in the USA to form a special interest group called 
+\begin_inset Quotes erd
+\end_inset
+
+
+\shape italic
+Smart House
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+ to push for the inclusion of the necessary technology into the design of new homes 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Inside03"
+
+\end_inset
+
+. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Even though the interest in home automation already existed, the existing technology at the time was not sufficient enough to cater to the demand and interest, and to transform the ideas into reality. The lack of technology did not stop researchers from thinking about integrating computers into their environment, and how computers could make their lives easier and their environment more comfortable.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In 1991, Mark Weiser, Xerox's a chief scientist at the time, defined a paradigm of ubiquitous computing. Ubiquitous computing has as its goal the nonintrusive availability of computers throughout the physical environment, virtually, if not effectively, invisible to the user. 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "MW93"
+
+\end_inset
+
+ Back in 1991 this was a visionary statement, because due to the lack of technology, this concept could not have been realized. Further advancements in technology, such as advancements in wireless network technology, increase of computational power and decrease of the size of hardware, enabled the creation of systems that follow the ubiquitous computing paradigm.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A concept that arose from the ubiquitous computing paradigm is the concept of a smart space or smart environment. This concept represents a direct connection between home automation and ubiquitous computing. As discussed by Lupiana et al., many definitions of a smart environment have been given, but they have all had some limitations. The definition provided by Lupiana et al. states that the smart environment is a 
+\shape italic
+highly integrated
+\shape default
+ computing and sensory environment that 
+\shape italic
+effectively reasons
+\shape default
+ about the physical and 
+\shape italic
+user context
+\shape default
+ of the space to 
+\shape italic
+transparently act
+\shape default
+ on human desires 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Lupiana09"
+
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The terms written in 
+\shape italic
+italic
+\shape default
+ have the following meaning: 
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+highly integrated
+\shape default
+ - an environment that is saturated with devices and sensors that are fully integrated with wireless networks 
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+effectively reason
+\shape default
+ - a pseudo-intelligent reasoning mechanism for the environment as a whole is meant, not just for an individual device or component 
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+user context
+\shape default
+ - an individual's profiles, policies, current location and mobility status 
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+transparently act
+\shape default
+ - an environment that is responsive to human and supports their mobility without requiring user interaction 
+\end_layout
+
+\begin_layout Standard
+The main prerequisite for building a smart environment is the interaction between a human and the fixtures. The problems arising from this prerequisite are described in the 
+\shape italic
+Problem Statement
+\shape default
+ section.
+\end_layout
+
+\begin_layout Standard
+Another concept that arose from the ubiquitous computing paradigm is the concept of Internet of Things (IoT). Internet of Things semantically means 
+\begin_inset Quotes erd
+\end_inset
+
+a world-wide network of interconnected objects uniquely addressable, based on standard communication protocols
+\begin_inset Quotes erd
+\end_inset
+
+. The basic idea of this concept is the pervasive presence of a variety of things or objects (e.g. mobile phones, sensors, actuators, Radio-Frequency IDentification (RFID) tags) in the space around us, which are able to interact and cooperate among each other using unique addressing schemes, in other to reach their common goals 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "IoT"
+
+\end_inset
+
+. A prerequisite for creating an IoT is enabling the computers to track and identify objects in the environment. This can be done by tagging objects using RFID, QR codes, near field communication (NFC) and digital watermarks 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "TAG"
+
+\end_inset
+
+. Object tagging and tracking is out of the scope of this thesis, thus the concept of IoT will not be discussed any further.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%Describe KNX
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Industry Standards
+\end_layout
+
+\begin_layout Standard
+Since the beginnings of the smart environment industry, there has been a number of proposals how to standardize the management, control and communication among fixtures. The first European standard for fixture communication was the European Installation Bus (EIB) 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "EIB"
+
+\end_inset
+
+. It was published by the European Installation Bus Association (EIBA) in 1990. EIBA was established by the leading companies in the production of electrical installation equipment at the time, Siemens, Jung, Gira and Marten. The EIB standard described how the fixtures can be connected to each other and how they can communicate with each other (communication protocol). EIB allows all the fixtures to be interconnected through an electrical bus which is made of a twisted pair cable. The disadvantage of this standard is that it requires the installation of additional wiring in the building, which can be costly. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The successor of the EIB standard is the KNX standard 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "KNX"
+
+\end_inset
+
+. KNX is the only worldwide standard for home and building control. This standard is based on the communication stack of EIB, but it was enlarged with the physical layers, configuration modes and application experience of BatiBUS 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "BATIBUS"
+
+\end_inset
+
+ and European Home System (EHS) protocol 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "EHS"
+
+\end_inset
+
+. The added layers enable this protocol to be used across the following communication medias: twisted pair, powerline network, radio frequency, infrared and Ethernet.
+\end_layout
+
+\begin_layout Section
+Problem Statement
+\end_layout
+
+\begin_layout Standard
+Despite the fact that a worldwide fixture communication standard exists, not all fixture manufacturers are willing to comply to the standard. Some fixture manufacturers use proprietary communication protocols for controlling their devices, because they find their protocols more suitable for their needs or the costs of using a standardized protocol are too high. The problem of controlling smart spaces arises from the fact that different manufacturers still use different communication protocols which hinders the communication among devices from different manufacturers. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The fact that a proprietary controller is needed in order to interact with a fixture, or a group of fixtures, poses another problem. With the increase of the number of fixtures, the number of controllers may increase as well, which can decrease the user's comfort (if the user has to memorise which controller is used for which fixture). Taking into account the cost of controllers, this can lead to a significant increase of the price of a smart environment.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A smart environment requires the fixtures to be integrated into a network, meaning that there has to be a way for fixtures to communicate and interact with each other. A smart environment is made up of a number of different types of simple sensors and actuators that are aware of their state, but not of the state of other fixtures. Therefore, in order to know the state of all fixtures (thus the state of the environment), a centralized communication unit has to be created to track the state of the fixtures, and to provide a possibility of reacting to the changes in the environment.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A smart environment requires context awareness, which which can be derived from the analysis of user behaviour and environment information. In the case of an environment in which fixtures communicate using different protocols, gathering such information is a challenge. Processing data gathered from fixtures using different protocols may require time consuming preprocessing of received messages. Preprocessing would include the extraction of useful data from data sets produced by all fixtures and the merging of extracted data coming from fixture types that are the same, but which use different communication protocols.
+\end_layout
+
+\begin_layout Section
+Motivation
+\end_layout
+
+\begin_layout Standard
+Some of the reasons identified by Genn et al. 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Inside03"
+
+\end_inset
+
+ causing the uptake of the smart enviroment technology to be slow: 
+\end_layout
+
+\begin_layout Itemize
+The initial investment required from the consumer is high, restricting the market to the middle and upper income brackets, and potential buyers must first be convinced of the benefits they will derive. 
+\end_layout
+
+\begin_layout Itemize
+Due to the lack of a common protocol, the smart homes industry in Europe has tended to focus on simple on-off switching systems (e.g. remote control switching) for single applications, which require no additional network installation.
+\end_layout
+
+\begin_layout Itemize
+Suppliers have done little to evaluate the usability of their products. However, Barlow 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "barlow"
+
+\end_inset
+
+ points out that this is not a simple task, because of the diversity of the user population, variation in the context of use, necessity of prior training and the challenge of investigating products that don't exist yet.
+\end_layout
+
+\begin_layout Standard
+The motivation for building a system that provides a uniform communication protocol for controlling the smart environment is: 
+\end_layout
+
+\begin_layout Itemize
+hiding the complexity of using a variety of different protocols for communication with different fixtures
+\end_layout
+
+\begin_layout Itemize
+enabling research in the area of intuitive smart environment control by simplifying the control mechanisms of the smart environment
+\end_layout
+
+\begin_layout Itemize
+enabling research in the area of smart environment automation by gathering and analysing data regarding the user behaviour in the smart environment
+\end_layout
+
+\begin_layout Itemize
+lowering the initial investment required for creating a smart environment, by mitigating the need for buying proprietary fixture controllers.
+\end_layout
+
+\begin_layout Section
+Related Work
+\end_layout
+
+\begin_layout Standard
+The following section provides the summary of research projects related to creating smart spaces. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Cook et al., 2003: MavHome: An Agent-Based Smart Home, 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "mavhome"
+
+\end_inset
+
+ 
+\series default
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Cook et al. introduce a concept of a smart home which acts as an intelligent agent, perceiving the state of the home through sensors and acting upon the environment through device controllers 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "mavhome"
+
+\end_inset
+
+. Device controllers in this sense are system agents that are responsible for communication with fixtures. 
+\begin_inset Newline newline
+\end_inset
+
+ An agent is a computer system situated in some environment, which is capable of autonomous action in this environment in order to meet its design objectives. An intelligent agent is a computer system that is capable of flexible autonomous action in order to meet its design objectives. Flexible action means that an agent should be responsive (agents should perceive their environment and respond in a timely fashion to changes that occur in it), proactive(agents should not simply act in response to their environment, they should be able to exhibit opportunistic, goal-directed behaviour and take the initiative where appropriate) and social(agents should be able to interact, when they deem appropriate, with other artificial agents and humans in order to complete their own problem solving and to help others with their activities). 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "agents"
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ The idea of making a smart environment act as an intelligent agent is implemented by turning the devices inside the smart environment into intelligent agents. The technologies within each agent are separated into four cooperating layers: 
+\end_layout
+
+\begin_layout Itemize
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Decision layer
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ selects actions for the agent to execute based on information supplied from the other layers through the Information layer. 
+\end_layout
+
+\begin_layout Itemize
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Information layer
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ gathers, stores, and generates knowledge useful for decision making. 
+\end_layout
+
+\begin_layout Itemize
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Communication layer
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ facilitates the communication of information, requests, and queries between agents. 
+\end_layout
+
+\begin_layout Itemize
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Physical layer
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ contains the hardware within the house including individual devices, transducers, and network hardware. 
+\end_layout
+
+\begin_layout Standard
+The functionalities of the system described by Cook et al. have the following thing in common with the solution proposed in this thesis: gathering, storing and generation of useful knowledge for decision making, communication between the fixtures and the user. The agent/based solution based on the distributed system architecture, requires 
+\begin_inset Formula $n(n-1)/2$
+\end_inset
+
+ communication channels between agents, where n is the number of agents. With the increase of the number of fixtures in the environment, the number of communication channels increases exponentially which can lead to the degradation of system performance. The solution proposed in this thesis is based on a centralized architecture where the number of communication channels is constant. Also, an agent-based system could be implemented on top of the solution presented in this thesis. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Wu et al., 2007: Service-Oriented Smart-Home Architecture Based on OSGi and Mobile-Agent Technology, 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "mobileAgents"
+
+\end_inset
+
+
+\series default
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Wu et al. propose a model based peer-to-peer (P2P) architecture based on multiple Open Services Gateway Initiative (OSGi) platforms in which service-oriented mechanisms are used for system components to interact with one another, and mobile agent technology 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "ma"
+
+\end_inset
+
+ is applied to augment the interaction mechanisms. 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "mobileAgents"
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ The proposed architecture is made up of several components, and each component is a OSGi bundle. According to the proposed P2P model of the OSGi, the components are distributed over multiple OSGi platforms in the smart environment. The mobile agent technology facilitates the cooperation among these components.
+\begin_inset Newline newline
+\end_inset
+
+ The core idea of this paper is to encode plans, behaviours and states of the mobile agents into XML-based scripting documents, which can be communicated between web services (OSGi platforms) using HTTP and SOAP. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The solution proposed by Wu et al. eliminates the dependency between the number of fixtures and the number of communication channels, but requires the installation of OSGi framework on the fixtures. What this solution and the solution proposed in this thesis have in common is that both solutions are based on Service-Oriented architecture. The advantage of the solution presented in this thesis is that it is designed to work with oft-the-shelf fixtures, which means no changes to the fixtures have to be made in order to integrate them in the smart environment. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Li et al., 2012: Design of Smart Home Control System Based on ZigBee and Embedded Web Technology, 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "zigbee"
+
+\end_inset
+
+ 
+\series default
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Li et al. propose a client/server architecture for controlling a smart environment equipped with devices using ZigBee 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "alliance2006zigbee"
+
+\end_inset
+
+ protocol. The structure of a proposed smart home system can be divided into three parts: 
+\end_layout
+
+\begin_layout Itemize
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Intranet
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ is a star architecture network made up of smart devices that are using Zigbee protocol, and a ZigBee coordinator device in the center of the start architecture. 
+\end_layout
+
+\begin_layout Itemize
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Extranet
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ is a residential local area network (LAN) or the Internet. 
+\end_layout
+
+\begin_layout Itemize
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Gateway
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ is a web server, that connects the Extranet and the Intranet. The server provides a smart environment controller in the form of a web page. It receives user requests from the Extranet, translates them into ZigBee protocol messages and forwards them to appropriate devices. 
+\end_layout
+
+\begin_layout Standard
+The client/server based architecture that is described in this paper is similar to the architecture proposed in this thesis. Unlike having a dynamic web page, the solution proposed in this thesis offers more flexibility with regard to the user interface. The solution proposed in this thesis may also support dynamic web pages, but its main goal is to provide support for mobile applications for smart environments. In contrast to this paper which focuses on controlling devices using only the ZigBee protocol, our solution supports controlling of devices that use a variety of different communication protocols. 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Koß
+\begin_inset space \space{}
+
+\end_inset
+
+et al., 2012: Establishing a smart grid node architecture and demonstrator in an office environment using the SOA approach, 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "smartGrid"
+
+\end_inset
+
+
+\series default
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Koß
+\begin_inset space \space{}
+
+\end_inset
+
+et al. propose an architecture for a smart environment control system that was to achieve the goals of working in a heterogeneous hardware landscape and provide a generalized interface for usage in higher-level domains such as data-analysis, event processing and for controlling applications 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "smartGrid"
+
+\end_inset
+
+. They propose a layered architecture for a smart environment control system. The architecture is made up of three layers: 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Device layer
+\series default
+ translates the device specific protocols into a device independent internal protocol 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Communication layer
+\series default
+ enables the components to interact in one-to-one or publish/subscribe manner. 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Processing/control layer
+\series default
+ contains high-level services that provide more complex functionality like event persisting or rule system for environment automation. 
+\end_layout
+
+\begin_layout Standard
+The device layer contains wrappers for a number of communication protocols for different fixtures. Every wrapper is implemented as a separate web service. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The architecture of the system presented in this thesis is based on the architecture proposed by Koß
+\begin_inset space \space{}
+
+\end_inset
+
+et al. Unlike the requirements that are presented in the paper by Koß
+\begin_inset space \space{}
+
+\end_inset
+
+et al., which are related to the optimization of energy consumption, the requirements defined in this thesis focus on providing a uniform protocol for controlling fixtures that use different communication protocol. Unlike wrapping different communication protocol implementations into separate web services, we propose a solution based on one web service that handles all the communication with fixtures, no matter which communication protocol the fixtures use.
+\end_layout
+
+\begin_layout Section
+Proposed solution
+\end_layout
+
+\begin_layout Standard
+The proposed solution for solving the problems defined in the 
+\shape italic
+Problem Statement
+\shape default
+ section is the creation of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+(
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sife
+\end_layout
+
+\end_inset
+
+), a framework for controlling a smart environment. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+is a framework that acts as a broker between the user and the fixtures. The broker architectural pattern was formalized by Buschmann et al. in 1996 and its use is described as follows:
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Quotes erd
+\end_inset
+
+The broker architectural pattern can be used to structure distributed software systems with decoupled components that interact by remote service invocations. A broker component is responsible for coordinating communication, such as forwarding requests, as well as for transmitting results and exceptions.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Buschmann"
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+will provide the user with a uniform protocol for controlling the smart environment, and hide the communication complexity from the user. Nevertheless, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+alone isn't enough for creating a smart space, but it represents a step toward the creation of a smart environment. The following chapters provide the definition and analysis of requirements that 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+has to address, along with the design of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+and its components. 
+\end_layout
+
+\end_body
+\end_document

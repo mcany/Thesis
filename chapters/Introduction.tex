@@ -1,0 +1,122 @@
+\chapter{Introduction}
+\label{chapter:Introduction}
+
+
+
+	E-textiles, also known as smart garments, smart clothing, electronic textiles, smart textiles, or smart fabrics, are fabrics that contain embedded digital components (including small computers) and electronics [1]. Simply put, e-textiles are fabrics with electrical characteristics. These electronic devices can be worn on clothes, stored in pockets, held in the hand, or even strapped to the head. E-textiles provide an effective system to store or connect computing elements [12]. 
+\\ 
+Sensors and low-power processors are now small enough and inexpensive enough to allow the deployment of wireless ad hoc networks for various applications [11]. Recent technological developments have enabled miniaturization; smaller, lower-priced, and lighter chips; wireless sensor networks (WSN); and fiber level research. Thus, e-textiles have emerged, and the research focus has shifted from wearable devices to e-textiles. As in classical electronics, the construction of electronic capabilities in textile fibers requires the use of conducting and semiconducting materials such as conductive textiles [1]. One of the most important issues of e-textiles is that the fibers should be made in a way that they can be insulated and completely washable, so they can be successfully used in clothing manufacture. Fortunately, as a result of fiber level research, a new class of electronic materials has emerged that is more suitable for e-textiles. It is a class of organic electronics materials that can be conducting and semiconducting, and they can be designed as inks and plastics. As a result of this development, woven circuits are now possible to be produced [4]. These woven circuits enable the integration of electronic components in woven e-textiles at the yarn level. Furthermore, in connection to the continuing development of wireless sensor networks, the authors in [9] state that the excitement about this technology is motivated by the several benefits associated with the long-term monitoring, low cost, rapid deployment, self-organization, and flexibility features of WSN. These different technological developments make it possible to create e-textile products with electronic devices that can be worn, bent, washed, and carried without attaching any additional devices. For example, rather than attaching electronic devices to the body with strips, the strips are now the electronic components. Thus, because of all these technological advancements, electronic components can now be integrated into clothing. 
+\\
+The field of e-textiles can be divided into two main categories:
+\begin{itemize}
+
+\item E-textiles with classical electronic devices such as conductors, integrated circuits, LEDs and conventional batteries embedded into garments.
+\item E-textiles with electronics integrated directly into the textile substrates.
+
+\end{itemize}
+
+Since textiles play an essential role in human existence, e-textiles possess the potential to be used in many aspects of our lives. Wearable textile products can be utilized in many different areas, including sports, fashion, medicine, rehabilitation, context awareness systems, and social media integration [12]. Representative applications are sports training data acquisition, health monitoring of vital signs, monitoring personnel handling of hazardous materials, tracking the position and the status of soldiers in the field, and monitoring pilot or truck driver fatigue. Furthermore, in the area of rehabilitation as stated in [9], rehabilitation requires continuous supervision during long-term rehabilitation therapy. This continuous supervision increases the workload for physical therapists and medical staff, and it is very expensive for the patients. As a result of such challenges, new sensor-based e-textile solutions have arisen from the need to develop effective, low-cost and easy to use rehabilitation supervision systems. Using e-textile solutions dramatically reduces the cost and size of systems and opens new opportunities [9]. 
+\\
+Since the field of e-textiles has subcategories, the word e-textile is used to identify a variety of concepts. These concepts include fiber level development, textile sensors, and application development for smart garments (health/rehabilitation, fitness, fashion, maintenance). This thesis focuses on the application level development for e-textiles. In this paper, I present the design and implementation of a framework for rapid development of e-textile applications. 
+\\
+
+\section{Problem Statement}
+
+	Smart garments are highly popular among not only researchers but also end users. Despite this interest by both the developers and the end users, only a few developments have exceeded a prototypical level [2]. Moreover, problems still exist that prevent an efficient level of mass production. 
+	\\	
+	
+The basic materials used to produce e-textiles, which are conductive threads and fabrics, have been around for over 1,000 years. However, the e-textile market is still in its infancy, and the quantity of e-textiles being produced is limited. One main reason for and resulting criticism of this limited development and production of e-textiles is the slow and complicated process currently involved. 
+\\
+	
+	
+	One of the reasons for the this slow and complicated process is that there are few good high level sources of information or research data to give a practical insight into making e-textile development easier and quicker. The development must go through the following steps: signal receiving, synchronizing, signal filtering, and feature extraction. These essential steps generally need to be done in order to develop an e-textile application. However, when new developers are interested in working in this area, it is hard for them to find solid resources to aid in the development of their applications. Thus, because new developers may not have a comprehensive grasp of the essential steps in e-textile development, they often do not know where to start. 
+	\\
+	
+	 Another reason is that the knowledge that is required to develop e-textiles is complex. The development of e-textiles includes sensor interfaces, synchronization of the sensor signals, and signal filtering [8]. For beginners in the field, it is first required to experiment with the signals, to then review some examples, and finally to use an interactive development tool in order to get some idea about the concept. The IDEs and libraries that are used for e-textile development will be explained in detail in the Related Work section. They focus on either the students that are not professional developers or the experienced developers that have previous experience with e-textiles. These IDEs and libraries do not actually support complex application development since they lack testing, simulation, visualization, and predefined algorithms for machine learning or filtering. All of these procedures should be implemented manually. So that this creates an expectation that users have a deep knowledge about e-textile development, and so they do not really support newcomers to the field.  \\	
+	
+There is a jungle of libraries and protocols and these libraries and protocols are either vendor specific or operate on the hardware level; for example, the developers must be able to handle the hardware I/0. In this situation, the developers need to start from the beginning by checking hardware level development. This low-level development is another reason for why overall e-textile development is such a slow process. Since there is no good abstractions for the development, users need to work on the hardware elements and develop them manually. This situation creates a time issue for the developers and they felt rushed the development and the problems. Since this low-level of development requires specific information about the device, most developers lack this kind of information, and it is hard to obtain this knowledge quickly and efficiently. Hence, that is the reason development is separated from device in other areas like communication, such as with servers and mobile devices. This device application separation is not available in e-textile science at this point in time.  	\\
+	
+	Furthermore most developers are not experts in signal processing or activity recognition but want to realize their application concepts using a high level API [2]. Niels Henze et al argue that there is a lack of tool support for application developers and no enough defined APIs within the software and hardware stack that allows developing useful smart garment applications [2]. The hardware that is used to produce e-textile products, like raspberry-pi, Arduino or Intel, does no support for higher level development, there is not enough protocols and libraries to interact with hardware components. The problem is there is no application layer in the e-textile development yet. (Fig. 1.1). As a result, all the communications with hardware ,such as reading the data from sensors or writing to actuators, are needed to be done by the developers. This situation makes building more complex systems even more harder. Like in development of mobile or desktop application, in the development of e-textile also requires for APIs that support more complex commonly used functions or functionality such as data mining and machine learning. Unfortunately in the current situation there is no tool support for application developers and no defined APIs within the software [2]. The development is on specific devices that the libraries or protocols are designed for. This makes an application is specific to that devices or vendors. All the signal-processing algorithms, signal synchronization or filtering methods are developed specific to the device because all the read inputs and write outputs are specifically designed according to used hardware. Thus the knowledge about developing on hardware is required from the developers. Since expecting a good knowledge on hardware development is not realistic, there are researches on creating a top development level on hardware are going on [2,4,5,8,9]. \\
+
+	Most of the development environments, which are used to test different system variants, are not suitable for actually running applications [8]. These environments are dependent upon custom engines or libraries. For this reason, in order to test different systems, implementing an actual e-textile application for specific device is necessary. In order to do this, developing selected algorithms in an appropriate programming language and then distributing them to specific devices are necessary. Relevant issues in this process include sensor interfaces, synchronization of the signals, and optimizing for specific devices. Although the applications are similar, when the developers want to test them on other devices, since all the implementations are done for a specific device, the same development has to be done from the beginning for any different hardware.  \\
+	
+
+	In addition to all of these problems, developing e-textiles is a complicated process. E-textile development is similar to distributed systems. It is hard to communicate and synchronize between different sensors. Moreover, as stated before, it is hard to simulate the application before actual implementation; therefore, it is not easy to test a system. Developers may not know which algorithms to use in their application. For example, just for filtering alone, there are more than twenty-four algorithms that can be used for smoothing the signals [10]. In order to find the best one, it requires several phases of testing. Also, the algorithms change according to the data and the sensor. Since there is no easy way to simulate the data and test them with different algorithms to find the best ones, the developers need to implement every algorithm that they want to compare, in order to find the suitable one. The developers need to collect the data again, apply the algorithm, see the results, and compare them. This cycle needs to be done for different algorithms to compare the results and find the appropriate ones. They cannot change the algorithm in the apply algorithm phase. If they want to test a different algorithm, they need to start the process from the beginning. This is a time-consuming process when the system is more complex. 
+
+
+\insertfigure{images/mcan/Introduction/layered.png}{Presented Development Layer}{UserFixtures}{0.30}
+
+
+
+\section{Related Work}
+
+The following sections provide the summary of proposed related framework to work on e-textile development.
+
+\subsection{E-textile Generic Environments}
+
+In this section the generic environments, that are created to create an abstraction for e-textile systems, are explained in detail. \\ 
+
+The CRN Toolbox enables fast implementation of activity and context recognition systems, featuring mechanisms for distributed processing and support for mobile and wearable devices. It is a tool set specifically optimized for implementing multimodal, distributed activity and context recognition systems running on Posix operating systems. The CRN Toolbox contains a collection of ready-to-use algorithms (signal processing, pattern classification, and so on). Another important feature is the ability to interface conventional simulation environments such as WEKA (Waikato Environment for Knowledge Analysis, www.cs.waikato. ac.nz/~ml). The concepts the CRN Toolbox uses are graphical programming, data driven computation, parameterizable libraries, and distribution. \\
+
+TinyOS is an open-source operating system designed for low-power wireless devices, such a sensor networks, ubiquitous computing, personal area networks, smart buildings and smart meters. TinyOS provides useful software abstractions of the underlying device hardware. TinyOS is especially useful for microcontroller-based devices that have sensors and/or networking capabilities. It is developed to make a layer on top of the hardware so that the Os separately runs the applications from hardware.
+
+
+\subsection{E-textile Frameworks and Platforms}
+In this section the platforms and frameworks with collection of different algorithms to work on e-textile data.\\
+
+Matlab is a High-level language for numerical computation, visualization, and application development. It has predefined mathematical functions for linear algebra, statistics, Fourier analysis, filtering, optimization, numerical integration, and solving ordinary differential equations. It supports Built-in graphics for visualizing data and tools for creating custom plots. \\
+
+Weka is a collection of machine learning algorithms for data mining tasks. The algorithms can either be applied directly to a data-set or called from your own Java code. Weka contains tools for data pre-processing, classification, regression, clustering, association rules, and visualization. It is also well-suited for developing new machine learning schemes. Advantages of Weka include, free availability under the GNU General Public License, portability, since it is fully implemented in the Java programming language and thus runs on almost any modern computing platform, a comprehensive collection of data pre-processing and modeling techniques, ease of use due to its graphical user interfaces. \\
+
+\subsection{E-textile Development Environments}
+
+The following section provides the summary of related development environments to create e-textiles. \\ 
+
+	There are different models in the market right now to produce wearable or e-textile devices. As an example there are; Arduino Lilypad, which is cheap board and has low energy consumption. It is designed to build soft interactive textiles. Raspberry-pi is cheap, bigger than Arduino Lilypad, powerful and has high-energy consumption. Intel Edison has very powerful microprocessor, Wi-Fi and Bluetooth low-level energy but bulky design. Beaglebone is very similar to Raspberry-pi, has a size of a credit card. \\
+
+
+There are different development environments specifically for almost every other hardware that is listed above.  Arduino IDE is a text based programming language for Arduino hardware. Its language is similar to C++. It has 1-click deployment feature but no debugging.  \\
+
+In Gadgeteer hardware structure is defined visually (components and their connections). Automatic code is generated based on visually defined structure. It has debugging feature and also text based programming in C\#.  \\
+
+Espruino IDE is Google Chrome plug-in. It is a script and block based programming language. It can upload automatically to the Espruino microprocessor. \\
+
+Cloud9 is another browser based collaborative development environment. Version management integrated in the environment. It is also text based programming language in Node\.js and Javascript. Node-Red is visual flow based programming environment based on Node\.js. It runs as a Web Server. Programs can be created from any browser and offers components with higher-level features such as Tweeting, Mail. It can be used to connect the beans to the cloud and define behaviors such as alerting over email when temperature drops below some level. \\
+
+I\*CATch is a hybrid with visual and textual programming environment for Arduino based micro-controllers. Its targets are children and novices. It is based on bus architecture. And it is available to plug and play programming blocks and connect them to denoted program flow.  \\
+
+Fritzing is open source software for documenting and prototyping hardware involving micro-controllers sensors and actuators. Their purpose is to help hobbyists, designer and artists to produce their designs. It supports many components including micro-controllers, sensors, actuators and smaller parts such as resistors and connectivity modules. It has functionality to export the design in order to share it with other users. SAM is visual flow based programming environment for the SAM Kit. It can translate visual representation into code that can be uploaded wirelessly to the boards. \\
+
+RUNES (Reconfigurable Ubiquitous Networked Embedded Systems), is a project to enable the creation of large scale, widely distributed, heterogeneous networked embedded e-textile systems that interoperate and adapt to their environments. RUNES aims to provide an adaptive middleware platform and application development tools that allow programmers the flexibility to interact with the environment where necessary. It also offers a level of abstraction that facilitates ease of application construction and use. This will allow for a dramatic cut in the cost of new application development and a much faster time to market. \\
+
+\subsection{Interactive Development Environments for Teaching}
+
+Swift playground is introduced by Apple to make swift learning more interactive, effective and fun. Playground makes writing Swift code incredibly simple and fun [13]. Whenever the users enter a line of code, the result appears immediately. For immediate result the Swift playground uses REPL (read-eval-print-loop) approach. Thus the playground does not require any compiling and keep listening the input from the users. The playground can be used for designing a new algorithm by watching its results every step, create new tests by verifying the work before applying into the test suite and experimenting with new APIs. \\
+
+Khan Academy has also launched an online development environment for teaching purpose. This online environment contains a set of tutorials based on the JavaScript and Processing languages and supports live coding environment like Swift playground, where the program updates the output as the programmers write. \\
+
+Processing is an open source programming language built for teaching the fundamentals of computer programming in a visual context and to serve as the foundation for electronic sketchbooks. One of the stated aims of Processing is to act as a tool to get non-programmers started with programming, through the instant gratification of visual feedback. \\
+
+Greenfoot is an interactive Java development environment for also educational purposes. Its main focuses are two-dimensional graphical applications like simulations and games. The aim of Greenfoot is to give programming education (object-oriented programming) at high school and early university level. \\
+
+Bluej is another Java environment specifically for first year college students. It is developed to eliminate some of Java's complex syntax and represents the object/class relationship visually. Special emphasis is placed in Bluej on visualization and interaction techniques to create an interactive environment to encourage experimentation and exploration. \\
+
+Bret Victor, the owner of the work that was cited as an inspiration for the Khan system, emphasizes that; the goals of a programming system should be: 
+
+\begin{itemize}
+
+\item to support and encourage powerful ways of thinking
+\item to enable programmers to see and understand the execution of their programs
+
+\end{itemize}
+
+As a live coding example Processing do not address any of these goals [14]. Bret Victor further criticizes JavaScript and Processing as a poorly-designed languages since they do not support ways of thinking and ignores learning process. Without these goals a live coding environments are worthless.
+
+\section{Solution}
+
+According to problems that are described in section 1.1, an interactive e-textile development environment, so called TextIt, is proposed as a solution in order to increase the speed of development and as a result more developers may join to production even they do not have previous knowledge. \\ 
+
+
+The solution of development environment that is proposed is to create some kind of an e-textile playground for the developers. In that development environment, developers may get some sample data or receive the real data from e-textile products and have predefined components, which are required to process data, so that they can try their own application ideas by using the components. These components have to be extracted according to current market needs. In the e-textile applications there are some common components that are used several times like Bluetooth communication, signal processing, filtering, machine learning and etc. Since these steps are common and there are some standardized solutions for that problem, the environment should support pre-defined solutions for those common problems. Implementing those components for every application is a wasted effort and money especially they do not change over time. Moreover since the developers are required to test and experiment with different algorithms before the actual implementation, the development environment can solve this problem by providing the algorithms that the developers need and can show the result of the algorithms. By this approach the developers can see the effect of the algorithms and choose the best one for their applications and use it for actual implementation. This support for pre-defined components helps developers to explore more and be more free. With this approach rather worrying about how to implement the algorithms, the developers can focus on the big picture and be more imaginative and think about more complex applications. Focusing on the actual application and thinking about what can be done rather than how can be done can help e-textile to be more innovative and can address the problems of the market. \\
+
+As a result, to realize the solution of a development environment for e-textiles, needed APIs, pre-defined algorithms and components are required to be identified. The purpose to collect those requirements under one environment is to support developers to easily access the resources specifically for e-textile development. The aims of this e-textile environment, so called TextIt \ in this thesis, are to speed up the development of e-textiles, make it available for many developers that have different knowledge background and make the applications hardware independent to extend its usage area.

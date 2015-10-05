@@ -1,0 +1,57 @@
+  <Policy PolicyId="ExamplePolicy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:permit-overrides">
+    <Target>
+      <Subjects>
+        <AnySubject/>
+      </Subjects>
+      <Resources>
+        <Resource>
+          <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:anyURI-equal">
+            <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#anyURI">Fixture_name</AttributeValue>
+            <ResourceAttributeDesignator DataType="http://www.w3.org/2001/XMLSchema#anyURI"
+                                         AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id"/>
+          </ResourceMatch>
+        </Resource>
+      </Resources>
+      <Actions>
+        <AnyAction/>
+      </Actions>
+    </Target>
+   
+    <Rule RuleId="LoginRule" Effect="Permit">
+      <Target>
+       
+        <Subjects>
+        <Subject>
+          <SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+              <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">username</AttributeValue>
+              <SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id"
+                 DataType="http://www.w3.org/2001/XMLSchema#string" />
+            </SubjectMatch>
+            </Subject>
+        </Subjects>
+        
+        <Resources>
+          <AnyResource/>
+        </Resources>
+       
+       
+        <Actions>
+          <Action>
+            <ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+              <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">command</AttributeValue>
+              <ActionAttributeDesignator DataType="http://www.w3.org/2001/XMLSchema#string"
+                                         AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id"/>
+            </ActionMatch>
+          </Action>
+          <Action>
+          <ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+              <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">logout</AttributeValue>
+              <ActionAttributeDesignator DataType="http://www.w3.org/2001/XMLSchema#string"
+                                         AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id"/>
+            </ActionMatch>
+          </Action>
+        </Actions>
+      </Target>
+    </Rule>
+  <Rule RuleId="DenyRule" Effect="Deny"/>
+  </Policy>

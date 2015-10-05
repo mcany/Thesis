@@ -1,0 +1,875 @@
+#LyX file created by tex2lyx 2.1
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\options bibtotoc,idxtotoc,headsepline,footsepline,footexclude,BCOR12mm,DIV13
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Conclusion
+\end_layout
+
+\begin_layout Standard
+In the following chapter, a discussion about the design of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+is given, along with the future work and summary of what has been done during the process of writing this thesis. The discussion section describes the advantages and disadvantages of the framework, in addition to the suggestions given on how the response time of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+could be decreased and thus the user experience improved. Future work describes the functions of the modules which would increase the comfort of the inhabitants of the smart environment, and make the management of the framework easier.
+\end_layout
+
+\begin_layout Section
+Discussion
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+is decomposed into seven components (
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ra
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fr
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+et
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+aac
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+dm
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+and Message-oriented middleware), where every component is responsible for one aspect of the system (client interface, fixture control, fixture management, environment tracking, user management and access rights, environment automation and message exchange). 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An advantage of this design is that the implementation of every component can be done independently, as long as the interface of the component does not change. The components are implemented using the design-by-contract approach. The key concept of design-by-contract is viewing the relationship between a class and its clients as a formal agreement, expressing each party's rights and obligations 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Mayer88"
+
+\end_inset
+
+. For every SOAP web service, a WSDL file is generated which represents the contract. The existence of a contract also means that every component can be developed by a different person or a team, without knowing anything about the functioning of other components. 
+\begin_inset Newline newline
+\end_inset
+
+ Another advantage of this design is that the components can easily be distributed across multiple machines without the need for changing the components themselves. The only change that would be required in this case is the change of configuration files of the components. The advantage that emerges from the ease of distribution and the fact that components of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+are stateless, is that all the components can be replicated and deployed on multiple machines, in case if they were to become the bottlenecks of the system.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A disadvantage of this design is that the components have to communicate with each other over a network. Network traffic load influences the response time of the system. The higher the network load is, the longer the response time of the system will be. Currently, the response time of the system is, in the best case, around 1 second. If a gesture based control of the smart environment is to be implemented using 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+, the 1 second response time is too slow, and the response time has to be decreased. For the execution of a single request, at least five messages are exchanged between components, including the response messages. The most intensive communication is between fixture controller and the fixture repository, where at least four messages are exchanged before a request is executed. If a command is a group command, the number of exchanged messages increases by 2 for every fixture in the group. By placing a proxy on the fixture controller side, the number of communication messages decreases from at least four messages per request to two messages per request. Also, communication between the component that is processing user requests and the authentication and access control component is two messages per request.
+\end_layout
+
+\begin_layout Standard
+The response time is expected to decrease by creating a web service that encapsulates the functionality of every two components between which the communication is the most intense. Using this approach, the majority of the communication is done through memory. The proposed architecture optimization is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "OptimLayers"
+
+\end_inset
+
+. Using this architecture, the communication over the network would be optimized to a maximum of three messages per request, two between the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ra
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+(and 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+aac
+\end_layout
+
+\end_inset
+
+) and the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fc
+\end_layout
+
+\end_inset
+
+ (and 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fr
+\end_layout
+
+\end_inset
+
+) and one between 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fr
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+and 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+dm
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+(and 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+et
+\end_layout
+
+\end_inset
+
+) used for reporting the change in the environment and user activity.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+insertfigure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+images/OptimLayers.pdf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Optimized architecture of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+OptimLayers
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.90
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The consequence of such a design would be components becoming more complex than in the previous case. Before developing the components any further, one would have to understand more about the system dataflow and workflow than in the previous design. Regardless of the increase in components' complexity, it would still be possible for all components of the system to be developed independently, as long as the interface of the component does not change. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Another disadvantage of this system is that it uses SOAP protocol for communication between web services. SOAP protocol uses XML as its message format. As discussed by Ramon Lawrence, the use of XML format for highly data-centric documents can increase the overhead two to four times 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "XML"
+
+\end_inset
+
+. If a certain threshold of number of messages exchanged by the components of the system is reached, the XML caused overhead can influence the performance of the network, thus cause the prolongation of the response time of the system. 
+\begin_inset Newline newline
+\end_inset
+
+ A way to decrease the response time of the system would be to use JSON for communication between the components of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+Ṫhis would mean abandoning the SOAP web services, and implementing the components as RESTful web services that communicate using JSON messages. As discussed by Nurzhan Nurseitov et al., JSON message processing is faster and uses fewer resources than XML 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "xmlVSjson"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Future Work
+\end_layout
+
+\begin_layout Standard
+The emphasis of the future work should be on increasing the usability of the system and comfort of the smart environment inhabitants. The usability of the system and comfort of the inhabitants can be increased by the following activities: 
+\end_layout
+
+\begin_layout Itemize
+the development of an administration component 
+\end_layout
+
+\begin_layout Itemize
+the implementation of communication protocols for new fixtures 
+\end_layout
+
+\begin_layout Itemize
+the development of an artificial intelligence component containing machine learning algorithms that analyse the behaviour of the inhabitants, and suggest system automation rules that increase their comfort 
+\end_layout
+
+\begin_layout Subsection
+Administration Component
+\end_layout
+
+\begin_layout Standard
+Adding, removing and changing information about users and fixtures is done by editing data directly in the database. This is not convenient because a person administering the system should be familiar with database administration tools. Changing data directly in the database enables the user to provide invalid information (for example, non-existent fixture types) which can cause problems in system functioning. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The development of an administration component would enable the administrator to manage users and fixtures using an user interface. This would decrease the possibility of providing invalid information by mistake, because the administrator would be selecting the sensitive information (from a list) instead of typing it. 
+\begin_inset Newline newline
+\end_inset
+
+ The administration module would also facilitate access to user activity and environment, making it easier to find certain events or user activities.
+\end_layout
+
+\begin_layout Subsection
+Artificial Intelligence Component
+\end_layout
+
+\begin_layout Standard
+Simple smart environment automation is based on rules. The rules have to be defined and written by the administrator. Every change has to be manually edited by the administrator. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To provide more comfort to the inhabitants, an artificial intelligence module can be developed. It will contain machine learning algorithms which will analyse the data gathered by the environment tracker. These algorithms will try to recognize a pattern of behaviour of the inhabitants. If a pattern of behaviour is recognized, the artificial intelligence component can suggest an automation rule to the administrator with the goal of increasing inhabitants' comfort. The administrator will decide if he wants to add the new rule to the rule database.
+\end_layout
+
+\begin_layout Subsection
+Communication Protocols for New Fixtures
+\end_layout
+
+\begin_layout Standard
+As stated in the definition of a smart environment in the introduction of this thesis, the environment has to be aware of the user context. User context and environment context cannot be created using the fixtures that were available during the course of this research. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the creation of a fully functional smart environment, the addition of new fixture types is inevitable. New fixtures are required to provide information needed for the creation of user and environment context. Such fixtures are temperature sensors, light sensors, CO
+\begin_inset Formula $_{2}$
+\end_inset
+
+ sensors, fixtures that enable positioning of the user in the environment such as microphones, cameras etc. These fixtures may use communication protocols, other than the ones implemented in the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+. Even if they use the same protocols that are implemented in the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+, the content of the messages may be different. 
+\begin_inset Newline newline
+\end_inset
+
+ Addition of every new fixture type requires adding new fixture type specific information to the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Summary
+\end_layout
+
+\begin_layout Standard
+During the course of writing this thesis, a framework (
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+sife
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+- 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+) for controlling a smart environment was designed and implemented. The emphasis was placed on designing and implementing a framework which would provide a fixture response time of less than 2 seconds and the system response time of 5 seconds in case of an error. Also, the emphasis was on enabling the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+components to be distributed to multiple machines. The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+is made up of six web services, with every service performing a different task in the system. Web services communicate with each other over a message-oriented middleware which facilitates addition of new modules to the system, and makes the system more suitable for distribution. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+enables the user to control fixtures in the smart environment, and to get the information about the state of the environment. Besides that, the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+tracks the changes in the smart environment (changes of fixture states), tracks user activities, provides user authentication and access control and enables the smart environment automation based on the defined rules. The 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+enables the controlling of in-wall switches, smart light bulbs, addressable plugs and tracking of the window sensors' status. Other devices were not available during the course of writing this thesis.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+does not yet add the "smartness" to the environment. Nevertheless, the design of the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+supports development of components that are discussed in the 
+\shape italic
+Future Work
+\shape default
+ section that will add this kind of functionality to the environment. The data gathered by the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+, along with the ability provided by the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+to control the devices in the environment, enables the research in the smart environment automation and control areas. As a result of this research, new components, which would add the "smartness" to the environments in which the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+seif
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+
+\end_inset
+
+and the fixtures are installed, could be added.
+\end_layout
+
+\end_body
+\end_document

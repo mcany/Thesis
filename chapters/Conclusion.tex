@@ -1,0 +1,66 @@
+\chapter{Conclusion}
+
+In the following chapter, a discussion about the design of TextIt is given, along with the future work and summary of what has been done during the process of writing this thesis. The discussion section describes the advantages and disadvantages of the framework, in addition to the suggestions given on how the system can be improved and thus the user experience improved. Future work would increase the usability of the system, and make the development of e-textile application easier and faster. 
+
+
+\section{Discussion}
+\seif\ is decomposed into seven components (\ra, \fc, \fr, \et, \aac, \dm\ and Message-oriented middleware), where every component is responsible for one aspect of the system (client interface, fixture control, fixture management, environment tracking, user management and access rights, environment automation and message exchange). \\ 
+
+	An advantage of this design is that the implementation of every component can be done independently, as long as the interface of the component does not change. The components are implemented using the design-by-contract approach. The key concept of design-by-contract is viewing the relationship between a class and its clients as a formal agreement, expressing each party's rights and obligations \cite{Mayer88}. For every SOAP web service, a WSDL file is generated which represents the contract. The existence of a contract also means that every component can be developed by a different person or a team, without knowing anything about the functioning of other components. \\
+Another advantage of this design is that the components can easily be distributed across multiple machines without the need for changing the components themselves. The only change that would be required in this case is the change of configuration files of the components. The advantage that emerges from the ease of distribution and the fact that components of the \seif\ are stateless, is that all the components can be replicated and deployed on multiple machines, in case if they were to become the bottlenecks of the system.\\
+
+	A disadvantage of this design is that the components have to communicate with each other over a network. Network traffic load influences the response time of the system. The higher the network load is, the longer the response time of the system will be. Currently, the response time of the system is, in the best case, around 1 second. If a gesture based control of the smart environment is to be implemented using \seif, the 1 second response time is too slow, and the response time has to be decreased.
+ For the execution of a single request, at least five messages are exchanged between components, including the response messages. The most intensive communication is between fixture controller and the fixture repository, where at least four messages are exchanged before a request is executed. If a command is a group command, the number of exchanged messages increases by 2 for every fixture in the group. By placing a proxy on the fixture controller side, the number of communication messages decreases from at least four messages per request to two messages per request. Also, communication between the component that is processing user requests and the authentication and access control component is two messages per request. 
+ 
+ 
+ The response time is expected to decrease by creating a web service that encapsulates the functionality of every two components between which the communication is the most intense. Using this approach, the majority of the communication is done through memory. The proposed architecture optimization is shown in figure \ref{OptimLayers}. Using this architecture, the communication over the network would be optimized to a maximum of three messages per request, two between the \ra\ (and \aac) and the \fc (and \fr) and one between \fr\ and \dm\ (and \et) used for reporting the change in the environment and user activity. 
+
+		\insertfigure{images/OptimLayers.pdf}{Optimized architecture of the \seif }{OptimLayers}{0.90}
+
+The consequence of such a design would be components becoming more complex than in the previous case. Before developing the components any further, one would have to understand more about the system dataflow and workflow than in the previous design. Regardless of the increase in components' complexity, it would still be possible for all components of the system to be developed independently, as long as the interface of the component does not change. \\
+
+	Another disadvantage of this system is that it uses SOAP protocol for communication between web services. SOAP protocol uses XML as its message format. As discussed by Ramon Lawrence, the use of XML format for highly data-centric documents can increase the overhead two to four times  \cite{XML}. If a certain threshold of number of messages exchanged by the components of the system is reached, the XML caused overhead can influence the performance of the network, thus cause the prolongation of the response time of the system. \\
+ 	A way to decrease the response time of the system would be to use JSON for communication between the components of the \seif\. This would mean abandoning the SOAP web services, and implementing the components as RESTful web services that communicate using JSON messages. As discussed by Nurzhan Nurseitov et al., JSON message processing is faster and uses fewer resources than XML \cite{xmlVSjson}.
+
+
+\section{Future Work}
+
+The emphasis of the future work should be on increasing the usability of the system and comfort of the smart environment inhabitants. The usability of the system and comfort of the inhabitants can be increased by the following activities:
+\begin{itemize}
+\item the development of an administration component
+\item the implementation of communication protocols for new fixtures
+\item the development of an artificial intelligence component containing machine learning algorithms that analyse the behaviour of the inhabitants, and suggest system automation rules that increase their comfort
+\end{itemize}
+
+\subsection{Administration Component}
+
+Adding, removing and changing information about users and fixtures is done by editing data directly in the database. This is not convenient because a person administering the system should be familiar with database administration tools. Changing data directly in the database enables the user to provide invalid information (for example, non-existent fixture types) which can cause problems in system functioning. \\
+
+	The development of an administration component would enable the administrator to manage users and fixtures using an user interface. This would decrease the possibility of providing invalid information by mistake, because the administrator would be selecting the sensitive information (from a list) instead of typing it. \\
+	The administration module would also facilitate access to user activity and environment, making it easier to find certain events or user activities.
+	
+
+\subsection{Artificial Intelligence Component}
+Simple smart environment automation is based on rules. The rules have to be defined and written by the administrator. Every change has to be manually edited by the administrator. \\ 
+
+To provide more comfort to the inhabitants, an artificial intelligence module can be developed. It will contain machine learning algorithms which will analyse the data gathered by the environment tracker. 
+These algorithms will try to recognize a pattern of behaviour of the inhabitants. If a pattern of behaviour is recognized, the artificial intelligence component can suggest an automation rule to the administrator with the goal of increasing inhabitants' comfort. The administrator will decide if he wants to add the new rule to the rule database.
+
+
+\subsection{Communication Protocols for New Fixtures}
+As stated in the definition of a smart environment in the introduction of this thesis, the environment has to be aware of the user context. User context and environment context cannot be created using the fixtures that were available during the course of this research.	\\ 
+
+For the creation of a fully functional smart environment, the addition of new fixture types is inevitable. New fixtures are required to provide information needed for the creation of user and environment context. Such fixtures are temperature sensors, light sensors, CO$_{2}$ sensors, fixtures that enable positioning of the user in the environment such as microphones, cameras etc. These fixtures may use communication protocols, other than the ones implemented in the \seif. Even if they use the same protocols that are implemented in the \seif, the content of the messages may be different. \\
+Addition of every new fixture type requires adding new fixture type specific information to the \seif. 
+
+
+
+\section{Summary}
+During the course of writing this thesis, a framework (\sife\ - \seif) for controlling a smart environment was designed and implemented. The emphasis was placed on designing and implementing a framework which would provide a fixture response time of less than 2 seconds and the system response time of 5 seconds in case of an error. Also, the emphasis was on enabling the \seif\ components to be distributed to multiple machines. The \seif\ is made up of six web services, with every service performing a different task in the system. Web services communicate with each other over a message-oriented middleware which facilitates addition of new modules to the system, and makes the system more suitable for distribution. \\ 
+
+The \seif\ enables the user to control fixtures in the smart environment, and to get the information about the state of the environment. Besides that, the \seif\ tracks the changes in the smart environment (changes of fixture states), tracks user activities, provides user authentication and access control and enables the smart environment automation based on the defined rules. The \seif\ enables the controlling of in-wall switches, smart light bulbs, addressable plugs and tracking of the window sensors' status. Other devices were not available during the course of writing this thesis.\\
+
+\seif\ does not yet add the "smartness" to the environment. Nevertheless, the design of the \seif\ supports development of components that are discussed in the \textit{Future Work} section that will add this kind of functionality to the environment. The data gathered by the \seif, along with the ability provided by the \seif\ to control the devices in the environment, enables the research in the smart environment automation and control areas. As a result of this research, new components, which would add the "smartness" to the environments in which the \seif\ and the fixtures are installed, could be added.
+
+
+
