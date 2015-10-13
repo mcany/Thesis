@@ -58,7 +58,7 @@
 \contentsline {subsubsection}{\nonumberline Portability}{27}{section*.52}
 \contentsline {section}{\numberline {4.2}Subsystem Decomposition}{28}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Event Driven Middle-ware Architecture}{28}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Repository Pattern}{29}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}Repository Pattern}{28}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Broker Pattern}{29}{subsection.4.2.3}
 \contentsline {subsection}{\numberline {4.2.4}Plug-in Pattern}{29}{subsection.4.2.4}
 \contentsline {subsection}{\numberline {4.2.5}TextIt}{29}{subsection.4.2.5}
