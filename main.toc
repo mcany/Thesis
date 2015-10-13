@@ -11,34 +11,34 @@
 \contentsline {subsection}{\numberline {2.1.1}One Leg Hop}{8}{subsection.2.1.1}
 \contentsline {subsection}{\numberline {2.1.2}Side Hops}{8}{subsection.2.1.2}
 \contentsline {section}{\numberline {2.2}Requirements}{10}{section.2.2}
-\contentsline {subsubsection}{\nonumberline Observation 1: Gathering}{11}{section*.13}
-\contentsline {subsubsection}{\nonumberline Observation 2: Observing}{11}{section*.14}
-\contentsline {subsubsection}{\nonumberline Observation 3: Testing}{12}{section*.15}
+\contentsline {subsubsection}{\nonumberline Observation 1: Gathering}{11}{section*.14}
+\contentsline {subsubsection}{\nonumberline Observation 2: Observing}{11}{section*.15}
+\contentsline {subsubsection}{\nonumberline Observation 3: Testing}{12}{section*.16}
 \contentsline {subsection}{\numberline {2.2.1}Functional Requirements}{12}{subsection.2.2.1}
-\contentsline {subsubsection}{\nonumberline FR1: Data Gathering}{12}{section*.16}
-\contentsline {subsubsection}{\nonumberline FR2: Data Observing with Graph}{12}{section*.17}
-\contentsline {subsubsection}{\nonumberline FR3: Data Observing with Number}{12}{section*.18}
-\contentsline {subsubsection}{\nonumberline FR4: Data Observing with Text}{12}{section*.19}
-\contentsline {subsubsection}{\nonumberline FR5: Data Observing with Video}{12}{section*.20}
-\contentsline {subsubsection}{\nonumberline FR6: Creating of different Algorithm Test Cases}{12}{section*.21}
-\contentsline {subsubsection}{\nonumberline FR7: Applying of different Algorithm Test Cases}{12}{section*.22}
-\contentsline {subsubsection}{\nonumberline FR8: Testing of Different Algorithms}{13}{section*.23}
-\contentsline {subsubsection}{\nonumberline FR9: Data Manipulation}{13}{section*.24}
-\contentsline {subsubsection}{\nonumberline FR10: Test Case Management}{13}{section*.25}
-\contentsline {subsubsection}{\nonumberline FR11: Filter}{13}{section*.26}
-\contentsline {subsubsection}{\nonumberline FR12: Feature Extract}{13}{section*.27}
-\contentsline {subsubsection}{\nonumberline FR13: Learn}{13}{section*.28}
-\contentsline {subsubsection}{\nonumberline FR14: Live Coding}{13}{section*.29}
+\contentsline {subsubsection}{\nonumberline FR1: Data Gathering}{12}{section*.17}
+\contentsline {subsubsection}{\nonumberline FR2: Data Observing with Graph}{12}{section*.18}
+\contentsline {subsubsection}{\nonumberline FR3: Data Observing with Number}{12}{section*.19}
+\contentsline {subsubsection}{\nonumberline FR4: Data Observing with Text}{12}{section*.20}
+\contentsline {subsubsection}{\nonumberline FR5: Data Observing with Video}{12}{section*.21}
+\contentsline {subsubsection}{\nonumberline FR6: Creating of different Algorithm Test Cases}{12}{section*.22}
+\contentsline {subsubsection}{\nonumberline FR7: Applying of different Algorithm Test Cases}{12}{section*.23}
+\contentsline {subsubsection}{\nonumberline FR8: Testing of Different Algorithms}{13}{section*.24}
+\contentsline {subsubsection}{\nonumberline FR9: Data Manipulation}{13}{section*.25}
+\contentsline {subsubsection}{\nonumberline FR10: Test Case Management}{13}{section*.26}
+\contentsline {subsubsection}{\nonumberline FR11: Filter}{13}{section*.27}
+\contentsline {subsubsection}{\nonumberline FR12: Feature Extract}{13}{section*.28}
+\contentsline {subsubsection}{\nonumberline FR13: Learn}{13}{section*.29}
+\contentsline {subsubsection}{\nonumberline FR14: Live Coding}{13}{section*.30}
 \contentsline {subsection}{\numberline {2.2.2}Non-functional Requirements}{13}{subsection.2.2.2}
-\contentsline {subsubsection}{\nonumberline NF1: Vendor Independent}{13}{section*.30}
-\contentsline {subsubsection}{\nonumberline NF2: Allowed Vendor List}{13}{section*.31}
-\contentsline {subsubsection}{\nonumberline NF3: Extendibility with Respect to Algorithms}{13}{section*.32}
-\contentsline {subsubsection}{\nonumberline NF4: Response Time}{13}{section*.33}
-\contentsline {subsubsection}{\nonumberline NF5: Pre-defined Re-usable Library}{14}{section*.34}
-\contentsline {subsubsection}{\nonumberline NF6: Robustness}{14}{section*.35}
-\contentsline {subsubsection}{\nonumberline NF7: Operating System}{14}{section*.36}
-\contentsline {subsubsection}{\nonumberline NF8: Interactex Integrity}{14}{section*.37}
-\contentsline {subsubsection}{\nonumberline NF9: Interpreter}{14}{section*.38}
+\contentsline {subsubsection}{\nonumberline NF1: Vendor Independent}{13}{section*.31}
+\contentsline {subsubsection}{\nonumberline NF2: Allowed Vendor List}{13}{section*.32}
+\contentsline {subsubsection}{\nonumberline NF3: Extendibility with Respect to Algorithms}{13}{section*.33}
+\contentsline {subsubsection}{\nonumberline NF4: Response Time}{13}{section*.34}
+\contentsline {subsubsection}{\nonumberline NF5: Pre-defined Re-usable Library}{14}{section*.35}
+\contentsline {subsubsection}{\nonumberline NF6: Robustness}{14}{section*.36}
+\contentsline {subsubsection}{\nonumberline NF7: Operating System}{14}{section*.37}
+\contentsline {subsubsection}{\nonumberline NF8: Interactex Integrity}{14}{section*.38}
+\contentsline {subsubsection}{\nonumberline NF9: Interpreter}{14}{section*.39}
 \contentsline {section}{\numberline {2.3}Related Work}{14}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}E-textile Environments}{14}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Data Manipulation Frameworks and Platforms}{15}{subsection.2.3.2}
@@ -46,48 +46,48 @@
 \contentsline {subsection}{\numberline {2.3.4}Interactive Development Environments for Teaching}{17}{subsection.2.3.4}
 \contentsline {chapter}{\numberline {3}Analysis}{19}{chapter.3}
 \contentsline {section}{\numberline {3.1}Analysis Object Model}{19}{section.3.1}
-\contentsline {chapter}{\numberline {4}System Design}{23}{chapter.4}
-\contentsline {section}{\numberline {4.1}Design Goals}{23}{section.4.1}
-\contentsline {subsubsection}{\nonumberline Support of Different E-Textile Hardware}{23}{section*.43}
-\contentsline {subsubsection}{\nonumberline Selection of Different Communication Message Types}{23}{section*.44}
-\contentsline {subsubsection}{\nonumberline Saving ad Displaying the Incoming Data From E-Textile}{24}{section*.45}
-\contentsline {subsubsection}{\nonumberline Supporting Scripting Language}{24}{section*.46}
-\contentsline {subsubsection}{\nonumberline Should Connect and Push User Defined Code to Interactex Program}{24}{section*.47}
-\contentsline {subsubsection}{\nonumberline Supporting Basic Features of Integrated Development Environment}{24}{section*.48}
-\contentsline {subsubsection}{\nonumberline Ready to Use E-Textile Development Components and Pre-defined Functions}{25}{section*.49}
-\contentsline {subsubsection}{\nonumberline Portability}{25}{section*.50}
-\contentsline {section}{\numberline {4.2}Subsystem Decomposition}{26}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Event Driven Middle-ware Architecture}{26}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Repository Pattern}{27}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Broker Pattern}{27}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Plug-in Pattern}{27}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}TextIt}{27}{subsection.4.2.5}
-\contentsline {section}{\numberline {4.3}Identify Concurrency}{28}{section.4.3}
-\contentsline {section}{\numberline {4.4}HW/SW Mapping}{29}{section.4.4}
-\contentsline {section}{\numberline {4.5}Persistent Data Management}{30}{section.4.5}
-\contentsline {section}{\numberline {4.6}Software Control}{30}{section.4.6}
-\contentsline {section}{\numberline {4.7}Boundary Conditions}{30}{section.4.7}
-\contentsline {subsection}{\numberline {4.7.1}Initialization}{30}{subsection.4.7.1}
-\contentsline {subsection}{\numberline {4.7.2}Failure}{31}{subsection.4.7.2}
-\contentsline {subsection}{\numberline {4.7.3}Termination}{31}{subsection.4.7.3}
-\contentsline {chapter}{\numberline {5}Object Design}{33}{chapter.5}
-\contentsline {section}{\numberline {5.1}Specifying Interfaces}{33}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}BLE - Firmata Controller}{33}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}ViewController}{35}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Gathering Data}{35}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Etextile Communication Selection}{35}{subsection.5.1.4}
-\contentsline {subsection}{\numberline {5.1.5}JavaScript Runner}{38}{subsection.5.1.5}
-\contentsline {subsection}{\numberline {5.1.6}File}{39}{subsection.5.1.6}
-\contentsline {subsection}{\numberline {5.1.7}Interactex Server Controller}{39}{subsection.5.1.7}
-\contentsline {chapter}{\numberline {6}Conclusion}{41}{chapter.6}
-\contentsline {section}{\numberline {6.1}Discussion}{41}{section.6.1}
-\contentsline {section}{\numberline {6.2}Future Work}{43}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Implementing the Missing Functionality}{43}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Adding More Pre-defined Algorithms}{43}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}New Communication Protocols for New Devices}{43}{subsection.6.2.3}
-\contentsline {subsection}{\numberline {6.2.4}Full Integration with Interactex or with Other Applications}{44}{subsection.6.2.4}
-\contentsline {subsection}{\numberline {6.2.5}Data Visualization with the Reference Video}{44}{subsection.6.2.5}
-\contentsline {section}{\numberline {6.3}Summary}{44}{section.6.3}
-\contentsline {part}{Appendix}{49}{part*.67}
-\contentsline {chapter}{\numberline {A}Glossary}{49}{appendix.A}
-\contentsline {chapter}{\nonumberline Bibliography}{51}{appendix*.68}
+\contentsline {chapter}{\numberline {4}System Design}{25}{chapter.4}
+\contentsline {section}{\numberline {4.1}Design Goals}{25}{section.4.1}
+\contentsline {subsubsection}{\nonumberline Support of Different E-Textile Hardware}{25}{section*.45}
+\contentsline {subsubsection}{\nonumberline Selection of Different Communication Message Types}{25}{section*.46}
+\contentsline {subsubsection}{\nonumberline Saving ad Displaying the Incoming Data From E-Textile}{26}{section*.47}
+\contentsline {subsubsection}{\nonumberline Supporting Scripting Language}{26}{section*.48}
+\contentsline {subsubsection}{\nonumberline Should Connect and Push User Defined Code to Interactex Program}{26}{section*.49}
+\contentsline {subsubsection}{\nonumberline Supporting Basic Features of Integrated Development Environment}{26}{section*.50}
+\contentsline {subsubsection}{\nonumberline Ready to Use E-Textile Development Components and Pre-defined Functions}{27}{section*.51}
+\contentsline {subsubsection}{\nonumberline Portability}{27}{section*.52}
+\contentsline {section}{\numberline {4.2}Subsystem Decomposition}{28}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Event Driven Middle-ware Architecture}{28}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Repository Pattern}{29}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Broker Pattern}{29}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Plug-in Pattern}{29}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}TextIt}{29}{subsection.4.2.5}
+\contentsline {section}{\numberline {4.3}Identify Concurrency}{30}{section.4.3}
+\contentsline {section}{\numberline {4.4}HW/SW Mapping}{31}{section.4.4}
+\contentsline {section}{\numberline {4.5}Persistent Data Management}{32}{section.4.5}
+\contentsline {section}{\numberline {4.6}Software Control}{32}{section.4.6}
+\contentsline {section}{\numberline {4.7}Boundary Conditions}{32}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Initialization}{32}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.2}Failure}{33}{subsection.4.7.2}
+\contentsline {subsection}{\numberline {4.7.3}Termination}{33}{subsection.4.7.3}
+\contentsline {chapter}{\numberline {5}Object Design}{35}{chapter.5}
+\contentsline {section}{\numberline {5.1}Specifying Interfaces}{35}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}BLE - Firmata Controller}{35}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}ViewController}{37}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Gathering Data}{37}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Etextile Communication Selection}{37}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.5}JavaScript Runner}{40}{subsection.5.1.5}
+\contentsline {subsection}{\numberline {5.1.6}File}{41}{subsection.5.1.6}
+\contentsline {subsection}{\numberline {5.1.7}Interactex Server Controller}{41}{subsection.5.1.7}
+\contentsline {chapter}{\numberline {6}Conclusion}{43}{chapter.6}
+\contentsline {section}{\numberline {6.1}Discussion}{43}{section.6.1}
+\contentsline {section}{\numberline {6.2}Future Work}{45}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Implementing the Missing Functionality}{45}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Adding More Pre-defined Algorithms}{45}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}New Communication Protocols for New Devices}{45}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4}Full Integration with Interactex or with Other Applications}{46}{subsection.6.2.4}
+\contentsline {subsection}{\numberline {6.2.5}Data Visualization with the Reference Video}{46}{subsection.6.2.5}
+\contentsline {section}{\numberline {6.3}Summary}{46}{section.6.3}
+\contentsline {part}{Appendix}{51}{part*.70}
+\contentsline {chapter}{\numberline {A}Glossary}{51}{appendix.A}
+\contentsline {chapter}{\nonumberline Bibliography}{53}{appendix*.71}

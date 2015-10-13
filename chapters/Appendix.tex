@@ -7,41 +7,25 @@
  
 
  
- \item[Enterprise service bus ] \hfill \\
-   Enterprise service bus (ESB) is a software architecture model used for designing and implementing the interaction and communication between mutually interacting software applications in service-oriented architecture.
+ \item[Layered Architecture] \hfill \\
+  Partition the system into multiple interacting Layers with each layer
+representing a specific responsibility or concern of relevance and
+comprising all functionality that addresses that concern \cite{Buschmann}.
+ 
     
  
-  \item[Fixture] \hfill \\
-   A fixture is an instance of a specific fixture type (see below). An instrumented space consists of a number of fixtures that affect the environmental conditions of the occupant.
-
-  \item[Fixture type] \hfill \\
-  A fixture type is the generalization of a fixture. Fixture types include:
-  \begin{itemize}
-  	\item Light
-  	\item Addressable plug
-  	\item Window blinds
-  	\item Window/door sensor
-  \end{itemize}
-
- \item[Smart environment] \hfill \\
-A highly integrated computing and sensory environment that effectively reasons about the physical and user context of the space to transparently act on human desires .
-\begin{itemize}
-\item Highly integrated - an environment that is saturated with actuators and sensors that are fully integrated with wireless networks
-\item Effectively reason - a pseudo-intelligent reasoning mechanism for the environment as a whole, not just to an individual device or component 
-\item User context - an individual profiles, policies, current location and mobility status
-\item Transparently act - an environment that is responsive to humans and supports their mobility without requiring user interaction
-\end{itemize}
-
-%(http://www.opengroup.org/soa/source-book/soa/soa.htm#soa_definition) \\
-
- 
- \item[Service Oriented Architecture] \hfill \\
- Service-oriented architecture (SOA) is a software design and software architecture design pattern based on discrete pieces of software that provide application functionality as services, known as Service-orientation. A service is a self-contained logical representation of a repeatable function or activity .   
- 
+  \item[Plug-in Pattern] \hfill \\
+  The Plug-in Pattern is a software pattern for extending the behavior of a class with a clean interface. Often behavior of classes is extended by class inheritance, where the derived class overwrites some of the virtual methods of the class. A problem with this solution is that it conflicts with implementation hiding. It also leads to situations where derived class become a gathering places of unrelated behavior extensions. Another way of extending the behavior of classes is by means of configuration. In this solution the class is given a set of primitives with which the user of the class can configure the behavior of the class. The problem with this solution is that the behavior extensions are limited to the configuration abilities that the root class provides, and to the chosen implementation. In a sense the root class contain unnecessary information. Both solutions make it difficult to dynamically switch between different behavior extensions.
   
+ \item[E-textiles] \hfill \\
+E-textiles, also known as smart garments, smart clothing, electronic textiles, smart textiles, or smart fabrics, are fabrics that enable digital components (including small computers), and electronics to be embedded in them.Smart textiles are fabrics that have been developed with new technologies that provide added value to the wearer. It is stated that "What makes smart fabrics revolutionary is that they have the ability to do many things that traditional fabrics cannot, including communicate, transform, conduct energy and even grow."
+ 
+ \item[Repository Pattern] \hfill \\
+The Repository Pattern is a common construct to avoid duplication of data access logic throughout our application. This includes direct access to a database, ORM, WCF dataservices, xml files and so on. The sole purpose of the repository is to hide the nitty gritty details of accessing the data. We can easily query the repository for data objects, without having to know how to provide things like a connection string. The repository behaves like a freely available in-memory data collection to which we can add, delete and update objects.
 
- \item[Web service] \hfill \\
-A Web service is a software system designed to support interoperable machine-to-machine interaction over a network. It has an interface described in a machine-processable format (specifically WSDL). Other systems interact with the Web service in a manner prescribed by its description using SOAP-messages, typically conveyed using HTTP with an XML serialization in conjunction with other Web-related standards .
+
+ \item[Event-driven architecture] \hfill \\
+Event-driven architecture (EDA) is a software architecture pattern promoting the production, detection, consumption of, and reaction to events. An event can be defined as "a significant change in state". This architectural pattern may be applied by the design and implementation of applications and systems which transmit events among loosely coupled software components and services.
 
 \end{description}
 \label{chapter:ThisIsMyAppendixChapter}

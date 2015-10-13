@@ -1,6 +1,6 @@
 
 \chapter{System Design}
-	The system design chapter focuses on transforming the previously described requirements analysis model into a system design model. The system design model contains a description of design goals, subsystem decomposition and strategies (hardware/software mapping, persistent data management, access control policy) for building the system. The goal of this chapter is to describe the system decomposition and to give a clear description of the strategies that are to be used for building the system.
+	The system design chapter focuses on transforming the previously described requirements analysis model into a system design model. The system design model contains a description of design goals, subsystem decomposition and strategies (hardware/software mapping, persistent data management, access control policy) for building the system. The goal of this chapter is to describe the system decomposition and to give a clear description of the strategies that are to be used for building the system. 
 	
 \section{Design Goals}
 The system design of TextIt was based on the following design goals:
@@ -78,13 +78,13 @@ The focus of this thesis is on the TextIt component, thus the e-textile hardware
 
 
 \subsection{Event Driven Middle-ware Architecture}
-To support distributability of the TextIt components, event-driven architecture is implemented. A center middle-ware controller has the control of the flow and calls the necessary components to do their job. As the components finishes their job  and sends their events to the middle-ware, the middle-ware assigns the next task to other components or return feedback to the user.
+To support low coupling of the TextIt sub-components, event-driven architecture is implemented. A center middle-ware controller has the control of the flow and calls the necessary sub-components to do their job. As the sub-components finishes their job  and sends their events to the middle-ware, the middle-ware assigns the next task to other components or return feedback to the user.
 
 \subsection{Repository Pattern}
-There are some methods that are able to be used by the users. The users do not know the implementation but the purpose of the methods. The reason is that there are some functionality that TextIt supports but the user actually do not know who it is implemented. To decouple these two different subsystems a repository pattern is used. All the pre-defined functions are added to repository so that users can call them whenever they need from the repository. Later if new functions are added to the system again they can be added to repository to make them available to the users. 
+There are pre-defined methods that are used often and make changes on the data. The users and the other components do not know the implementation but the purpose of the methods. The reason is that there are some functionality that TextIt supports, like filterin, feature extraction and machine learning, but the user actually do not know where it is implemented. To decouple these two different subsystems a repository pattern is used. The Repository pattern adds a separation layer between the data and domain layers of an application. All the pre-defined functions are added to repository so that users can call them whenever they need from the repository. Later if new functions are added to the system again they can be added to repository to make them available to the users. 
 
 \subsection{Broker Pattern}
-For the implementation of communication between the system and the hardware a Broker Pattern is implemented. The purpose of using this pattern is there are two distributed system that needs to communicate and work on synchronously. Moreover, this patterns helps to separate system communication functionality from the main application functionality, alkso isolates communication-related concerns.
+For the implementation of communication between the system (TextIt) and the hardware (e-textile) a Broker Pattern is implemented. The purpose of using this pattern is there are two distributed system, one is the TextIt that runs on MacOs and the other is an e-textile device, that needs to communicate and work on synchronously. So the communication is given to specific component and isolated from the system. Only one component is responsible to handle to communication. This component is responsible for coordinating communication, such as forwarding requests, as well as for transmitting results and exceptions. Moreover, this patterns helps to separate system communication functionality from the main application functionality, also isolates communication-related concerns.
 
 \subsection{Plug-in Pattern}
 When it comes to connecting and communicating with Interactex, plug-in pattern is used. In this functionality, TextIt works as an plug in to Interactex. A new components is defined by the user in TextIt and later this custom component is sent to Interactex, and Interactex systems uses it as a new custom component without knowing the implementation. So that a new element is added to the system by using another compatible system.  
@@ -110,7 +110,7 @@ The purpose of TextIt in this design model is to hide the complexity of differen
 
 \seif\ architecture can be represented as a four layered architecture which is shown in figure \ref{LayeredDiagram}. 
 
-\insertfigure{images/mcan/SystemDesign/LayeredDiagram.jpg}{Layered architecture of TextIt }{LayeredDiagram}{0.90}
+\insertfigure{images/mcan/SystemDesign/LayeredDiagram.jpg}{Layered Architecture Representation of TextIt }{LayeredDiagram}{0.90}
 
 \begin{enumerate}
 \item \textbf{Interface Layer} manages user interactions. It receives the user inputs and forwards the request to appropriate components. Interface layer also forwards the system response to the user.
