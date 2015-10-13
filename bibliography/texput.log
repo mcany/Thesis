@@ -1,20 +1,21 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.5.21)  29 OCT 2013 14:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=latex 2014.5.25)  12 OCT 2015 15:28
 entering extended mode
+ restricted \write18 enabled.
  %&-line parsing enabled.
-**literature.tex
+**master.tex
 
 ! Emergency stop.
-<*> literature.tex
-                  
+<*> master.tex
+              
 *** (job aborted, file error in nonstop mode)
 
  
 Here is how much of TeX's memory you used:
- 3 strings out of 495061
- 111 string characters out of 1182621
- 45108 words of memory out of 3000000
- 3282 multiletter control sequences out of 15000+50000
- 3640 words of font info for 14 fonts, out of 3000000 for 9000
- 28 hyphenation exceptions out of 8191
- 0i,0n,0p,1b,6s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 3 strings out of 493118
+ 101 string characters out of 6135459
+ 52906 words of memory out of 5000000
+ 3568 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 0i,0n,0p,1b,6s stack positions out of 5000i,500n,10000p,200000b,80000s
+No pages of output.

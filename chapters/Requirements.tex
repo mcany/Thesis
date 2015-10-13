@@ -3,7 +3,7 @@
 
 \chapter{Requirements Elicitation}
 	
-	The requirements elicitation chapter provides a description of the overall use of the system and defines the requirements that the system has to meet. The requirements are extracted from the project \kneehapp. In order to identify the requirements the project KneeHapp is developed with the current technologies that are available to develop smart garments. After using the available e-textile development environments and frameworks, the missing pieces are identified.  \kneehapp  project is developed in TUM iOS praktikum with Prof. Bern Br\"uge and sport traumatology expert Dr. J\"urgen H\"oher in 2014. Moreover the participants of this project were computer science students and had not previous knowledge about e-textile development. This made us also see the barriers and challenges for beginners to e-textile development. With \kneehapp project we had the chance to work on a real e-textile project and see the current status and the drawbacks of the area. The most of the requirements are extracted by our observations. The requirements are extracted from the scenarios described below. Extracted requirements are divided into two categories: \textbf{functional requirements} and \textbf{non-functional requirements}. Functional requirements describe the interaction between the system and its environment, independent of its implementation \cite{Bruegge2004}. Non-functional requirements refer to user requirements that are not directly related to the functional behavior of the system \cite{Bruegge2004}.
+	The requirements elicitation chapter provides a description of the overall use of the system and defines the requirements that the system has to meet. The requirements are extracted from the project \kneehapp. In order to identify the requirements the project KneeHapp is developed with the current technologies that are available to develop smart garments. After using the available e-textile development environments and frameworks, the missing pieces are identified.  \kneehapp  project is developed in TUM iOS praktikum with Prof. Bern Br\"uge and sport traumatology expert Dr. J\"urgen H\"oher in 2014 \cite{19}. Moreover the participants of this project were computer science students and had not previous knowledge about e-textile development. This made us also see the barriers and challenges for beginners to e-textile development. With \kneehapp project we had the chance to work on a real e-textile project and see the current status and the drawbacks of the area. The most of the requirements are extracted by our observations. The requirements are extracted from the scenarios described below. Extracted requirements are divided into two categories: \textbf{functional requirements} and \textbf{non-functional requirements}. Functional requirements describe the interaction between the system and its environment, independent of its implementation \cite{Bruegge2004}. Non-functional requirements refer to user requirements that are not directly related to the functional behavior of the system \cite{Bruegge2004}.
 
 	
 \section{Project \kneehapp}
@@ -11,26 +11,25 @@
 The rupture of the anterior cruciate ligament (ACL) of the knee is a severe injury. ACL ruptures are mainly the result of sports related injuries such as football, basketball, handball, and contact sports. An intense rehabilitation period is necessary to bring the individual back to physical activities and the desired sports. The rehabilitation of the knee often includes physical therapy and strength exercises. The progress and the success of the rehabilitation measures are currently not well documented. The goal of this project is to develop a system that would allow patients to record their rehabilitation progress without the need of a doctor or physiotherapist. During the Summer Semester 2014 we, six TUM students, developed a smart bandage (Kangaroo Bandage) and iPad application (\kneehapp) that measure performance parameters while the patient performs the rehabilitation exercises. The smart bandage was consisted of two Arduino devices and the devices were put in to the knee bandage. One of the exercises that were supported was "One Leg Hop". The one Leg Hop is an exercise in which the patient jumps forward as far as he/she can with only one leg. Then the algorithm calculates the duration of the hop. The other exercise was "Side Hops". In this exercise patient should jump right and left as many times as he/she can in the given time. Then the algorithm calculates the number of the hops from accelerometer data.
 
 
-\section{Use Cases}
 
 The requirements are extracted by use cases and they also serve to describe the functionality of the system from the users point of view \cite{Bruegge2004}.
 
 \subsection{	One Leg Hop}
 
 One Leg Hop is the exercise that the patient should jump as far as he/she can, then the smart garment should calculate the duration of the hop by processing the acceloremeter data. 
-Figure 2.1 shows the linear accelerometer data from the y and z-axis corresponding to a one-leg hop. Even for human eyes it is not easy to read this accelerometer signal. There are one maximum peak and two minimum peaks in the signal. Thus without further observations, one can not conclude which points corresponds to jumping and landing. So that we could take the time difference between these two points. It was not really possible to implement the algorithm before really understanding the signal and knowing which points to take. We made several iterations of jumping, collecting the data, video recording of the jump, using different filtering methods, using different feature extraction methods. Unfortunately at the end we found measuring the duration of a hop from accelerometer signal challenging due to the fact that hops occur very quickly (an average hop lasts around 0.22 seconds) and there are so many noise because of the leg shaking. One possible solution we proposed was using an insole with integrated pressure sensors. We thought that it could be more easier to detect when the user leaves the ground and lands the ground by using insole with pressure sensor. Figure 2.2 shows the insole and its hardware. Figure 2.3 shows the signal produced by the pressure sensors during a one-leg hop. We could then determine whether the user is on the ground or in the air using a threshold. 
+Figure \ref{Accelerometer} shows the linear accelerometer data from the y and z-axis corresponding to a one-leg hop. Even for human eyes it is not easy to read this accelerometer signal. There are one maximum peak and two minimum peaks in the signal. Thus without further observations, one can not conclude which points corresponds to jumping and landing. So that we could take the time difference between these two points. It was not really possible to implement the algorithm before really understanding the signal and knowing which points to take. We made several iterations of jumping, collecting the data, video recording of the jump, using different filtering methods, using different feature extraction methods. Unfortunately at the end we found measuring the duration of a hop from accelerometer signal challenging due to the fact that hops occur very quickly (an average hop lasts around 0.22 seconds) and there are so many noise because of the leg shaking. One possible solution we proposed was using an insole with integrated pressure sensors. We thought that it could be more easier to detect when the user leaves the ground and lands the ground by using insole with pressure sensor. Figure \ref{Insole} shows the insole and its hardware. Figure \ref{Pressure} shows the signal produced by the pressure sensors during a one-leg hop. We could then determine whether the user is on the ground or in the air using a threshold. 
 
-\insertfigure{images/mcan/Requirement/oneleghop-acc.png}{One Leg Hop with Accelerometer Data}{UserFixtures}{0.40}
-\insertfigure{images/mcan/Requirement/insole.png}{Insole - Pressure Sensor}{UserFixtures}{0.40}
-\insertfigure{images/mcan/Requirement/oneleghop-insole.png}{One Leg Hop with Pressure Sensor}{UserFixtures}{0.40}
+\insertfigure{images/mcan/Requirement/oneleghop-acc.png}{One Leg Hop with Accelerometer Data}{Accelerometer}{0.40}
+\insertfigure{images/mcan/Requirement/insole.png}{Insole - Pressure Sensor}{Insole}{0.40}
+\insertfigure{images/mcan/Requirement/oneleghop-insole.png}{One Leg Hop with Pressure Sensor}{Pressure}{0.40}
 
 \subsection{	Side Hops}
 
-Side Hops is the exercise that the patient should jump right and left as many times as he/she can in the given time. Then our smart garment should calculate the number of jumps. This was rather an easier exercise than the One Leg Hop to calculate. To given an idea about how the signal looks like, the example linear acceleration on the horizontal axis for 7 side hops is given in Figure 2.4. This was rather cleaner and easier to understand when compared to One Leg Hop exercise signal. The number of jumps are clear for human eyes, as the peaks indicates the jumps. However for the algorithm to calculate the number of the jumps, we needed to filter the signal from the noise. In order to eliminate noise in the signal, we applied several iterations of a low-pass filter until the signal's standard deviation became smaller than a specific threshold. We called this threshold low-pass filter threshold. We found the optimal low-pass filter threshold to vary depending on the algorithms used for calculating the jump duration. We tested the RC low-pass filter with a time constant T = 0.25 and a weighted moving average filter with coefficients [1/4 1/2 1/4]. After filtering the signal, we used a peak detection algorithm to count the high and low peaks in the signal. A naive peak detection algorithm counted also local maxima as hops in the signal, resulting in more side hops being counted. To overcome this issue we analyzed the surroundings of a peak. If the peak is larger enough than its surroundings, the peak is counted as a hop. We called this factor peak threshold. We found the peak threshold leading to most accurate results to depend on the filtering algorithm used. Figure 2.5 shows the same 7 hops after applying three iterations of the RC filter and running the peak detection algorithm.
+Side Hops is the exercise that the patient should jump right and left as many times as he/she can in the given time. Then our smart garment should calculate the number of jumps. This was rather an easier exercise than the One Leg Hop to calculate. To given an idea about how the signal looks like, the example linear acceleration on the horizontal axis for 7 side hops is given in Figure \ref{Raw}. This was rather cleaner and easier to understand when compared to One Leg Hop exercise signal. The number of jumps are clear for human eyes, as the peaks indicates the jumps. However for the algorithm to calculate the number of the jumps, we needed to filter the signal from the noise. In order to eliminate noise in the signal, we applied several iterations of a low-pass filter until the signal's standard deviation became smaller than a specific threshold. We called this threshold low-pass filter threshold. We found the optimal low-pass filter threshold to vary depending on the algorithms used for calculating the jump duration. We tested the RC low-pass filter with a time constant T = 0.25 and a weighted moving average filter with coefficients [1/4 1/2 1/4]. After filtering the signal, we used a peak detection algorithm to count the high and low peaks in the signal. A naive peak detection algorithm counted also local maxima as hops in the signal, resulting in more side hops being counted. To overcome this issue we analyzed the surroundings of a peak. If the peak is larger enough than its surroundings, the peak is counted as a hop. We called this factor peak threshold. We found the peak threshold leading to most accurate results to depend on the filtering algorithm used. Figure \ref{Filtered} shows the same 7 hops after applying three iterations of the RC filter and running the peak detection algorithm.
 
 
-\insertfigure{images/mcan/Requirement/sidehop-raw.png}{Side Hop Raw Data}{UserFixtures}{0.40}
-\insertfigure{images/mcan/Requirement/sidehop-filtered.png}{Side Hop Filtered Data}{UserFixtures}{0.40}
+\insertfigure{images/mcan/Requirement/sidehop-raw.png}{Side Hop Raw Data}{Raw}{0.40}
+\insertfigure{images/mcan/Requirement/sidehop-filtered.png}{Side Hop Filtered Data}{Filtered}{0.40}
 
 
 \section{Requirements}
@@ -58,98 +57,139 @@ As every algorithm has different effects on the signal, we wanted to see which o
 The following subsection defines functional requirements identified from the previously shown use cases.
 
 \subsubsection{FR1: Data Gathering}
-\textit\ should allow the user to receive data from an external e-textile device.
+The system should receive data from an e-textile.
 
-\subsubsection{FR2: Data Observing}
-\textit\ should allow the user to visualize the data.
+\subsubsection{FR2: Data Observing with Graph}
+The system should be able to visualize the incoming data from an e-textile as a graph.
 
-\subsubsection{FR3: Data Testing}
-\textit\ should show the result of different test cases and the comparison of their accuracies. 
+\subsubsection{FR3: Data Observing with Number}
+The system should be able to visualize the incoming data from an e-textile as a number.
 
-\subsubsection{FR4: Test Case Management}
-\textit\ should allow the user to create and to run different test cases.
+\subsubsection{FR4: Data Observing with Text}
+The system should be able to visualize the incoming data from an e-textile as a text.
 
-\subsubsection{FR5: Pre-defined Algorithms}
-\textit\ should allow the user to use pre-defined algorithms.
+\subsubsection{FR5: Data Observing with Video}
+The system should be able to visualize the incoming data from an e-textile as a video.
 
-\subsubsection{FR6: Live Coding}
-\textit\ should interpret the user input live with REPL (read eval print loop) approach.
+\subsubsection{FR6: Creating of different Algorithm Test Cases}
+The system should be able to create different algorithm test cases to apply on the same data.
+
+\subsubsection{FR7: Applying of different Algorithm Test Cases}
+The system should be able to apply different algorithm test cases on the same data.
+
+\subsubsection{FR8: Testing of Different Algorithms}
+The system should show the results of different algorithms applied on data and the comparison of algorithms accuracy. 
+
+\subsubsection{FR9: Data Manipulation}
+The system should allow the user to manipulate and apply different algorithms to the data.
+
+\subsubsection{FR10: Test Case Management}
+The system should allow the user to create and to run different test cases.
+
+\subsubsection{FR11: Filter}
+The system should support to filter the data.
+
+\subsubsection{FR12: Feature Extract}
+The system should support to feature extract from the data.
+
+\subsubsection{FR13: Learn}
+The system should support to learn from the data.
+
+\subsubsection{FR14: Live Coding}
+The system should interpret the user input live with REPL (read eval print loop) approach.
 
 
 
 \subsection{Non-functional Requirements}
 
-In the following subsection, the non-functional requirements of \textit\ will be described.
+In the following subsection, the non-functional requirements of TextIt will be described.
 
-\subsubsection{NF1: E-textile Device Independence} 
-\textit\ should provide suport to receive from different e-textile products.
+\subsubsection{NF1: Vendor Independent} 
+The system should provide support to communicate with different e-textile products.
 
-\subsubsection{NF2: Extendibility with Respect to Algorithms} 
-\textit\ should support the addition of defined algorithms.
+\subsubsection{NF2: Allowed Vendor List} 
+The system should communicate with allowed e-textile products.
 
-\subsubsection{NF6: Response Time}
-\textit\ should provide system feedback within 5 seconds (an error message in case of an error or a message about a successful execution of a command)
+\subsubsection{NF3: Extendibility with Respect to Algorithms} 
+The system should support the addition of new algorithms.
 
-\subsubsection{NF7: Robustness}
-Invalid user input shall not cause any disruption in the functioning of \textit.
+\subsubsection{NF4: Response Time}
+The system should provide a feedback to user inputs, within 5 seconds (an error message in case of an error or a message about a successful execution of a command).
 
-\subsubsection{NF11: Operating System}
+\subsubsection{NF5: Pre-defined Re-usable Library}
+The user should be able to use pre-defined library that are defined in Functional Requirements.
 
-\textit\ should run on MAC OS. 
+\subsubsection{NF6: Robustness}
+Invalid developer input should not crash TextIt.
 
+\subsubsection{NF7: Operating System}
+The system should run on MAC OS. 
+
+\subsubsection{NF8: Interactex Integrity}
+The system should be able to communicate with Interactex (Graphical e-textile development app for iPads) and send the code that is defined by a developer.
+
+\subsubsection{NF9: Interpreter}
+The system should support an interpreted language to allow developers to code. 
 
 \section{Related Work}
 
 The following sections provide the summary of proposed related framework to work on e-textile development.
 
-\subsection{E-textile Generic Environments}
+\subsection{E-textile Environments}
 
 In this section the generic environments, that are created to create an abstraction for e-textile systems, are explained in detail. \\ 
 
-The CRN Toolbox enables fast implementation of activity and context recognition systems, featuring mechanisms for distributed processing and support for mobile and wearable devices. It is a tool set specifically optimized for implementing multimodal, distributed activity and context recognition systems running on Posix operating systems. The CRN Toolbox contains a collection of ready-to-use algorithms (signal processing, pattern classification, and so on). Another important feature is the ability to interface conventional simulation environments such as WEKA (Waikato Environment for Knowledge Analysis, www.cs.waikato. ac.nz/~ml). The concepts the CRN Toolbox uses are graphical programming, data driven computation, parameterizable libraries, and distribution. \\
+The CRN Toolbox enables fast implementation of activity and context recognition systems, featuring mechanisms for distributed processing and support for mobile and wearable devices. It is a tool set specifically optimized for implementing multimodal, distributed activity and context recognition systems running on Posix operating systems. The CRN Toolbox contains a collection of ready-to-use algorithms (signal processing, pattern classification, and so on). Another important feature is the ability to interface conventional simulation environments such as WEKA (Waikato Environment for Knowledge Analysis, www.cs.waikato. ac.nz/~ml). The concepts the CRN Toolbox uses are graphical programming, data driven computation, parameterizable libraries, and distribution \cite{8}. \\
 
-TinyOS is an open-source operating system designed for low-power wireless devices, such a sensor networks, ubiquitous computing, personal area networks, smart buildings and smart meters. TinyOS provides useful software abstractions of the underlying device hardware. TinyOS is especially useful for microcontroller-based devices that have sensors and/or networking capabilities. It is developed to make a layer on top of the hardware so that the Os separately runs the applications from hardware.
+TinyOS is an open-source operating system designed for low-power wireless devices, such a sensor networks, ubiquitous computing, personal area networks, smart buildings and smart meters. TinyOS provides useful software abstractions of the underlying device hardware. TinyOS is especially useful for microcontroller-based devices that have sensors and/or networking capabilities. It is developed to make a layer on top of the hardware so that the Os separately runs the applications from hardware \cite{33}.
 
+RUNES (Reconfigurable Ubiquitous Networked Embedded Systems), is a project to enable the creation of large scale, widely distributed, heterogeneous networked embedded e-textile systems that interoperate and adapt to their environments. RUNES aims to provide an adaptive middleware platform and application development tools that allow programmers the flexibility to interact with the environment where necessary. It also offers a level of abstraction that facilitates ease of application construction and use. This will allow for a dramatic cut in the cost of new application development and a much faster time to market \cite{28}. \\
 
-\subsection{E-textile Frameworks and Platforms}
-In this section the platforms and frameworks with collection of different algorithms to work on e-textile data.\\
+VisualRDK is a high-level programming language for prototyping pervasive applications. Pervasive applications are inherently distributed. Logical control flow jumps between sensors, context servers, PDAs, and any other kind of networking appliance. The control flow is extremely difficult to follow using classical debugging tools because a debugger is attached to a single process running on a single device. the Visual Robotic Development Kit (VisualRDK) that can generate two implementations from one source: a prototype version and a debug version \cite{30}.
 
-Matlab is a High-level language for numerical computation, visualization, and application development. It has predefined mathematical functions for linear algebra, statistics, Fourier analysis, filtering, optimization, numerical integration, and solving ordinary differential equations. It supports Built-in graphics for visualizing data and tools for creating custom plots. \\
+BASE is a flexible middleware for Pervasive Computing environments. It provides adaptation support on the communication level by dynamically (re-) selecting communication protocol stacks, even for currently running interactions. It is created for an extensible middleware platform covering small embedded systems to full-fledged desktop computers \cite{31}.
 
-Weka is a collection of machine learning algorithms for data mining tasks. The algorithms can either be applied directly to a data-set or called from your own Java code. Weka contains tools for data pre-processing, classification, regression, clustering, association rules, and visualization. It is also well-suited for developing new machine learning schemes. Advantages of Weka include, free availability under the GNU General Public License, portability, since it is fully implemented in the Java programming language and thus runs on almost any modern computing platform, a comprehensive collection of data pre-processing and modeling techniques, ease of use due to its graphical user interfaces. \\
+PCOM: a component system for Pervasive Computing. PCOM offers application programmers a high-level programming abstraction which captures the dependencies between components using contracts. BASE offers no support for adaptation at higher levels, e.g. by automatically reselecting services and devices. Therefore, we have designed and developed PCOM, a light-weight component system on top of BASE \cite{32}. 
+
+\subsection{Data Manipulation Frameworks and Platforms}
+In this section the platforms and frameworks with collection of different algorithms to work on a data.\\
+
+Matlab is a High-level language for numerical computation, visualization, and application development. It has predefined mathematical functions for linear algebra, statistics, Fourier analysis, filtering, optimization, numerical integration, and solving ordinary differential equations. It supports Built-in graphics for visualizing data and tools for creating custom plots \cite{20}. \\
+
+Weka is a collection of machine learning algorithms for data mining tasks. The algorithms can either be applied directly to a data-set or called from your own Java code. Weka contains tools for data pre-processing, classification, regression, clustering, association rules, and visualization. It is also well-suited for developing new machine learning schemes. Advantages of Weka include, free availability under the GNU General Public License, portability, since it is fully implemented in the Java programming language and thus runs on almost any modern computing platform, a comprehensive collection of data pre-processing and modeling techniques, ease of use due to its graphical user interfaces \cite{21}. \\
 
 \subsection{E-textile Development Environments}
 
 The following section provides the summary of related development environments to create e-textiles. \\ 
 
-	There are different models in the market right now to produce wearable or e-textile devices. As an example there are; Arduino Lilypad, which is cheap board and has low energy consumption. It is designed to build soft interactive textiles. Raspberry-pi is cheap, bigger than Arduino Lilypad, powerful and has high-energy consumption. Intel Edison has very powerful microprocessor, Wi-Fi and Bluetooth low-level energy but bulky design. Beaglebone is very similar to Raspberry-pi, has a size of a credit card. \\
+	There are different models in the market right now to produce wearable or e-textile devices. As an example there are; Arduino Lilypad, which is cheap board and has low energy consumption \cite{7}. It is designed to build soft interactive textiles. Raspberry-pi is cheap, bigger than Arduino Lilypad, powerful and has high-energy consumption \cite{23}. Intel Edison has very powerful microprocessor, Wi-Fi and Bluetooth low-level energy but bulky design \cite{24}. Beaglebone is very similar to Raspberry-pi, has a size of a credit card \cite{22}. \\
 
 
 There are different development environments specifically for almost every other hardware that is listed above.  Arduino IDE is a text based programming language for Arduino hardware. Its language is similar to C++. It has 1-click deployment feature but no debugging.  \\
 
-In Gadgeteer hardware structure is defined visually (components and their connections). Automatic code is generated based on visually defined structure. It has debugging feature and also text based programming in C\#.  \\
+In Gadgeteer hardware structure is defined visually (components and their connections). Automatic code is generated based on visually defined structure. It has debugging feature and also text based programming in C\# \cite{25}.  \\
 
-Espruino IDE is Google Chrome plug-in. It is a script and block based programming language. It can upload automatically to the Espruino microprocessor. \\
+Espruino IDE is Google Chrome plug-in. It is a script and block based programming language. It can upload automatically to the Espruino microprocessor \cite{26}. \\
 
-Cloud9 is another browser based collaborative development environment. Version management integrated in the environment. It is also text based programming language in Node\.js and Javascript. Node-Red is visual flow based programming environment based on Node\.js. It runs as a Web Server. Programs can be created from any browser and offers components with higher-level features such as Tweeting, Mail. It can be used to connect the beans to the cloud and define behaviors such as alerting over email when temperature drops below some level. \\
+Cloud9 is another browser based collaborative development environment. Version management integrated in the environment. It is also text based programming language in Node\.js and Javascript. Node-Red is visual flow based programming environment based on Node\.js. It runs as a Web Server. Programs can be created from any browser and offers components with higher-level features such as Tweeting, Mail. It can be used to connect the beans to the cloud and define behaviors such as alerting over email when temperature drops below some level \cite{27}. \\
 
 I\*CATch is a hybrid with visual and textual programming environment for Arduino based micro-controllers. Its targets are children and novices. It is based on bus architecture. And it is available to plug and play programming blocks and connect them to denoted program flow.  \\
 
-Fritzing is open source software for documenting and prototyping hardware involving micro-controllers sensors and actuators. Their purpose is to help hobbyists, designer and artists to produce their designs. It supports many components including micro-controllers, sensors, actuators and smaller parts such as resistors and connectivity modules. It has functionality to export the design in order to share it with other users. SAM is visual flow based programming environment for the SAM Kit. It can translate visual representation into code that can be uploaded wirelessly to the boards. \\
+Fritzing is open source software for documenting and prototyping hardware involving micro-controllers sensors and actuators. Their purpose is to help hobbyists, designer and artists to produce their designs. It supports many components including micro-controllers, sensors, actuators and smaller parts such as resistors and connectivity modules. It has functionality to export the design in order to share it with other users. SAM is visual flow based programming environment for the SAM Kit. It can translate visual representation into code that can be uploaded wirelessly to the boards \cite{29}. \\
 
-RUNES (Reconfigurable Ubiquitous Networked Embedded Systems), is a project to enable the creation of large scale, widely distributed, heterogeneous networked embedded e-textile systems that interoperate and adapt to their environments. RUNES aims to provide an adaptive middleware platform and application development tools that allow programmers the flexibility to interact with the environment where necessary. It also offers a level of abstraction that facilitates ease of application construction and use. This will allow for a dramatic cut in the cost of new application development and a much faster time to market. \\
+
 
 \subsection{Interactive Development Environments for Teaching}
 
-Swift playground is introduced by Apple to make swift learning more interactive, effective and fun. Playground makes writing Swift code incredibly simple and fun [13]. Whenever the users enter a line of code, the result appears immediately. For immediate result the Swift playground uses REPL (read-eval-print-loop) approach. Thus the playground does not require any compiling and keep listening the input from the users. The playground can be used for designing a new algorithm by watching its results every step, create new tests by verifying the work before applying into the test suite and experimenting with new APIs. \\
+Swift playground is introduced by Apple to make swift learning more interactive, effective and fun. Playground makes writing Swift code incredibly simple and fun \cite{14}. Whenever the users enter a line of code, the result appears immediately. For immediate result the Swift playground uses REPL (read-eval-print-loop) approach. Thus the playground does not require any compiling and keep listening the input from the users. The playground can be used for designing a new algorithm by watching its results every step, create new tests by verifying the work before applying into the test suite and experimenting with new APIs \cite{13}. \\
 
-Khan Academy has also launched an online development environment for teaching purpose. This online environment contains a set of tutorials based on the JavaScript and Processing languages and supports live coding environment like Swift playground, where the program updates the output as the programmers write. \\
+Khan Academy has also launched an online development environment for teaching purpose. This online environment contains a set of tutorials based on the JavaScript and Processing languages and supports live coding environment like Swift playground, where the program updates the output as the programmers write \cite{15}. \\
 
-Processing is an open source programming language built for teaching the fundamentals of computer programming in a visual context and to serve as the foundation for electronic sketchbooks. One of the stated aims of Processing is to act as a tool to get non-programmers started with programming, through the instant gratification of visual feedback. \\
+Processing is an open source programming language built for teaching the fundamentals of computer programming in a visual context and to serve as the foundation for electronic sketchbooks. One of the stated aims of Processing is to act as a tool to get non-programmers started with programming, through the instant gratification of visual feedback \cite{16}. \\
 
-Greenfoot is an interactive Java development environment for also educational purposes. Its main focuses are two-dimensional graphical applications like simulations and games. The aim of Greenfoot is to give programming education (object-oriented programming) at high school and early university level. \\
+Greenfoot is an interactive Java development environment for also educational purposes. Its main focuses are two-dimensional graphical applications like simulations and games. The aim of Greenfoot is to give programming education (object-oriented programming) at high school and early university level \cite{17}. \\
 
-Bluej is another Java environment specifically for first year college students. It is developed to eliminate some of Java's complex syntax and represents the object/class relationship visually. Special emphasis is placed in Bluej on visualization and interaction techniques to create an interactive environment to encourage experimentation and exploration. \\
+Bluej is another Java environment specifically for first year college students. It is developed to eliminate some of Java's complex syntax and represents the object/class relationship visually. Special emphasis is placed in Bluej on visualization and interaction techniques to create an interactive environment to encourage experimentation and exploration \cite{18}. \\
 
 Bret Victor, the owner of the work that was cited as an inspiration for the Khan system, emphasizes that; the goals of a programming system should be: 
 
@@ -160,4 +200,4 @@ Bret Victor, the owner of the work that was cited as an inspiration for the Khan
 
 \end{itemize}
 
-As a live coding example Processing do not address any of these goals [14]. Bret Victor further criticizes JavaScript and Processing as a poorly-designed languages since they do not support ways of thinking and ignores learning process. Without these goals a live coding environments are worthless.
+As a live coding example Processing do not address any of these goals \cite{14}. Bret Victor further criticizes JavaScript and Processing as a poorly-designed languages since they do not support ways of thinking and ignores learning process. Without these goals a live coding environments are worthless \cite{14}.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  5 OCT 2015 14:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  13 OCT 2015 13:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -664,23 +664,7 @@ Package caption Info: subfigure package is loaded.
 
 
 Writing glossary file main.glo 
-(./main.aux
-
-LaTeX Warning: Label `UserFixtures' multiply defined.
-
-
-LaTeX Warning: Label `UserFixtures' multiply defined.
-
-
-LaTeX Warning: Label `UserFixtures' multiply defined.
-
-
-LaTeX Warning: Label `UserFixtures' multiply defined.
-
-
-LaTeX Warning: Label `UserFixtures' multiply defined.
-
-)
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -774,7 +758,7 @@ Class scrbook Warning: Usage of deprecated font command `\bf'!
 
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 43.
-<styles/informat.png, id=227, 355.3275pt x 202.7575pt>
+<styles/informat.png, id=223, 355.3275pt x 202.7575pt>
 File: styles/informat.png Graphic file (type png)
 
 <use styles/informat.png>
@@ -877,7 +861,7 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 34.
  (./main.toc [11]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 78.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 89.
 )
 \tf@toc=\write5
 \openout5 = `main.toc'.
@@ -959,12 +943,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--34
 
  []
 
-
+[2]
 Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
-[2]
+
 Underfull \hbox (badness 10000) in paragraph at lines 37--38
 
  []
@@ -974,12 +958,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--40
 
  []
 
-
+[3]
 Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-[3] <images/mcan/Introduction/layered.png, id=365, 129.48375pt x 191.71625pt>
+<images/mcan/Introduction/layered.png, id=390, 129.48375pt x 191.71625pt>
 File: images/mcan/Introduction/layered.png Graphic file (type png)
 
 <use images/mcan/Introduction/layered.png>
@@ -992,177 +976,179 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--54
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4 <./images/mcan/Introduction/layered.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 56--57
 
  []
 
-) (./chapters/Requirements.tex [5] [6
+[4]) (./chapters/Requirements.tex
+Underfull \vbox (badness 1939) has occurred while \output is active []
+
+ [5 <./images/mcan/Introduction/layered.png>] [6]
+Chapter 2.
+[7
 
 ]
-Chapter 2.
-[7]
-<images/mcan/Requirement/oneleghop-acc.png, id=390, 122.3772pt x 122.3772pt>
+<images/mcan/Requirement/oneleghop-acc.png, id=422, 122.3772pt x 122.3772pt>
 File: images/mcan/Requirement/oneleghop-acc.png Graphic file (type png)
 
 <use images/mcan/Requirement/oneleghop-acc.png>
 Package pdftex.def Info: images/mcan/Requirement/oneleghop-acc.png used on inpu
-t line 23.
+t line 22.
 (pdftex.def)             Requested size: 173.34032pt x 173.34172pt.
 
-<images/mcan/Requirement/insole.png, id=391, 175.3752pt x 104.0688pt>
+<images/mcan/Requirement/insole.png, id=423, 175.3752pt x 104.0688pt>
 File: images/mcan/Requirement/insole.png Graphic file (type png)
 
 <use images/mcan/Requirement/insole.png>
 Package pdftex.def Info: images/mcan/Requirement/insole.png used on input line 
-24.
+23.
 (pdftex.def)             Requested size: 173.34032pt x 102.86963pt.
 
-<images/mcan/Requirement/oneleghop-insole.png, id=392, 113.223pt x 113.223pt>
+<images/mcan/Requirement/oneleghop-insole.png, id=424, 113.223pt x 113.223pt>
 File: images/mcan/Requirement/oneleghop-insole.png Graphic file (type png)
 
 <use images/mcan/Requirement/oneleghop-insole.png>
 Package pdftex.def Info: images/mcan/Requirement/oneleghop-insole.png used on i
-nput line 25.
+nput line 24.
 (pdftex.def)             Requested size: 173.34032pt x 173.34636pt.
  [8 <./images/mcan/Requirement/oneleghop-acc.png>] [9 <./images/mcan/Requiremen
 t/insole.png> <./images/mcan/Requirement/oneleghop-insole.png>]
-<images/mcan/Requirement/sidehop-raw.png, id=407, 122.3772pt x 122.3772pt>
+<images/mcan/Requirement/sidehop-raw.png, id=442, 122.3772pt x 122.3772pt>
 File: images/mcan/Requirement/sidehop-raw.png Graphic file (type png)
 
 <use images/mcan/Requirement/sidehop-raw.png>
 Package pdftex.def Info: images/mcan/Requirement/sidehop-raw.png used on input 
-line 32.
+line 31.
 (pdftex.def)             Requested size: 173.34032pt x 173.34172pt.
 
-<images/mcan/Requirement/sidehop-filtered.png, id=408, 122.3772pt x 122.3772pt>
+<images/mcan/Requirement/sidehop-filtered.png, id=443, 122.3772pt x 122.3772pt>
 File: images/mcan/Requirement/sidehop-filtered.png Graphic file (type png)
 <use images/mcan/Requirement/sidehop-filtered.png>
 Package pdftex.def Info: images/mcan/Requirement/sidehop-filtered.png used on i
-nput line 33.
+nput line 32.
 (pdftex.def)             Requested size: 173.34032pt x 173.34172pt.
+
+Underfull \vbox (badness 1910) has occurred while \output is active []
+
  [10 <./images/mcan/Requirement/sidehop-raw.png>] [11 <./images/mcan/Requiremen
-t/sidehop-filtered.png>]
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 115--116
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 130--131
-
- []
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 132--133
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 136--137
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
-
- []
-
-
+t/sidehop-filtered.png>] [12] [13]
 Underfull \hbox (badness 10000) in paragraph at lines 140--141
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--145
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
 
  []
 
-
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 146--147
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
+
+ []
+
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
 
  []
 
-) (./chapters/Analysis.tex [16]
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
+
+ []
+
+) (./chapters/Analysis.tex [17] [18]
 Chapter 3.
 
-<images/mcan/Analysis/oldCommunicationDiagram.jpg, id=460, 948.54375pt x 295.10
+<images/mcan/Analysis/oldCommunicationDiagram.jpg, id=559, 948.54375pt x 295.10
 25pt>
 File: images/mcan/Analysis/oldCommunicationDiagram.jpg Graphic file (type jpg)
  <use images/mcan/Analysis/oldCommunicationDiagram.jpg>
 Package pdftex.def Info: images/mcan/Analysis/oldCommunicationDiagram.jpg used 
 on input line 10.
-(pdftex.def)             Requested size: 346.68726pt x 107.85785pt.
+(pdftex.def)             Requested size: 433.35742pt x 134.82118pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
+[19
 
+ <./images/mcan/Analysis/oldCommunicationDiagram.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
-[17
 
- <./images/mcan/Analysis/oldCommunicationDiagram.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 21--22
 
  []
@@ -1183,24 +1169,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
  []
 
 
-<images/mcan/Analysis/CommunicationDiagram.jpg, id=470, 1082.0425pt x 511.9125p
-t>
+<images/mcan/Analysis/CommunicationDiagram.jpg, id=568, 1084.05pt x 511.9125pt>
 File: images/mcan/Analysis/CommunicationDiagram.jpg Graphic file (type jpg)
- <use images/mcan/Analysis/CommunicationDiagram.jpg>
+<use images/mcan/Analysis/CommunicationDiagram.jpg>
 Package pdftex.def Info: images/mcan/Analysis/CommunicationDiagram.jpg used on 
 input line 29.
-(pdftex.def)             Requested size: 346.68726pt x 164.01843pt.
+(pdftex.def)             Requested size: 433.35742pt x 204.6364pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
-
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
 
-[18]
+
 Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
@@ -1210,15 +1195,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--38
 
  []
 
-<images/mcan/Analysis/ComponentDiagram.jpg, id=480, 869.2475pt x 453.695pt>
+
+<images/mcan/Analysis/ComponentDiagram.jpg, id=578, 948.54375pt x 454.69875pt>
 File: images/mcan/Analysis/ComponentDiagram.jpg Graphic file (type jpg)
 
 <use images/mcan/Analysis/ComponentDiagram.jpg>
 Package pdftex.def Info: images/mcan/Analysis/ComponentDiagram.jpg used on inpu
 t line 39.
-(pdftex.def)             Requested size: 346.68726pt x 180.94864pt.
-
-<images/mcan/Analysis/TestDiagram.jpg, id=482, 854.19125pt x 261.97874pt>
+(pdftex.def)             Requested size: 346.68726pt x 166.18915pt.
+ [21 <./images/mcan/Analysis/CommunicationDiagram.jpg>]
+<images/mcan/Analysis/TestDiagram.jpg, id=585, 854.19125pt x 261.97874pt>
 File: images/mcan/Analysis/TestDiagram.jpg Graphic file (type jpg)
 
 <use images/mcan/Analysis/TestDiagram.jpg>
@@ -1226,23 +1212,23 @@ Package pdftex.def Info: images/mcan/Analysis/TestDiagram.jpg used on input lin
 e 43.
 (pdftex.def)             Requested size: 346.68726pt x 106.32466pt.
 ) (./chapters/SystemDesign.tex
-[19 <./images/mcan/Analysis/CommunicationDiagram.jpg>] [20 <./images/mcan/Analy
-sis/ComponentDiagram.jpg> <./images/mcan/Analysis/TestDiagram.jpg>]
+[22 <./images/mcan/Analysis/ComponentDiagram.jpg> <./images/mcan/Analysis/TestD
+iagram.jpg>]
 Chapter 4.
 
 Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-[21
+[23
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
-[22] [23]
-<images/mcan/SystemDesign/DecompositionDiagram.jpg, id=515, 1085.05376pt x 558.
+[24] [25]
+<images/mcan/SystemDesign/DecompositionDiagram.jpg, id=615, 1085.05376pt x 558.
 085pt>
 File: images/mcan/SystemDesign/DecompositionDiagram.jpg Graphic file (type jpg)
 
@@ -1250,16 +1236,16 @@ File: images/mcan/SystemDesign/DecompositionDiagram.jpg Graphic file (type jpg)
 Package pdftex.def Info: images/mcan/SystemDesign/DecompositionDiagram.jpg used
  on input line 75.
 (pdftex.def)             Requested size: 433.35742pt x 222.88942pt.
- [24 <./images/mcan/SystemDesign/DecompositionDiagram.jpg>]
-<images/mcan/SystemDesign/ComponentDiagram.jpg, id=526, 1294.8375pt x 396.48125
+ [26 <./images/mcan/SystemDesign/DecompositionDiagram.jpg>]
+<images/mcan/SystemDesign/ComponentDiagram.jpg, id=626, 1294.8375pt x 396.48125
 pt>
 File: images/mcan/SystemDesign/ComponentDiagram.jpg Graphic file (type jpg)
  <use images/mcan/SystemDesign/ComponentDiagram.jpg>
 Package pdftex.def Info: images/mcan/SystemDesign/ComponentDiagram.jpg used on 
 input line 95.
 (pdftex.def)             Requested size: 433.35742pt x 132.6965pt.
- [25 <./images/mcan/SystemDesign/ComponentDiagram.jpg>]
-<images/mcan/SystemDesign/LayeredDiagram.jpg, id=533, 639.38875pt x 450.68375pt
+ [27 <./images/mcan/SystemDesign/ComponentDiagram.jpg>]
+<images/mcan/SystemDesign/LayeredDiagram.jpg, id=633, 639.38875pt x 450.68375pt
 >
 File: images/mcan/SystemDesign/LayeredDiagram.jpg Graphic file (type jpg)
  <use images/mcan/SystemDesign/LayeredDiagram.jpg>
@@ -1271,13 +1257,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
-[26]
+[28]
 Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
 
-<images/mcan/SystemDesign/DeploymentDiagram.jpg, id=552, 837.1275pt x 315.1775p
+<images/mcan/SystemDesign/DeploymentDiagram.jpg, id=652, 837.1275pt x 315.1775p
 t>
 File: images/mcan/SystemDesign/DeploymentDiagram.jpg Graphic file (type jpg)
  <use images/mcan/SystemDesign/DeploymentDiagram.jpg>
@@ -1287,7 +1273,7 @@ Package pdftex.def Info: images/mcan/SystemDesign/DeploymentDiagram.jpg used on
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27 <./images/mcan/SystemDesign/LayeredDiagram.jpg>]
+ [29 <./images/mcan/SystemDesign/LayeredDiagram.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
@@ -1302,7 +1288,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 158--159
 
  []
 
-[28 <./images/mcan/SystemDesign/DeploymentDiagram.jpg>]
+[30 <./images/mcan/SystemDesign/DeploymentDiagram.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 160--161
 
  []
@@ -1317,7 +1303,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 174--175
 
  []
 
-) (./chapters/ObjectDesign.tex [29] [30
+) (./chapters/ObjectDesign.tex [31] [32
 
 ]
 Chapter 5.
@@ -1327,7 +1313,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--11
  []
 
 
-<images/mcan/ObjectDesign/CommunicationInterface.jpg, id=573, 759.83875pt x 224
+<images/mcan/ObjectDesign/CommunicationInterface.jpg, id=672, 759.83875pt x 224
 .84pt>
 File: images/mcan/ObjectDesign/CommunicationInterface.jpg Graphic file (type jp
 g)
@@ -1340,7 +1326,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-[31 <./images/mcan/ObjectDesign/CommunicationInterface.jpg>]
+[33 <./images/mcan/ObjectDesign/CommunicationInterface.jpg>]
 Overfull \hbox (7.12349pt too wide) in paragraph at lines 33--34
 []\T1/ppl/b/n/10.95 Digital Mes-sages \T1/ppl/m/n/10.95 - sendReportRe-quests-F
 orDig-i-talPin:(NSInteger) pin re-ports:(BOOL)
@@ -1379,8 +1365,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-[32]
-<images/mcan/ObjectDesign/mainWindow.png, id=594, 1557.82pt x 988.69376pt>
+[34]
+<images/mcan/ObjectDesign/mainWindow.png, id=693, 1557.82pt x 988.69376pt>
 File: images/mcan/ObjectDesign/mainWindow.png Graphic file (type png)
 
 <use images/mcan/ObjectDesign/mainWindow.png>
@@ -1393,7 +1379,7 @@ Overfull \hbox (43.33838pt too wide) in paragraph at lines 65--65
  []
 
 
-<images/mcan/ObjectDesign/ViewControllerInterface.jpg, id=595, 634.37pt x 184.6
+<images/mcan/ObjectDesign/ViewControllerInterface.jpg, id=694, 634.37pt x 184.6
 9pt>
 File: images/mcan/ObjectDesign/ViewControllerInterface.jpg Graphic file (type j
 pg)
@@ -1402,7 +1388,7 @@ Package pdftex.def Info: images/mcan/ObjectDesign/ViewControllerInterface.jpg u
 sed on input line 67.
 (pdftex.def)             Requested size: 346.68726pt x 100.93726pt.
 
-<images/mcan/ObjectDesign/gatheringWindow.png, id=598, 594.22pt x 405.515pt>
+<images/mcan/ObjectDesign/gatheringWindow.png, id=697, 594.22pt x 405.515pt>
 File: images/mcan/ObjectDesign/gatheringWindow.png Graphic file (type png)
 
 <use images/mcan/ObjectDesign/gatheringWindow.png>
@@ -1410,17 +1396,17 @@ Package pdftex.def Info: images/mcan/ObjectDesign/gatheringWindow.png used on i
 nput line 72.
 (pdftex.def)             Requested size: 346.68726pt x 236.59726pt.
 
-<images/mcan/ObjectDesign/gatheringInterface.jpg, id=599, 484.81125pt x 229.858
+<images/mcan/ObjectDesign/gatheringInterface.jpg, id=698, 484.81125pt x 229.858
 75pt>
 File: images/mcan/ObjectDesign/gatheringInterface.jpg Graphic file (type jpg)
  <use images/mcan/ObjectDesign/gatheringInterface.jpg>
 Package pdftex.def Info: images/mcan/ObjectDesign/gatheringInterface.jpg used o
 n input line 74.
 (pdftex.def)             Requested size: 346.68726pt x 164.3793pt.
- [33] [34 <./images/mcan/ObjectDesign/mainWindow.png> <./images/mcan/ObjectDesi
-gn/ViewControllerInterface.jpg>] [35 <./images/mcan/ObjectDesign/gatheringWindo
+ [35] [36 <./images/mcan/ObjectDesign/mainWindow.png> <./images/mcan/ObjectDesi
+gn/ViewControllerInterface.jpg>] [37 <./images/mcan/ObjectDesign/gatheringWindo
 w.png> <./images/mcan/ObjectDesign/gatheringInterface.jpg>]
-<images/mcan/ObjectDesign/e-textileCommunicationSelection.png, id=626, 872.2587
+<images/mcan/ObjectDesign/e-textileCommunicationSelection.png, id=726, 872.2587
 4pt x 495.8525pt>
 File: images/mcan/ObjectDesign/e-textileCommunicationSelection.png Graphic file
  (type png)
@@ -1430,7 +1416,7 @@ Package pdftex.def Info: images/mcan/ObjectDesign/e-textileCommunicationSelecti
 on.png used on input line 80.
 (pdftex.def)             Requested size: 433.35742pt x 246.35188pt.
 
-<images/mcan/ObjectDesign/ECommunicationInterface.jpg, id=627, 462.72874pt x 98
+<images/mcan/ObjectDesign/ECommunicationInterface.jpg, id=727, 462.72874pt x 98
 .3675pt>
 File: images/mcan/ObjectDesign/ECommunicationInterface.jpg Graphic file (type j
 pg)
@@ -1448,13 +1434,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
-[36 <./images/mcan/ObjectDesign/e-textileCommunicationSelection.png> <./images/
+[38 <./images/mcan/ObjectDesign/e-textileCommunicationSelection.png> <./images/
 mcan/ObjectDesign/ECommunicationInterface.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
-<images/mcan/ObjectDesign/JSInterface.jpg, id=637, 420.57124pt x 74.2775pt>
+<images/mcan/ObjectDesign/JSInterface.jpg, id=737, 420.57124pt x 74.2775pt>
 File: images/mcan/ObjectDesign/JSInterface.jpg Graphic file (type jpg)
 
 <use images/mcan/ObjectDesign/JSInterface.jpg>
@@ -1467,7 +1453,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 94--95
  []
 
 
-<images/mcan/ObjectDesign/fileInterface.jpg, id=639, 419.5675pt x 223.83624pt>
+<images/mcan/ObjectDesign/fileInterface.jpg, id=739, 419.5675pt x 223.83624pt>
 File: images/mcan/ObjectDesign/fileInterface.jpg Graphic file (type jpg)
 
 <use images/mcan/ObjectDesign/fileInterface.jpg>
@@ -1480,7 +1466,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--102
  []
 
 
-<images/mcan/ObjectDesign/InteractexInterface.jpg, id=641, 461.725pt x 84.315pt
+<images/mcan/ObjectDesign/InteractexInterface.jpg, id=741, 461.725pt x 84.315pt
 >
 File: images/mcan/ObjectDesign/InteractexInterface.jpg Graphic file (type jpg)
  <use images/mcan/ObjectDesign/InteractexInterface.jpg>
@@ -1488,64 +1474,88 @@ Package pdftex.def Info: images/mcan/ObjectDesign/InteractexInterface.jpg used
 on input line 103.
 (pdftex.def)             Requested size: 346.68726pt x 63.30812pt.
 )
-(./chapters/Conclusion.tex [37 <./images/mcan/ObjectDesign/JSInterface.jpg>]
-[38 <./images/mcan/ObjectDesign/fileInterface.jpg> <./images/mcan/ObjectDesign/
+(./chapters/Conclusion.tex [39 <./images/mcan/ObjectDesign/JSInterface.jpg>]
+[40 <./images/mcan/ObjectDesign/fileInterface.jpg> <./images/mcan/ObjectDesign/
 InteractexInterface.jpg>]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
+Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--11
-
- []
-
-[39
-
-] <images/OptimLayers.pdf, id=659, 1174.3875pt x 762.85pt>
-File: images/OptimLayers.pdf Graphic file (type pdf)
-
-<use images/OptimLayers.pdf>
-Package pdftex.def Info: images/OptimLayers.pdf used on input line 18.
-(pdftex.def)             Requested size: 390.01903pt x 253.34761pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
-
- []
-
-[40 <./images/OptimLayers.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--45
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
  []
 
-[41]
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+
+ []
+
+[41
+
+]
+File: images/mcan/SystemDesign/ComponentDiagram.jpg Graphic file (type jpg)
+ <use images/mcan/SystemDesign/ComponentDiagram.jpg>
+Package pdftex.def Info: images/mcan/SystemDesign/ComponentDiagram.jpg used on 
+input line 18.
+(pdftex.def)             Requested size: 433.35742pt x 132.6965pt.
+File: images/mcan/SystemDesign/LayeredDiagram.jpg Graphic file (type jpg)
+
+<use images/mcan/SystemDesign/LayeredDiagram.jpg>
+Package pdftex.def Info: images/mcan/SystemDesign/LayeredDiagram.jpg used on in
+put line 20.
+(pdftex.def)             Requested size: 390.01903pt x 274.90979pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [42]
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 51--52
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
+
+ []
+
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
 
-[42]) [43] [44
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+
+ []
+
+[44]) [45] [46
 
 ]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 57.
- [45] [46] (./chapters/Appendix.tex
+ [47] [48] (./chapters/Appendix.tex
 Appendix A.
 LaTeX Font Info:    Try loading font information for T1+phv on input line 5.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1phv.fd
@@ -1553,126 +1563,92 @@ File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 5.
- [47
+ [49
 
-]) [48]
+]) [50]
 (./main.bbl
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 6.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 7.
  (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 26--31
-[]\T1/ppl/m/n/10.95 Balana xacml 3.0 project home page.  Web-site, 2013.  Avail
--
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 26--31
-\T1/ppl/m/n/10.95 able on-line at []$\T1/pcr/m/n/10.95 http : / / xacmlinfo . o
-rg / 2012 / 08 / 16 /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 26--31
-\T1/pcr/m/n/10.95 balana-[]the-[]open-[]source-[]xacml-[]3-[]0-[]implementation
-$[]\T1/ppl/m/n/10.95 ; vis-ited
- []
-
-
-Underfull \hbox (badness 2617) in paragraph at lines 50--55
-[]\T1/ppl/m/n/10.95 Falls among older adults: An overview.  Web-site, 2013.  Av
-ail-able
- []
-
-[49
+[51
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 158--163
-[]\T1/ppl/m/n/10.95 Performance of soap/http vs. soap/jms.  Web-site, 2008.
+Underfull \hbox (badness 10000) in paragraph at lines 93--96
+[]\T1/ppl/m/n/10.95 Available on-line at[]$\T1/pcr/m/n/10.95 http : / / arduino
+ . cc / en / Main /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--163
-\T1/ppl/m/n/10.95 Avail-able on-line at []$\T1/pcr/m/n/10.95 http : / / java . 
-dzone . com / articles /
- []
-
-[50]
-Underfull \hbox (badness 10000) in paragraph at lines 219--224
-[]\T1/ppl/m/n/10.95 100 prod-ucts and tech-nolo-gies for en-ergy con-ser-va-tio
-n.  Web-site,
+Underfull \hbox (badness 10000) in paragraph at lines 118--121
+[]\T1/ppl/m/n/10.95 Available on-line at[]$\T1/pcr/m/n/10.95 https : / / en . w
+ikipedia . org / wiki / Weka _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--224
-\T1/ppl/m/n/10.95 2013.  Avail-able on-line at []$\T1/pcr/m/n/10.95 http : / / 
-mapawatt . com / 2011 / 07 / 17 /
- []
-
-[51]
-Underfull \hbox (badness 3179) in paragraph at lines 273--278
-[]\T1/ppl/m/n/10.95 The soa source group: What is soa?  Web-site, 2011.  Avail-
-able
+Underfull \hbox (badness 1924) in paragraph at lines 128--131
+[]\T1/ppl/m/n/10.95 Available on-line at[]$\T1/pcr/m/n/10.95 https : / / www . 
+khanacademy . org/$[]\T1/ppl/m/n/10.95 .  Khanacademy.
  []
 
 
-Underfull \hbox (badness 4467) in paragraph at lines 273--278
-\T1/ppl/m/n/10.95 on-line at []$\T1/pcr/m/n/10.95 http : / / www . opengroup . 
-org / soa / source-[]book / soa / soa .
+Underfull \hbox (badness 10000) in paragraph at lines 153--157
+[]\T1/ppl/m/n/10.95 Available on-line at[]$\T1/pcr/m/n/10.95 http : / / www . i
+ntel . com / content / www / us / en /
  []
 
 
-Underfull \hbox (badness 1527) in paragraph at lines 286--291
-[]\T1/ppl/m/n/10.95 From m2m to the in-ter-net of things: View-points from eu-r
-ope.  Web-
+Underfull \hbox (badness 1755) in paragraph at lines 159--162
+[]\T1/ppl/m/n/10.95 Available on-line at[]$\T1/pcr/m/n/10.95 http : / / www . n
+etmf . com / gadgeteer/$[]\T1/ppl/m/n/10.95 .  Gad-geteer.
  []
 
 
-Underfull \hbox (badness 3000) in paragraph at lines 286--291
-\T1/ppl/m/n/10.95 site, 2013.  Avail-able on-line at []$\T1/pcr/m/n/10.95 http 
-: / / www . techvibes . com / blog /
+Underfull \hbox (badness 3635) in paragraph at lines 169--174
+[]\T1/ppl/m/n/10.95 PaoloCosta, Ge-of-f-Coul-son, Ce-cilia Mas-colo, Gi-an-Piet
+roP-icco, and Ste-
  []
 
 
-Overfull \hbox (76.53886pt too wide) in paragraph at lines 286--291
-\T1/pcr/m/n/10.95 from-[]m2m-[]to-[]the-[]internet-[]of-[]things-[]viewpoints-[
-]from-[]europe-[]2011-[]07-[]07$[]\T1/ppl/m/n/10.95 ;
+Underfull \hbox (badness 1715) in paragraph at lines 176--181
+[]\T1/ppl/m/n/10.95 Bret Vic-tor.  Learn-able pro-gram-ming: De-sign-ing a pro-
+gram-ming sys-
  []
 
-
-Underfull \hbox (badness 1521) in paragraph at lines 304--309
-\T1/pcr/m/n/10.95 www . w3 . org / TR / 2004 / NOTE-[]ws-[]gloss-[]20040211 / #
-webservice$[]\T1/ppl/m/n/10.95 ; vis-
- []
-
-)
+[52])
 
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 167.
 See the caption package documentation for explanation.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 66.
-[52]
+[53]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 66.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 66.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 66.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E1A99387E93EF69356DCB5D9758AF3C2;3690.
 
 
-LaTeX Warning: There were multiply-defined labels.
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 38939ED7588A57747B517491CE58AD69;3649
+(rerunfilecheck)             After:  204F3834A4C4D8C91D8A2B281C1B1587;3862.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 66.
  ) 
 Here is how much of TeX's memory you used:
- 12714 strings out of 493117
- 195192 string characters out of 6135433
- 324006 words of memory out of 5000000
- 15588 multiletter control sequences out of 15000+600000
+ 12694 strings out of 493117
+ 194693 string characters out of 6135433
+ 323688 words of memory out of 5000000
+ 15572 multiletter control sequences out of 15000+600000
  35866 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,11n,59p,2068b,513s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,11n,59p,2327b,513s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
 ive/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2014
@@ -1681,10 +1657,10 @@ dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2014/texmf-dist/fo
 nts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/typ
 e1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
 palatino/uplri8a.pfb>
-Output written on main.pdf (66 pages, 1136863 bytes).
+Output written on main.pdf (67 pages, 1070149 bytes).
 PDF statistics:
- 921 PDF objects out of 1000 (max. 8388607)
- 800 compressed objects within 8 object streams
- 253 named destinations out of 1000 (max. 500000)
- 579 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 923 PDF objects out of 1000 (max. 8388607)
+ 803 compressed objects within 9 object streams
+ 251 named destinations out of 1000 (max. 500000)
+ 566 words of extra memory for PDF output out of 10000 (max. 10000000)
 
