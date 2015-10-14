@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  13 OCT 2015 20:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  14 OCT 2015 08:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1470,20 +1470,6 @@ Package pdftex.def Info: images/mcan/ObjectDesign/JSInterface.jpg used on input
  line 91.
 (pdftex.def)             Requested size: 346.68726pt x 61.22981pt.
 
-
-! Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `latin1'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.94 ...of the File component is shown in figureß
-                                                   \ref{FileInterface}.\\
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
@@ -1690,7 +1676,7 @@ dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2014/texmf-dist/fo
 nts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/typ
 e1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
 palatino/uplri8a.pfb>
-Output written on main.pdf (69 pages, 1557099 bytes).
+Output written on main.pdf (69 pages, 1556882 bytes).
 PDF statistics:
  968 PDF objects out of 1000 (max. 8388607)
  837 compressed objects within 9 object streams

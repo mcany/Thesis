@@ -91,7 +91,7 @@ In addition the execution of user input is done in another thread to make sure t
 \insertfigure{images/mcan/ObjectDesign/JSInterface.jpg}{JavaScript Runner Interface Speficitation}{JSRunner}{0.80}
 
 \subsection{File}
-File Component is responsible for storing two different information. One job is to store the data that is gathered from e-textile device, the other job is storing the user code. The stored user code later can be retrieved when the system is started, so that user does not loose any information between coding sessions. With the same reason data is also stored to use the same data again in other programming sessions and can be manipulated without loosing the original data. The interface of the File component is shown in figureß \ref{FileInterface}.\\
+File Component is responsible for storing two different information. One job is to store the data that is gathered from e-textile device, the other job is storing the user code. The stored user code later can be retrieved when the system is started, so that user does not loose any information between coding sessions. With the same reason data is also stored to use the same data again in other programming sessions and can be manipulated without loosing the original data. The interface of the File component is shown in figure \ref{FileInterface}.\\
 
 The stored user code and data are sent to the ViewController to visualize and let the user to manipulate them. Indeed, ViewController sends the user code to File Component to make them stored in a file. However Gathering Data components is the component to send the gathered data to File component to store them. The gathered data is saved with their original message types alongside with the received values. 
 
